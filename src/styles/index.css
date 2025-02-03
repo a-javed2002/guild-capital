@@ -5,7 +5,7 @@
 
 .Home h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
 .Home p {
@@ -19,37 +19,37 @@ h5,
 h6 {
     font-family: 'Manrope', serif;
 }
-
-
+.Home .home-header{
+    margin-top: 200px;
+}
 .Home .fund-section .fund-years {
     background-color: #FFFFFF;
     color: #0E192B;
-    font-weight: bold;
-    width: 130px;
-    height: 50px;
+    width: 90px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 1.375rem;
+    padding: 20px 10px 20px 10px;
+    font-family: 'Manrope', serif;
 }
 
 .Home .fund-section h1 {
-    font-family: 'Manrope', serif;
+    font-family: 'Manrope-SemiBold', serif;
+    font-size: 3.25rem;
+}
+
+.Home .fund-section .fund-txt {
+
+    font-size: 1.375rem;
 }
 
 .Home .fund-section .active .fund-years {
     background-color: #A1624D;
     color: #FFFFFF;
-    font-weight: bold;
-    width: 130px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-size: 20px;
+
 }
 
 .Home .fund-section .fund-txt {
@@ -70,6 +70,14 @@ h6 {
     color: #A1624D;
 }
 
+.Home .feature-section .left-hand .investment-txt {
+    font-family: 'Manrope-SemiBold', serif;
+    font-size: 2.813rem;
+}
+
+.Home .feature-section .feature-image-txt {
+    font-size: 1.5rem;
+}
 
 .Home .potiential-setion .slider-card {
     width: 600px;
@@ -81,6 +89,11 @@ h6 {
 .Home .potiential-setion .slider-card img {
     max-width: 100%;
 
+}
+
+.Home .potiential-setion .potiential-intro {
+    font-size: 1.5rem;
+    font-family: 'Manrope-Regular', serif;
 }
 
 @media (max-width: 768px) {
@@ -118,19 +131,24 @@ h6 {
 
 
 .Home .customer-experience .counter h1 {
-    font-size: 75px;
-    font-family: 'Manrope', serif;
+    font-size: 4.688rem;
+    font-family: 'Manrope-Bold', serif;
+}
+
+.Home .customer-experience .customer-experience-intro {
+    font-size: 1.5rem;
+
 }
 
 .Home .customer-experience .counter p {
-    font-size: 20px;
-    font-family: 'Manrope', serif;
+    font-size: 1.375rem;
+    font-family: 'Manrope-SemiBold', serif;
     text-align: center;
 }
 
 .Home .customer-experience .vedio2 {
     width: 100%;
-
+    height: 553.89px;
 }
 
 .Home .vedio1 {
@@ -147,6 +165,12 @@ h6 {
     text-align: center;
 }
 
+.Home .insight-section .insight-tab {
+    font-size: 1.375rem;
+    font-family: 'Manrope-SemiBold', serif;
+    font-weight: 500;
+}
+
 .Home .insight-section .insight-content .insight-card {
     width: 300px;
     padding: 10px;
@@ -159,18 +183,56 @@ h6 {
     max-width: 100%;
 }
 
+
 .Home .insight-section .insight-content {
     padding: 30px 0px 30px 0px;
     background-color: #262D3C;
     border-radius: 20px;
-    width: 80%;
+    width: 73%;
 
+}
+
+@media (max-width:2560px) and (min-width: 1440px) {
+
+    .Home .insight-section .insight-content {
+        width: 41%;
+    }
+}
+
+@media (max-width:1441px) and (min-width: 1023px) {
+
+    .Home .insight-section .insight-content {
+        width: 80%;
+    }
+}
+
+@media (max-width:1024px) and (min-width: 768px) {
+
+    .Home .insight-section .insight-content {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .Home .insight-section .insight-content {
+        width: 86%;
+    }
 }
 
 .Home .testinomial .h1 {
     font-size: 75px;
 }
 
+.Home .testinomial .intro h3 {
+    font-size: 2rem;
+}
+@media (max-width: 768px) {
+
+    .Home .testinomial .intro {
+      margin-left:  16px;
+    }
+}
 .Home .testinomial .testinomial-card p {
     color: #525252;
 }
@@ -208,15 +270,10 @@ h6 {
     height: 603px;
 }
 
-/* Mobile adjustments (for screen widths below 768px) */
 @media (max-width: 768px) {
-
     .decorative-img-3,
     .decorative-img-4 {
-        /* Move the images behind the content */
         z-index: -1;
-
-
     }
 }
 
@@ -253,42 +310,51 @@ h6 {
     background-color: #A1624D;
     color: #FFFFFF;
 }
+
 .video-container {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.8s ease-in-out;
-  }
-  
-  .video-container.fullscreen {
+    transition: transform 0.8s ease-in-out, height 0.8s ease-in-out;
+}
+
+/* Fullscreen state */
+.video-container.fullscreen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
-  }
-  
-  .video-container.fullscreen video {
+    z-index: 900;
+    transform: scale(1);
+}
+
+/* Video inside fullscreen */
+.video-container.fullscreen video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-  }
-  
-  .video-container.normal {
+    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Normal state */
+.video-container.normal {
     position: relative;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
-    margin-top: 5rem; /* Adjust as needed */
-  }
-  
-  .video-container.normal video {
+    margin-top: 5rem;
+    /* Adjust as needed */
+    /* transform: scale(0.7); */
+    /* Shrinks smoothly */
+}
+
+/* Shrink video size gradually */
+.video-container.normal video {
     width: 900px;
     height: 600px;
-    transition: all 0.8s ease-in-out;
-  }
-  
+    transition: transform 0.8s ease-in-out, width 0.8s ease-in-out, height 0.8s ease-in-out;
+}

@@ -23,13 +23,13 @@ import insight3 from '../assets/images/insight3.png';
 import testinomial1 from '../assets/images/testinomial1.png';
 import testinomial2 from '../assets/images/testinomial2.png';
 import testinomial3 from '../assets/images/testinomial3.png';
-import analytics from '../assets/images/analytics-gif.gif';
+import analytics from '../assets/images/analytics-svg.svg';
 import vector1 from '../assets/images/vector1.png';
 import vector2 from '../assets/images/vector2.png';
 import vector3 from '../assets/images/vector3.png';
 import vector4 from '../assets/images/vector4.png';
 import vector from '../assets/images/Vector.png';
-import vedio1 from '../assets/vedio/home-one.mp4';
+import vedio1 from '../assets/vedio/home-one2.m4v';
 import vedio2 from '../assets/vedio/home-two.mp4';
 
 
@@ -96,13 +96,13 @@ function Home() {
             id: 1,
             title: "2007",
             text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.",
-            image: insight1
+            image: fund
         },
         {
             id: 2,
             title: "2009",
             text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.",
-            image: insight2
+            image: fund
         },
 
     ];
@@ -147,13 +147,13 @@ function Home() {
             id: 1,
             first: Investment2,
             text: "Customizable Integrations",
-            image: feature
+            image: fund
         },
         {
             id: 2,
             first: Investment3,
             text: "Real-time Analytics Dashboard",
-            image: feature
+            image: insight2
         },
 
     ];
@@ -239,40 +239,28 @@ function Home() {
         setActiveTab(tab);
     };
 
-   
-        const [isFullScreen, setIsFullScreen] = useState(true);
-      
-        useEffect(() => {
-          const handleScroll = () => {
+
+    const [isFullScreen, setIsFullScreen] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
             if (window.scrollY < 50) {
-              setIsFullScreen(true);  // Return to full screen when scrolled to top
+                setIsFullScreen(true);  // Return to full screen when scrolled to top
             } else {
-              setIsFullScreen(false); // Shrink video after scrolling
+                setIsFullScreen(false); // Shrink video after scrolling
             }
-          };
-      
-          window.addEventListener("scroll", handleScroll);
-          return () => window.removeEventListener("scroll", handleScroll);
-        }, []);
-      
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
 
         <header className="Home " >
 
             <section style={{ position: 'relative' }} className='home-header'>
-                {/* <img
-                        src={vector1}
-                        alt="Decorative vector"
-                        style={{
-                            position: 'absolute',
-                            bottom: '-96px',
-                            left: '-520px',
-                            zIndex: 1,
 
-
-                            height: '933px',
-                        }}
-                    /> */}
                 <h1 className="primary text-center">
                     Unlock Your Investment
                 </h1>
@@ -302,24 +290,11 @@ function Home() {
                         Join Now
                     </button>
                 </div>
-                {/* <img
-                        src={vector2}
-                        alt="Decorative vector"
-                        style={{
-                            position: 'absolute',
-                            bottom: '-317px',
-                            right: '-586px',
-                            zIndex: 1,
-
-
-                            height: '965px',
-                        }}
-                    /> */}
             </section>
 
-            <div>
+            <div className='home-second mt-5'>
                 <h1 className="primary text-center">Our Diverse Network of Partners</h1>
-                <div className="d-flex gap-4 justify-content-center mt-3 flex-wrap">
+                <div className="d-flex gap-4 justify-content-center mt-5 flex-wrap">
                     <div className="d-flex gap-2 ">
                         <img src={ShapeImage} className="network-icon" alt="Shape" />
 
@@ -372,28 +347,26 @@ function Home() {
                         <span className="white-txt">Nietzsche</span>
                     </div>
                 </div>
-
             </div>
 
             <div className="mt-5 container ">
                 <h1 className="text-center primary">
                     Unveiling Guilds Story
                 </h1>
-                <p className="text-center white-txt">
+                <p className="text-center white-txt mt-4">
                     The platform streamlines investments, enhances user engagement, and tracks agent <br></br> performance, catering to users, sales agents, and administrators.
                 </p>
 
-                <div className="row fund-section" ref={secondSectionRef} style={{ minHeight: '400px' }}>
+                <div className="row fund-section mt-5" ref={secondSectionRef} style={{ minHeight: '400px' }}>
 
-                    {/* Left Column for Images */}
-                    <div className="col-lg-6">
+
+                    <div className="col-lg-6 left-hand">
                         {categories[activeCategory].image && (
                             <img src={categories[activeCategory].image} alt={`Image for ${categories[activeCategory].title}`} />
                         )}
                     </div>
 
-                    {/* Right Column for Text */}
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 right-hand">
                         <h1 className="white-txt">Founding and Early Years</h1>
 
                         {categories.map((cat) => (
@@ -416,7 +389,7 @@ function Home() {
 
                             <div className={`d-flex gap-4  ${activeCategory2 === category.id ? "active" : ""}`} key={category.id}>
                                 <img src={category.first} className="investment-img" alt="Investment" />
-                                <h2 className="white-txt investment-txt mt-5">
+                                <h2 className="white-txt investment-txt align-content-center">
                                     {category.text}
                                 </h2>
                             </div>
@@ -428,23 +401,22 @@ function Home() {
                         {categories2[activeCategory2] && (
                             <img src={categories2[activeCategory2].image} className="feature-image" alt="Feature" />
                         )}
-                        <p className="white-txt text-center">Experience a seamless investment journey with.</p>
+                        <p className="white-txt text-center feature-image-txt mt-2">Experience a seamless investment journey with.</p>
                     </div>
 
-                    <button className="fill-button">Get Started</button>
+                    <button className="fill-button mt-5">Get Started</button>
                 </div>
             </div>
             <div className="potiential-setion container mt-5">
                 <h1 className="primary text-center">
                     Unlock Your Investment Potential with Us
                 </h1>
-                <p className="white-txt text-center mt-3">
+                <p className="white-txt text-center potiential-intro mt-4">
                     Experience a seamless investment journey with our platform. We prioritize user engagement and provide tools<br></br>
                     to track your performance effectively.
                 </p>
 
-                <div className="slider-container" style={{ position: 'relative' }}>
-                    {/* Left Hover Zone */}
+                <div className="slider-container mt-5" style={{ position: 'relative' }}>
                     <div
                         className="hover-zone left-zone"
                         onMouseEnter={handleLeftHover}
@@ -453,11 +425,10 @@ function Home() {
                             top: 0,
                             left: 0,
                             height: '100%',
-                            width: '20%', // Adjust as needed
+                            width: '20%',
                             zIndex: 2,
                         }}
                     />
-                    {/* Right Hover Zone */}
                     <div
                         className="hover-zone right-zone"
                         onMouseEnter={handleRightHover}
@@ -466,7 +437,7 @@ function Home() {
                             top: 0,
                             right: 0,
                             height: '100%',
-                            width: '20%', // Adjust as needed
+                            width: '20%',
                             zIndex: 2,
                         }}
                     />
@@ -499,19 +470,12 @@ function Home() {
             </div>
 
             <section className='mt-5 customer-experience'>
-                {/* 
-                    <img
-                        src={vector3}
-                        alt="Decorative vector"
-                
-                        className='decorative-img-3 '
-                    /> */}
                 <h1 className='primary text-center'> Improves Customer Experiences</h1>
-                <h5 className='white-txt text-center'>
+                <h5 className='white-txt text-center customer-experience-intro mt-3'>
                     Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. <br></br> Nibh est vitae suspendisse parturient sed lorem eu.
                 </h5>
 
-                <div className='d-flex justify-content-around flex-wrap mt-5 counter'>
+                <div className='d-flex justify-content-around flex-wrap mt-5 counter '>
                     <div>
                         <h1 className='primary text-center'>41.5%</h1>
                         <p className='white-txt'>Bitcoin Dominance</p>
@@ -527,17 +491,12 @@ function Home() {
                 </div>
 
                 <div className='d-flex justify-content-center mt-5 '>
-                    <video autoPlay loop muted className='vedio2 ' style={{ width: '900px', height: '400px' }} >
+                    <video autoPlay loop muted className='vedio2 '  >
                         <source src={vedio2} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                {/* <img
-                        src={vector4}
-                        alt="Decorative vector"
-                
-                        className='decorative-img-4'
-                    /> */}
+
             </section>
 
 
@@ -549,7 +508,7 @@ function Home() {
                     {['All', 'Borrowing', 'Earning', 'Investing', 'Planning', 'Saving'].map((tab) => (
                         <button
                             key={tab}
-                            className={`fill-button ${activeTab === tab ? 'active' : ''}`}
+                            className={`insight-tab fill-button ${activeTab === tab ? 'active' : ''}`}
                             onClick={() => handleTabClick(tab)}
                         >
                             {tab}
@@ -557,12 +516,14 @@ function Home() {
                     ))}
                 </div>
                 <center>
-                    <div className='mt-5 insight-content d-flex justify-content-center flex-wrap gap-5'>
+                    <div className='mt-5 insight-content d-flex justify-content-center flex-wrap gap-3'>
                         {insights[activeTab].map((insight, index) => (
                             <div key={index} className='insight-card'>
                                 <img src={insight.img} className="" alt={insight.title} />
-                                <h5 className='white-txt'>{insight.title}</h5>
-                                <button className="fill-button mt-3">Read</button>
+                                <h5 className='white-txt text-start'>{insight.title}</h5>
+                                <div className='d-flex justify-content-start'>
+                                    <button className="fill-button mt-3 ">Read</button>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -579,8 +540,8 @@ function Home() {
                         <img src={vector} className="" />
 
                     </div>
-                    <div className='col-lg-7 col-sm-10'>
-                        <h3 className='white-txt p-3'>
+                    <div className='col-lg-7 col-sm-10 intro'>
+                        <h3 className='white-txt p-3 ' >
                             "Joining this platform was a game-changer for me. The educational resources helped me understand crypto trading, and the community support is invaluable. Highly recommended!"
                         </h3>
                     </div>

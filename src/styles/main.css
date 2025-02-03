@@ -13,16 +13,34 @@
      src: url('../assets/Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
  }
 
-.MuiPaper-root,footer h1 {
-    font-family: 'Manrope', serif;
+ @font-face {
+     font-family: 'Manrope-SemiBold';
+     src: url('../assets/Fonts/Manrope/Manrope-SemiBold.ttf') format('truetype');
+ }
+
+ @font-face {
+     font-family: 'Manrope-Regular';
+     src: url('../assets/Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
+ }
+
+ @font-face {
+     font-family: 'Manrope-Bold';
+     src: url('../assets/Fonts/Manrope/Manrope-Bold.ttf') format('truetype');
+ }
+
+ .MuiPaper-root,
+ footer h1 {
+     font-family: 'Manrope', serif;
 
  }
 
- .MuiPaper-root,footer p {
+ .MuiPaper-root,
+ footer p {
      font-family: 'Manrope', serif;
  }
 
- .MuiPaper-root,footer h2,
+ .MuiPaper-root,
+ footer h2,
  h3,
  h4,
  h5,
@@ -103,15 +121,12 @@
      color: #00aaff;
  }
 
- /* .footer-right {
-    width: 50%;
-    text-align: right;
-} */
-
  .subscribe-form {
      display: flex;
      gap: 10px;
      margin-top: 10px;
+     width: 100%;
+     font-size: 1.375rem;
  }
 
  .subscribe-form input {
@@ -119,7 +134,7 @@
      border: 1px solid #ccc;
      border-radius: 25px;
      outline: none;
-     max-width: 300px;
+     max-width: 359px;
      background-color: transparent !important;
      color: #FFFFFF !important;
      caret-color: #FFFFFF;
@@ -138,6 +153,11 @@
      border-color: #FFFFFF;
  }
 
+ @media (max-width:768px)  {
+     footer .link-main{
+       margin-left: 10px; 
+     }
+ }
 
  .contact-info {
      margin-top: 10px;
@@ -157,4 +177,8 @@
      font-size: 12px;
      margin-top: 30px;
      opacity: 0.7;
+ }
+
+ .footer-intro {
+     font-size: 1rem;
  }

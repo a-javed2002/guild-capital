@@ -7,25 +7,16 @@ const Footer = () => {
     return (
         <footer className="footer" >
             <div className="footer-container row">
-                {/* Left Section */}
-                <div className="footer-left col-md-6 col-sm-12">
+
+                <div className="footer-left col-md-4 col-sm-12">
                     <img src={logo} alt="Logo" className="footer-logo" />
-                    <p>Integer sit quisque sed at. Fermentum nunc aliquet cursus eget. Egestas ornare.</p>
-                    <div className="footer-links mx-3">
-                        <div>
-                            <p>About Us</p>
-                            <p>What we offer</p>
-                            <p>Performance</p>
-                        </div>
-                        <div>
-                            <p>Insights</p>
-                            <p>Help</p>
-                            <p>Privacy</p>
-                        </div>
-                    </div>
+                    <p className="white-txt footer-intro">Integer sit quisque sed at. Fermentum nunc aliquet cursus eget. Egestas ornare.</p>
+
                 </div>
 
-                {/* Right Section */}
+                <div className="col-md-2">
+
+                </div>
                 <div className="footer-right  col-md-6 col-sm-12">
                     <div className="d-flex flex-column align-items-start">
 
@@ -40,22 +31,37 @@ const Footer = () => {
                             <button className="btn  fill-button">Subscribe</button>
                         </div>
                     </div>
-                    <div className='mt-3'>
-                        <h6 className='text-start'>Contact Us</h6>
-                        <div className='d-flex '>
-                            <p className="contact-info text-start"> info@guild.capital <br></br>| +971 569 55 66 88</p>
-                            <div className="social-icons mx-2 mt-4">
-                                <FaLinkedin />
-                                <FaInstagram />
-                                <FaTimesCircle />
-                            </div>
+
+                </div>
+            </div>
+            <div className="row  link-main">
+                <div className="col-md-1 mx-2"></div>
+                <div className="footer-links  col-md-4">
+                    <div>
+                        <p>About Us</p>
+                        <p>What we offer</p>
+                        <p>Performance</p>
+                    </div>
+                    <div>
+                        <p>Insights</p>
+                        <p>Help</p>
+                        <p>Privacy</p>
+                    </div>
+                </div>
+                <div className='mt-3 col-md-4'>
+                    <h6 className='text-start'>Contact Us</h6>
+                    <div className='d-flex '>
+                        <p className="contact-info text-start"> info@guild.capital <br></br>| +971 569 55 66 88</p>
+                        <div className="social-icons mx-2 mt-4">
+                            <FaLinkedin />
+                            <FaInstagram />
+                            <FaTimesCircle />
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Bottom Disclaimer */}
-            <div className="footer-bottom text-start">
+            </div>
+            <div className="footer-bottom text-start mx-3">
                 <p>
                     Guild Capital is a company incorporated in the Dubai Integrated Economic Zones Authority (DIEZA) and Dubai Economy and Tourism (DET) license for asset management. Our registered office is at Office 705, 7th floor, Building 8, Bay Square, Business Bay, Dubai, United Arab Emirates.
                 </p>

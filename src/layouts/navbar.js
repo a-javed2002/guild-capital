@@ -27,7 +27,9 @@ const Navbar = () => {
     const navItems = ["About Us", "What We Offer", "Performance", "Insights"];
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "#0d1626", paddingX: { xs: 2, md: 10 } }}>
+
+
+        <AppBar position="fixed" sx={{ backgroundColor: "#0d1626", paddingX: { xs: 2, md: 10 }, zIndex: 1100, }}>
             <Toolbar sx={{ justifyContent: "space-between" }}>
 
                 <a href="/">
