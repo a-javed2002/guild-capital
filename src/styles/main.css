@@ -1,0 +1,160 @@
+ body {
+     background-color: #0E192B;
+     /* background-color: #FFFFFF; */
+ }
+
+ @font-face {
+     font-family: 'Playfair Display';
+     src: url('../assets/Fonts/Playfair%20Display/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+ }
+
+ @font-face {
+     font-family: 'Manrope';
+     src: url('../assets/Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+ }
+
+.MuiPaper-root,footer h1 {
+    font-family: 'Manrope', serif;
+
+ }
+
+ .MuiPaper-root,footer p {
+     font-family: 'Manrope', serif;
+ }
+
+ .MuiPaper-root,footer h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     font-family: 'Manrope', serif;
+ }
+
+ .primary {
+     color: #A1624D;
+ }
+
+ .white-txt {
+     color: #FFFFFF;
+ }
+
+ .fill-button {
+     padding: 10px 20px;
+     border-radius: 25px;
+     border: 2px solid #FFFFFF;
+     background-color: #FFFFFF;
+     color: #0E192B;
+     /* font-size: 20px; */
+     cursor: pointer;
+     font-weight: bold;
+     width: auto;
+     border: none;
+ }
+
+ .outline-button {
+     padding: 10px 20px;
+     border-radius: 30px;
+     border: 2px solid #FFFFFF;
+     background-color: #0E192B;
+     color: #FFFFFF;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ .footer {
+     background: linear-gradient(180deg, #000000 0%, #4B596F 100%);
+     color: white;
+     padding: 40px 20px;
+     font-family: "Poppins", sans-serif;
+ }
+
+ .footer-container {
+
+     max-width: 1200px;
+     margin: auto;
+ }
+
+ /* .footer-left {
+    width: 40%;
+} */
+
+ .footer-logo {
+     width: 80px;
+     margin-bottom: 15px;
+ }
+
+ .footer-left p {
+     font-size: 14px;
+     opacity: 0.8;
+ }
+
+ .footer-links {
+     display: flex;
+     gap: 30px;
+     margin-top: 15px;
+ }
+
+ .footer-links p {
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+ .footer-links p:hover {
+     color: #00aaff;
+ }
+
+ /* .footer-right {
+    width: 50%;
+    text-align: right;
+} */
+
+ .subscribe-form {
+     display: flex;
+     gap: 10px;
+     margin-top: 10px;
+ }
+
+ .subscribe-form input {
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 25px;
+     outline: none;
+     max-width: 300px;
+     background-color: transparent !important;
+     color: #FFFFFF !important;
+     caret-color: #FFFFFF;
+ }
+
+
+ .subscribe-form input::placeholder {
+     color: #FFFFFF !important;
+     opacity: 1;
+ }
+
+
+ .subscribe-form input:focus {
+     background-color: transparent !important;
+     box-shadow: none;
+     border-color: #FFFFFF;
+ }
+
+
+ .contact-info {
+     margin-top: 10px;
+     font-size: 14px;
+     opacity: 0.8;
+ }
+
+ .social-icons {
+     display: flex;
+     gap: 15px;
+     font-size: 24px;
+     margin-top: 10px;
+ }
+
+ .footer-bottom {
+     text-align: center;
+     font-size: 12px;
+     margin-top: 30px;
+     opacity: 0.7;
+ }

@@ -1,0 +1,86 @@
+.what-we {
+
+    background-image: url('../assets/images/What we offer.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+.what-we h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 75px;
+}
+
+.what-we p {
+    font-family: 'Manrope', serif;
+}
+.what-we h2,h3,h4,h5,h6 {
+    font-family: 'Manrope', serif;
+}
+
+.what-we .header-img {
+    height: 600px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.what-we .what-we-header h1 {
+
+    font-size: 75px;
+}
+
+.what-we .financial-Future .main {
+    font-size: 60px;
+}
+
+@media (max-width: 768px) {
+    .what-we .financial-Future .main {
+        font-size: 68px;
+    }
+}
+
+.what-we .financial-Future .left-hand h1 {
+    font-size: 50px;
+}
+
+.what-we .financial-Future .left-hand {
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .what-we .financial-Future .rotation-img {
+        margin-top: 120px !important;
+    }
+}
+
+
+.what-we .financial-Future .financial-card {
+    background-color: #262D3C;
+    border-radius: 20px;
+    height: 300px;
+    /* padding: 20px; */
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.what-we .financial-Future .financial-card img {
+    height: 270px;
+
+}
+
+.what-we .choose-us .question {
+    border-radius: 40px;
+    background-color: #262D3C;
+    font-size: 26px;
+    padding: 20px;
+    width: 700px;
+    max-width: 100%;
+}
+
+.what-we .choose-us h1 {
+    font-size: 75px;
+}

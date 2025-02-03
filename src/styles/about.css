@@ -1,0 +1,186 @@
+.About {
+    background-image: url('../assets/images/About-Us-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.About h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 75px;
+}
+
+.About h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Manrope', serif;
+}
+
+.About p {
+    font-family: 'Manrope', serif;
+}
+
+.About .innovation-container {
+    display: flex;
+    align-items: start;
+    position: relative;
+}
+
+.About .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.About .second-section img {
+    max-width: 100%;
+}
+
+.About .second-section h1 {
+    font-size: 50px;
+}
+
+.About .icon {
+    width: 100px;
+    height: 100px;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    /* margin-right: 20px; */
+}
+
+.About .icon img {
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+}
+
+.About .content {
+    flex: 1;
+    background: linear-gradient(to bottom, #29303e, #9f614c);
+    padding: 30px;
+    height: 584px;
+    border-radius: 15px;
+}
+
+.About .content p {
+    font-size: 30px;
+}
+
+.About h2 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.About .italic {
+    font-style: italic;
+}
+
+.About .bold {
+    font-weight: bold;
+}
+
+
+.About .third-section .innovation-container .sidebar .active {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    width: 130px;
+}
+
+.About .last-section .last-card {
+    background-color: #262D3C;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.About .last-section .last-card img {
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
+}
+
+
+
+.About .last-section h1 {
+    font-size: 40px;
+
+}
+
+.About .last-section p {
+    font-size: 28px;
+}
+
+
+@media (max-width: 768px) {
+    .About .last-section h1 {
+        font-size: 26px;
+    }
+
+    .About .last-section p {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+
+    .About .icon img {
+        width: 30px;
+        height: 30px;
+        max-width: 100%;
+    }
+
+    .About .sidebar {
+
+        gap: 10px;
+    }
+
+    .About .third-section .content {
+        padding: 10px;
+    }
+
+    .About .third-section .content h1 {
+        font-size: 45px;
+    }
+
+    .About .sidebar .icon {
+        width: 50px;
+        height: 50px;
+        gap: 10px;
+    }
+
+    .About .third-section .innovation-container .sidebar .active {
+
+        width: 60px;
+    }
+
+    .About .content {
+        width: 100%;
+
+        height: auto;
+
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .About .content .fill-button {
+        width: 100%;
+
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .About .content p {
+        font-size: 12px;
+ 
+    }
+}

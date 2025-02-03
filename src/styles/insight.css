@@ -1,0 +1,144 @@
+.insight {
+    background-image: url('../assets/images/Insights-Bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.insight h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 75px;
+}
+
+.insight p {
+    font-family: 'Manrope', serif;
+}
+
+.insight h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Manrope', serif;
+}
+
+.insight .insight-header .header-img img {
+    height: 200px;
+    width: 200px;
+
+}
+
+.insight .insight-header h1 {
+    font-size: 75px;
+}
+
+@media (max-width: 768px) {
+    .insight .insight-header h1 {
+        font-size: 46px;
+    }
+}
+
+.insight .insight-second h1 {
+    font-size: 75px;
+}
+
+.insight .insight-second .second-tabs {
+    background-color: #33394A;
+    border-radius: 35px;
+    padding: 15px;
+}
+
+.insight .insight-second .second-tabs .active {
+    background-color: #A1624D !important;
+    border: #A1624D;
+
+}
+
+.insight .insight-second .outline-button {
+    background-color: #33394A !important;
+    border-radius: 10px !important;
+
+}
+
+.insight .insight-second .insight-card {
+    background-color: #33394A;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.insight .insight-second .insight-card img {
+    display: block;
+    margin: auto;
+}
+
+.insight .insight-second .insight-card h4 {
+    font-size: clamp(16px, 2vw, 20px);
+    /* text-align: center !important; */
+}
+
+.insight .insight-second .insight-card .insight-container {
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.insight .insight-second .insight-card {
+    width: 30%;
+    min-width: 250px;
+}
+
+.insight .insight-second .insight-card p {
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 170%;
+    /* text-align: center !important; */
+}
+
+.insight .insight-second .insight-card img {
+    max-width: 100%;
+}
+
+.insight .insight-third .insight-subcribtion input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    width: 350px;
+    background-color: transparent !important;
+    color: #FFFFFF !important;
+    caret-color: #FFFFFF;
+}
+
+
+.insight .insight-third .insight-subcribtion input::placeholder {
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+
+.insight .insight-third .insight-subcribtion input:focus {
+    background-color: transparent !important;
+    box-shadow: none;
+    border-color: #FFFFFF;
+}
+
+.insight .insight-third p {
+    font-size: 24px;
+    line-height: 140%;
+}
+
+.insight .insight-third h1 {
+    font-size: 40px;
+    line-height: 120%;
+}
+
+.insight .insight-third h1 {
+    font-size: 40px;
+    line-height: 120%;
+}
+
+.insight .insight-third {
+    padding: 20px;
+    background: linear-gradient(#000000 0%, #000000 0%, #2C3F60 100%);
+    border-radius: 20px;
+
+}

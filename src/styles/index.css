@@ -1,0 +1,294 @@
+.network-icon {
+    height: 20px;
+    margin-top: 2px;
+}
+
+.Home h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+}
+
+.Home p {
+    font-family: 'Manrope', serif;
+}
+
+.Home h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Manrope', serif;
+}
+
+
+.Home .fund-section .fund-years {
+    background-color: #FFFFFF;
+    color: #0E192B;
+    font-weight: bold;
+    width: 130px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.Home .fund-section h1 {
+    font-family: 'Manrope', serif;
+}
+
+.Home .fund-section .active .fund-years {
+    background-color: #A1624D;
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 130px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.Home .fund-section .fund-txt {
+    font-size: 20px;
+}
+
+.Home .fund-section .active .fund-txt {
+    color: #A1624D;
+}
+
+.Home .feature-section .feature-image {
+    width: 100%;
+    height: 490px;
+
+}
+
+.Home .feature-section .left-hand .active h2 {
+    color: #A1624D;
+}
+
+
+.Home .potiential-setion .slider-card {
+    width: 600px;
+    background-color: #262D3C;
+    transition: transform 0.3s ease;
+
+}
+
+.Home .potiential-setion .slider-card img {
+    max-width: 100%;
+
+}
+
+@media (max-width: 768px) {
+    .Home .potiential-setion .slider-card h2 {
+        font-size: 20px;
+    }
+
+    .Home .potiential-setion .slider-card p {
+        font-size: 12px;
+    }
+
+}
+
+.Home .fund-section img {
+    max-width: 100%;
+
+}
+
+/* .slider-card:hover {
+    transform: scale(1.7);   } */
+
+.Home .potiential-setion .slider-card .slider-image {
+    height: 250px;
+
+}
+
+
+.Home .slider-card {
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    transform: scale(0.9);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+.Home .customer-experience .counter h1 {
+    font-size: 75px;
+    font-family: 'Manrope', serif;
+}
+
+.Home .customer-experience .counter p {
+    font-size: 20px;
+    font-family: 'Manrope', serif;
+    text-align: center;
+}
+
+.Home .customer-experience .vedio2 {
+    width: 100%;
+
+}
+
+.Home .vedio1 {
+
+    width: 100%;
+}
+
+.Home .insight-section {
+    width: auto;
+}
+
+.Home .insight-section h1 {
+    font-size: 75px;
+    text-align: center;
+}
+
+.Home .insight-section .insight-content .insight-card {
+    width: 300px;
+    padding: 10px;
+
+}
+
+.Home .insight-section .insight-content .insight-card img {
+    width: 300px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.Home .insight-section .insight-content {
+    padding: 30px 0px 30px 0px;
+    background-color: #262D3C;
+    border-radius: 20px;
+    width: 80%;
+
+}
+
+.Home .testinomial .h1 {
+    font-size: 75px;
+}
+
+.Home .testinomial .testinomial-card p {
+    color: #525252;
+}
+
+.Home .last-section h1 {
+    font-size: 70px;
+}
+
+.Home .last-section .box img {
+    width: 70%;
+    background: linear-gradient(180deg, #000000 0%, #000000 0%, #2C3F60 100%);
+}
+
+.Home .last-section .box {
+    padding: 15px;
+    background: linear-gradient(180deg, #000000 0%, #000000 0%, #2C3F60 100%);
+}
+
+
+
+/* Default desktop styles */
+.decorative-img-3 {
+    position: absolute;
+    top: 3400px;
+    left: -350px;
+    z-index: 1;
+    height: 703px;
+}
+
+.decorative-img-4 {
+    position: absolute;
+    top: 3600px;
+    right: -280px;
+    z-index: 1;
+    height: 603px;
+}
+
+/* Mobile adjustments (for screen widths below 768px) */
+@media (max-width: 768px) {
+
+    .decorative-img-3,
+    .decorative-img-4 {
+        /* Move the images behind the content */
+        z-index: -1;
+
+
+    }
+}
+
+.Home {
+
+    background-image: url('../assets/images/Index.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.insight-card {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.insight-card:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fill-button.active {
+    background-color: #A1624D;
+    color: #FFFFFF;
+}
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .video-container.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+  }
+  
+  .video-container.fullscreen video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  .video-container.normal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem; /* Adjust as needed */
+  }
+  
+  .video-container.normal video {
+    width: 900px;
+    height: 600px;
+    transition: all 0.8s ease-in-out;
+  }
+  
