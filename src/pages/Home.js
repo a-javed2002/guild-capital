@@ -36,44 +36,144 @@ import vedio2 from '../assets/vedio/home-two.mp4';
 
 function Home() {
     const sliderRef = useRef(null);
+    const [currentSlide, setCurrentSlide] = useState(1);  // Default to the middle slide on load
 
     const settings = {
         dots: true,
         infinite: true,
-        speed: 300,
+        speed: 1,
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows: false,
-        // centerMode: true,
-        // centerPadding: '0',
-        // initialSlide: 1,
-        // variableWidth: true, // Allow variable widths
+        arrows: true,
+        centerMode: true,
+        centerPadding: '150',
+        initialSlide: 1,
+        autoplay: false,
+        //   autoplaySpeed: 1000,
+        afterChange: (index) => {
+            setCurrentSlide(index);
+        },
         responsive: [
             {
-                breakpoint: 768,  // Breakpoint for mobile screens
+                breakpoint: 768,
                 settings: {
-                    slidesToShow: 2,  // Show 2 slides on mobile
+                    slidesToShow: 2,
                     slidesToScroll: 1,
+                    centerPadding: '200',
                 },
             },
             {
-                breakpoint: 1024,  // Breakpoint for tablet screens
+                breakpoint: 425,
                 settings: {
-                    slidesToShow: 3,  // Show 3 slides on tablet
+                    slidesToShow: 1,
                     slidesToScroll: 1,
+                    centerPadding: '0',
+                },
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerPadding: '120',
+                },
+            },
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerPadding: '140',
                 },
             },
         ],
+
     };
-    const handleLeftHover = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickPrev();
+    useEffect(() => {
+        const slickSliderInstance = sliderRef.current;
+        if (slickSliderInstance && slickSliderInstance.innerSlider) {
+            const slickTrack = slickSliderInstance.innerSlider.list;
+            if (!slickTrack) return;
+    
+            const slickSlides = slickTrack.querySelectorAll('.slick-slide');
+            if (!slickSlides.length) return;
+    
+            // Check screen width using window.innerWidth
+            if (window.innerWidth > 425) {
+                slickSlides.forEach((slide) => {
+                    slide.classList.remove('slider-middle');
+                });
+    
+                slickSlides.forEach((slide, i) => {
+                    if (slide.classList.contains('slick-current')) {
+                        const nextSlide = slickSlides[i + 1];
+                        if (nextSlide) {
+                            nextSlide.classList.add('slider-middle');
+                        }
+                    }
+                });
+
+                const dots = document.querySelectorAll('.slick-dots li');
+                if (!dots.length) return;
+        
+                const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
+        
+                if (activeDot) {
+                    console.log("Active Dot: ", activeDot);
+                    dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
+        
+                    const activeIndex = Array.from(dots).indexOf(activeDot);
+                    console.log("Active Dot Index: ", activeIndex);
+        
+                    const nextDot = dots[activeIndex + 1] || dots[activeIndex];
+                    if (nextDot) {
+                        nextDot.classList.add('slider-dot-middle');
+                    }
+                }
+            } else {
+                slickSlides.forEach((slide) => {
+                    slide.classList.remove('slider-middle');
+                });
+    
+                slickSlides.forEach((slide) => {
+                    if (slide.classList.contains('slick-current')) {
+                        slide.classList.add('slider-middle');
+                    }
+                });
+
+                const dots = document.querySelectorAll('.slick-dots li');
+                if (!dots.length) return;
+        
+                const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
+        
+                if (activeDot) {
+                    console.log("Active Dot: ", activeDot);
+                    dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
+        
+                    const activeIndex = Array.from(dots).indexOf(activeDot);
+                    console.log("Active Dot Index: ", activeIndex);
+        
+                    const nextDot = dots[activeIndex ] || dots[activeIndex];
+                    if (nextDot) {
+                        nextDot.classList.add('slider-dot-middle');
+                    }
+                }
+            }
+    
+            // Handle dots
+       
         }
+    }, [currentSlide]);
+    
+    const handleLeftHover = () => {
+        // if (sliderRef.current) {
+        //     sliderRef.current.slickPrev();
+        // }
     };
     const handleRightHover = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickNext();
-        }
+        // if (sliderRef.current) {
+        //     sliderRef.current.slickNext();
+        // }
     };
 
 
@@ -255,6 +355,7 @@ function Home() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+
     return (
 
         <header className="Home " >
@@ -407,6 +508,7 @@ function Home() {
                     <button className="fill-button mt-5">Get Started</button>
                 </div>
             </div>
+
             <div className="potiential-setion container mt-5">
                 <h1 className="primary text-center">
                     Unlock Your Investment Potential with Us
@@ -441,35 +543,38 @@ function Home() {
                             zIndex: 2,
                         }}
                     />
-                    <Slider {...settings} ref={sliderRef}>
-
-                        <div className="slider-card d-flex flex-column justify-content-center align-items-center">
+                    <Slider {...settings} ref={sliderRef} className='row'>
+                        <div className=" slider-card d-flex flex-column justify-content-center align-items-center">
                             <img src={slider1} className="slider-image" />
-                            <h2 className="white-txt text-center">Unlock Your Investment</h2>
+                            <h2 className="white-txt text-center">1 Unlock Your Investment</h2>
                             <p className="white-txt text-center">
                                 Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
                             </p>
                         </div>
                         <div className="slider-card d-flex flex-column justify-content-center align-items-center">
                             <img src={slider2} className="slider-image" />
-                            <h2 className="white-txt text-center">Unlock Your Investment</h2>
+                            <h2 className="white-txt text-center">2 Unlock Your Investment</h2>
                             <p className="white-txt text-center">
                                 Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
                             </p>
                         </div>
                         <div className="slider-card d-flex flex-column justify-content-center align-items-center">
                             <img src={slider3} className="slider-image" />
-                            <h2 className="white-txt text-center">Unlock Your Investment</h2>
+                            <h2 className="white-txt text-center">3 Unlock Your Investment</h2>
                             <p className="white-txt text-center">
                                 Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
                             </p>
                         </div>
-
                     </Slider>
+
+                    {/* You can add a visual indicator for the active slide */}
+                    {/* <div>
+                        <h3 className='white-txt'>Current Slide Index: {currentSlide}</h3>
+                    </div> */}
                 </div>
             </div>
 
-            <section className='mt-5 customer-experience'>
+            <section className=' customer-experience'>
                 <h1 className='primary text-center'> Improves Customer Experiences</h1>
                 <h5 className='white-txt text-center customer-experience-intro mt-3'>
                     Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. <br></br> Nibh est vitae suspendisse parturient sed lorem eu.
@@ -490,11 +595,13 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='d-flex justify-content-center mt-5 '>
-                    <video autoPlay loop muted className='vedio2 '  >
-                        <source src={vedio2} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-center mt-5 vedio2-container'>
+                        <video autoPlay loop muted className='vedio2 '  >
+                            <source src={vedio2} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
 
             </section>
@@ -558,20 +665,20 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className="testinomial-card  ">
-                        <div>
-                            <img src={testinomial2} className="" style={{ width: '380px' }} />
-                            <br></br>
-                            <div className='mx-4'>
-                                <h5 className='white-txt'>
-                                    Constance Julien
-                                </h5>
-                                <p>Chief Factors Technician</p>
-                            </div>
+                    <div className="testinomial-card  d-flex flex-column justify-content-end ">
 
+                        <img src={testinomial2} className="" style={{ width: '380px' }} />
+                        <br></br>
+                        <div className='mx-4'>
+                            <h5 className='white-txt'>
+                                Constance Julien
+                            </h5>
+                            <p>Chief Factors Technician</p>
                         </div>
+
+
                     </div>
-                    <div className="testinomial-card  ">
+                    <div className="testinomial-card   d-flex flex-column justify-content-end">
                         <img src={testinomial3} className="" style={{ width: '380px' }} />
                         <div className='mx-4'>
                             <h5 className='white-txt'>

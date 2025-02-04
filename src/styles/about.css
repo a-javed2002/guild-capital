@@ -8,7 +8,7 @@
 
 .About h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 75px;
+    font-size: 4.375rem;
 }
 
 .About h2,
@@ -21,6 +21,24 @@ h6 {
 
 .About p {
     font-family: 'Manrope', serif;
+}
+
+.About .about-header h1 {
+    font-size: 7.5rem;
+
+
+}
+
+.About .about-header p {
+    font-size: 1.5rem;
+
+
+}
+
+.About .about-header {
+
+    margin-top: 5rem;
+
 }
 
 .About .innovation-container {
@@ -41,7 +59,28 @@ h6 {
 }
 
 .About .second-section h1 {
-    font-size: 50px;
+    font-size: 3.25rem;
+}
+
+.About .second-section p {
+    font-size: 1.5rem;
+}
+
+.About .second-section-btn {
+    margin-left: 14rem;
+}
+
+@media (max-width: 768px) {
+    .About .second-section-btn {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .About .second-section h1 {
+        font-size: 3rem;
+    }
+
+
 }
 
 .About .icon {
@@ -66,12 +105,15 @@ h6 {
     flex: 1;
     background: linear-gradient(to bottom, #29303e, #9f614c);
     padding: 30px;
-    height: 584px;
-    border-radius: 15px;
+    min-height: 518px;
+    /* Allows growth */
+    max-height: 600px;
+    /* Prevents exceeding 600px */
+    border-radius: 24px;
 }
 
 .About .content p {
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .About h2 {
@@ -106,15 +148,31 @@ h6 {
     max-width: 100%;
 }
 
+.About .last-section .left-hand .last-card img {
+    height: 320px;
+    width: 407px;
+    max-width: 100%;
+}
+
+.About .last-section .right-hand .last-card img {
+    height: 286px;
+    width: 214px;
+    max-width: 100%;
+}
 
 
-.About .last-section h1 {
-    font-size: 40px;
+.About .last-section .last-h1 {
+    font-size: 3.25rem;
 
 }
 
-.About .last-section p {
-    font-size: 28px;
+.About .last-section .main h1 {
+    font-size: 2.5rem;
+
+}
+
+.About .last-section .main p {
+    font-size: 1.75rem;
 }
 
 
@@ -170,6 +228,7 @@ h6 {
         padding: 20px;
         border-radius: 10px;
     }
+
     .About .content .fill-button {
         width: 100%;
 
@@ -181,6 +240,6 @@ h6 {
 @media (max-width: 480px) {
     .About .content p {
         font-size: 12px;
- 
+
     }
 }

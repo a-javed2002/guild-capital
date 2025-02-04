@@ -1,3 +1,9 @@
+.perfomance-main .perfomance-header {
+
+    margin-top: 7rem;
+
+}
+
 .perfomance-main {
     background-image: url('../assets/images/performance.png');
     background-size: cover;
@@ -8,29 +14,41 @@
 
 .perfomance-main h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 75px;
+    font-size: 4.375rem;
 }
 
 .perfomance-main p {
     font-family: 'Manrope', serif;
 }
-.perfomance-main h2,h3,h4,h5,h6 {
+
+.perfomance-main h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Manrope', serif;
 }
+
 .perfomance-main .perfomance-header h1 {
-    font-size: 75px;
+    font-size: 6.25rem;
+
+}
+
+@media (max-width: 768px) {
+
+
+    .perfomance-main .perfomance-header h1 {
+        font-size: 3.25rem;
+
+    }
 
 }
 
 .perfomance-main .perfomance-header p {
-    font-size: 24px;
+    font-size: 1.5rem;
 
 }
 
-.perfomance-main .perfomance-header .perfomace-card p {
-    font-size: 24px;
-
-}
 
 .perfomance-main .perfomance-header .perfomace-card {
     border-radius: 15px;
@@ -45,37 +63,77 @@
 
 .perfomance-main .perfomance-header .perfomace-card img {
     height: 350px;
-    width: 350px;
+    width: 100%;
+    ;
     display: block;
-    margin: auto;
+
     border-radius: 20px;
+}
+
+.perfomance-main .perfomance-header .perfomace-card p {
+
+    font-family: 'Manrope-ExtraBold', serif;
+    font-size: 1.563rem;
+}
+
+.perfomance-main .perfomance-header .d-flex.flex-wrap {
+    gap: 20px;
+    justify-content: space-between;
+}
+
+
+.perfomance-main .perfomance-header .perfomace-card {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+}
+
+.perfomance-main .perfomance-second {
+    margin-top: 10rem;
 }
 
 .perfomance-main .perfomance-second .perfomance-container {
     background-color: #262D3C;
     border-radius: 20px;
-    padding: 20px;
+    padding: 40px 10px 40px 10px;
+}
+
+.perfomance-main .perfomance-second h1 {
+    font-size: 5rem;
+}
+
+@media (max-width: 768px) {
+    .perfomance-main .perfomance-second h1 {
+        font-size: 4.5rem;
+    }
 }
 
 .perfomance-main .perfomance-second .perfomance-card2 img {
     height: 300px;
-    width: 350px;
+    width: 100%;
     max-width: 100%;
     display: block;
-    margin: auto;
-    border-radius: 20px;
+
+    border-radius: 38px;
 }
 
-.perfomance-main .perfomance-second h1 {
-    font-size: 75px;
-}
+
 
 .perfomance-main .perfomance-second .perfomance-card2 h2 {
-    font-size: 30px;
+    font-family: 'Manrope-ExtraBold', serif;
+    font-size: 1.875rem;
 }
 
 .perfomance-main .perfomance-second .perfomance-card2 p {
-    font-size: 20px;
+    font-family: 'Manrope-SemiBold', serif;
+    font-size: 1.5rem;
+}
+
+.perfomance-main .perfomance-third {
+    margin-top: 10rem;
+}
+
+.perfomance-main .perfomance-third .perfomance-container3 {
+    margin-top: 7rem;
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card {
@@ -83,15 +141,31 @@
     border-radius: 20px;
     padding: 15px;
 }
-.perfomance-main .perfomance-third  .main {
-font-size: 60px;
+
+.perfomance-main .perfomance-third .main {
+    font-size: 5rem;
 }
+
+.perfomance-main .perfomance-third .main2 {
+    font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+    .perfomance-main .perfomance-third .main2 {
+        font-size: 3.4rem;
+    }
+}
+
+.perfomance-main .perfomance-third .main3 {
+    font-size: 2rem;
+}
+
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card h2 {
-    font-size: 26px;
+    font-size: 1.625rem;
 }
 
 .perfomance-third .perfomance-container3 .sidebar-card .active {
-
+    font-family: '/PlayfairDisplay-BlackItalic', serif;
     color: #A1624D;
     font-style: italic;
 }
@@ -105,8 +179,8 @@ font-size: 60px;
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand h1 {
     letter-spacing: -4.5px;
     font-weight: 700;
-    font-size: 150px;
-    font-family: 'Manrope', serif;
+    font-size: 9.375rem;
+    font-family: 'Manrope-Bold', serif;
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand img {
@@ -119,8 +193,14 @@ font-size: 60px;
 
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand {
     background-color: #262D3C;
-    border-radius: 20px;
+    border-radius: 41px;
     padding: 15px;
+}
+
+.perfomance-main .perfomance-third .perfomance-container3 .right-hand p {
+    font-size: 1.5rem;
+    font-family: 'Manrope-Regular', serif;
+
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .last-divider {

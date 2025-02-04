@@ -10,10 +10,13 @@ import About from './pages/About';
 import Insight from './pages/Insight';
 import Performance from './pages/perfomance';
 import './assets/Fonts/Playfair Display/PlayfairDisplay-MediumItalic.ttf';
+import './assets/Fonts/Playfair Display/PlayfairDisplay-BlackItalic.ttf';
 import './assets/Fonts/Manrope/Manrope-Medium.ttf';
 import './assets/Fonts/Manrope/Manrope-SemiBold.ttf';
 import './assets/Fonts/Manrope/Manrope-Regular.ttf';
 import './assets/Fonts/Manrope/Manrope-Bold.ttf';
+import './assets/Fonts/Manrope/Manrope-ExtraBold.ttf';
+import './assets/Fonts/Manrope/Manrope-Regular.ttf';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

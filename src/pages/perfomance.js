@@ -26,8 +26,8 @@ function Performance() {
                         </div>
                     </div>
 
-                    <div className="d-flex gap-0 flex-wrap mt-5">
-                        <div className="col-md-4 perfomace-card  d-f">
+                    <div className="d-flex flex-wrap mt-5">
+                        <div className="col-md-4 perfomace-card ">
                             <img src={perfomance2} />
                             <p className="white-txt text-start">
                                 Experience the power of informed trading decisions. Our innovative tools and strategies empower you to maximize your profits.
@@ -50,44 +50,44 @@ function Performance() {
                     </div>
                 </header>
 
-                <section className="perfomance-second mt-5">
+                <section className="perfomance-second ">
                     <h1 className="primary text-center fst-italic">
                         Unlock Your Financial Potential with Us
                     </h1>
                     <div className="row perfomance-container mt-5">
                         <div className="col-md-4 perfomance-card2">
                             <img src={perfomance6} />
-                            <h2 className="white-txt text-start">Track Your Trading Performance Effortlessly</h2>
+                            <h2 className="white-txt text-start mt-5">Track Your Trading Performance Effortlessly</h2>
                             <p className="white-txt text-start">Monitor your winning vs. losing trades with ease.</p>
                         </div>
                         <div className="col-md-4 perfomance-card2">
                             <img src={perfomance5} />
-                            <h2 className="white-txt text-start">Visualize Your Growth with Our Charts</h2>
+                            <h2 className="white-txt text-start mt-5">Visualize Your Growth with Our Charts</h2>
                             <p className="white-txt text-start">Our growth charts provide clear insights into your progress.</p>
                         </div>
                         <div className="col-md-4 perfomance-card2">
                             <img src={perfomance4} />
-                            <h2 className="white-txt text-start">Maximize Your Profit Factor Today</h2>
+                            <h2 className="white-txt text-start mt-5">Maximize Your Profit Factor Today</h2>
                             <p className="white-txt text-start">Achieve a higher profit factor with our expert guidance.</p>
                         </div>
 
                     </div>
                 </section>
 
-                <section className="mt-5 perfomance-third mb-5">
+                <section className=" perfomance-third mb-5">
                     <h1 className="white-txt text-center fst-italic main">
                         See Our Success
                     </h1>
-                    <h1 className="primary text-center fst-italic main">
+                    <h1 className="primary text-center fst-italic main2 mt-3">
                         Live Account Performance
                     </h1>
-                    <h3 className="white-txt text-center ">
+                    <h3 className="white-txt text-center main3 m-1">
                         Are you ready to take control of your financial future?
                     </h3>
 
 
-                    <div className="row perfomance-container3">
-                        <div className="col-md-4 d-flex flex-column ">
+                    <div className="row perfomance-container3 ">
+                        <div className="col-md-4 d-flex flex-column mt-3 ">
                             <div className="sidebar-card mt-4">
                                 <h2 className="white-txt text-center">
                                     ROI: 30% | Duration: 6 months | Capital: AED 100,000
@@ -104,21 +104,21 @@ function Performance() {
                                 </h2>
                             </div>
                         </div>
-                        <div className="col-md-8 d-flex justify-content-around right-hand flex-wrap">
+                        <div className="col-md-8 d-flex justify-content-around right-hand flex-wrap mt-3">
                             <div className="d-flex flex-column justify-content-center ">
                                 <img src={perfomance7} />
-                                <h2 className="white-txt text-center">Profit Factor</h2>
+                                <p className="white-txt text-center">Profit Factor</p>
                                 <h1 className="white-txt">1.57</h1>
                             </div>
                             {/* <hr style={{ backgroundColor: '#FFFFFF', width: '3px' }} /> */}
                             <div
                                 className="mt-2 last-divider"
-                         
+
                             />
 
                             <div className="d-flex flex-column justify-content-center ">
                                 <img src={perfomance8} />
-                                <h2 className="white-txt text-center">Average Annual Gross Profit</h2>
+                                <p className="white-txt text-center">Average Annual Gross Profit</p>
                                 <h1 className="white-txt">67%</h1>
                             </div>
                         </div>

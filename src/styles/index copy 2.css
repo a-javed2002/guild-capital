@@ -95,10 +95,9 @@ h6 {
 }
 
 .Home .potiential-setion .slider-card {
-    /* width: 600px; */
+    width: 600px;
     background-color: #262D3C;
     transition: transform 0.3s ease;
-    border-radius: 38px;
 
 }
 
@@ -112,7 +111,16 @@ h6 {
     font-family: 'Manrope-Regular', serif;
 }
 
+@media (max-width: 768px) {
+    .Home .potiential-setion .slider-card h2 {
+        font-size: 20px;
+    }
 
+    .Home .potiential-setion .slider-card p {
+        font-size: 12px;
+    }
+
+}
 
 .Home .fund-section img {
     max-width: 100%;
@@ -142,10 +150,6 @@ h6 {
     font-family: 'Manrope-Bold', serif;
 }
 
-.Home .customer-experience {
-    margin-top: 5rem;
-}
-
 .Home .customer-experience .customer-experience-intro {
     font-size: 1.5rem;
 
@@ -158,17 +162,8 @@ h6 {
 }
 
 .Home .customer-experience .vedio2 {
-    border-radius: 50px !important;
-    object-fit: cover;
-}
-
-.Home .vedio2-container {
-    width: 1443px;
+    width: 100%;
     height: 553.89px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    /* Ensures the video respects the border-radius */
 }
 
 .Home .vedio1 {
@@ -257,15 +252,9 @@ h6 {
 
 .Home .testinomial .testinomial-card p {
     color: #525252;
-    font-size: 0.875rem;
 }
 
-.Home .testinomial .testinomial-card h5 {
-    font-family: 'Manrope-SemiBold', serif;
-    font-size: 1.375rem;
-}
-
-F .Home .last-section h1 {
+.Home .last-section h1 {
     font-size: 70px;
 }
 
@@ -353,14 +342,19 @@ F .Home .last-section h1 {
 
 
 
+
+
 .video-container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+   
     transition: height 0.8s ease-in-out;
 }
 
-/* Fullscreen Mode */
+/* Fullscreen state */
 .video-container.fullscreen {
     position: fixed;
     top: 0;
@@ -368,77 +362,73 @@ F .Home .last-section h1 {
     width: 100vw;
     height: 100vh;
     z-index: 900;
+    transform: scale(1);
 }
 
-/* Video in Fullscreen */
+/* Video inside fullscreen */
 .video-container.fullscreen video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Normal state */
+.video-container.normal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    /* Adjust as needed */
+    /* transform: scale(0.7); */
+    /* Shrinks smoothly */
+}
+/* Shrink video size gradually */
+.video-container.normal video {
+    
+    width: 900px;
+    height: 600px;
+
+    
+    transition: height 0.8s ease-in-out;
+}
+
+
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.8s ease-in-out;
+}
+
+/* Video in fullscreen */
+.video-container video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
 }
 
-/* Normal Mode (Shrinking Effect) */
-.video-container.normal {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 5rem;
-}
 
-.video-container video {
-    width: 900px;
-    height: 600px;
-}
 
-/* .slick-dots li {
+.slick-dots li {
     background-color: white;
 }
 
 .slick-dots .slick-active {
     background-color: red;
-} */
-
-
-
-.Home .slider-container .slick-slider .slick-dots {
-    bottom: -42px;
 }
 
-.Home .slick-dots li button {
-    border: none;
-    background-color: transparent;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: white !important;
+.slick-slide .slider-middle {
+    width: 60% !important; 
+    height: auto; 
+    min-height: 200px;  
+    z-index: 1; 
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: red;
 }
-
-.Home .slick-dots li button:before {
-    color: white !important;
-}
-
-.Home .slick-dots li.slider-dot-middle button:before {
-    color: #A1624D !important;
-}
-
-.Home .slick-dots li.slider-dot-middle button {
-    color: #A1624D !important;
-
-    background-color: #A1624D !important;
-
-}
-
-.Home .slick-slide.slider-middle .slider-card h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.75rem;
-}
-
-.Home .slick-slide.slider-middle .slider-card p {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.875rem;
-}
-
-/* .slick-slide.slider-middle .slider-card h2 {
-    font-family: 'PlayfairDisplay', serif;
-    font-size: 3.75rem;
-  } */

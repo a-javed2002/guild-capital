@@ -17,11 +17,11 @@ function Insight() {
                     <h1 className="primary text-center fst-italic">
                         Explore Our Comprehensive Financial Services Tailored Just for You
                     </h1>
-                    <p>
+                    <p className="white-txt text-center mt-5">
                         Discover innovative solutions tailored to your financial needs. Start your journey towards smarter savings, investing, and planning.
                     </p>
 
-                    <center>
+                    <center className="mt-5">
                         <div className="grid grid-cols-2 lg:grid-cols-4 max-w-3xl mx-auto header-img">
                             <img alt loading="lazy" data-nimg={1} style={{ color: 'transparent' }} src={insight4} />
                             <img alt loading="lazy" data-nimg={1} style={{ color: 'transparent' }} src={insight5} />
@@ -37,7 +37,7 @@ function Insight() {
                     <h1 className="primary text-center fst-italic">
                         Insights
                     </h1>
-                    <div className="second-tabs mt-4 d-flex justify-content-center gap-5 flex-wrap">
+                    <div className="second-tabs mt-5 d-flex justify-content-center gap-5 flex-wrap">
                         <button className="outline-button active">
                             All
                         </button>
@@ -158,22 +158,22 @@ function Insight() {
                 </section>
 
                 <section className="insight-third mt-5 mb-5">
-                    <div className="row">
-                        <div className="col-md-6 d-flex flex-column justify-content-center">
+                    <div className="row ">
+                        <div className="col-md-5 d-flex flex-column justify-content-center">
                             <h1 className="white-txt text-start fst-italic">
                                 Stay Updated with Our Insights
                             </h1>
                         </div>
 
-                        <div className="col-md-6">
-                            <p className="white-txt text-start">
+                        <div className="col-md-7">
+                            <p className="white-txt text-start first">
                                 Join our newsletter to receive the latest updates and valuable insights directly in your inbox. Don't miss out on tips and strategies to enhance your financial journey.
                             </p>
-                            <div className="insight-subcribtion d-flex gap-3">
+                            <div className="insight-subcribtion d-flex gap-3 mt-4 flex-wrap">
                                 <input type="email" placeholder="Your Email" />
                                 <button className="fill-button">Join Now</button>
                             </div>
-                            <p className="white-txt text-start">
+                            <p className="white-txt text-start  second mt-4">
                                 By clicking Join Now, you agree to our Terms and Conditions.
                             </p>
                         </div>

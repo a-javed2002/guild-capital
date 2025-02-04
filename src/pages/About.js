@@ -4,7 +4,7 @@ import "../styles/about.css";
 
 
 import header from '../assets/images/What-we-header.png';
-import fund from '../assets/images/Funds-of-funds.png';
+import fund from '../assets/images/Funds-of-funds 1.png';
 import vector5 from '../assets/images/vector5.png';
 import vector6 from '../assets/images/vector6.png';
 import vector7 from '../assets/images/vector7.png';
@@ -90,9 +90,9 @@ function About() {
     }, [categories.length]);
 
     return (
-        <div className='About '>
+        <div className='About ' style={{backgroundColor:'red'}}>
             <div className='container'>
-                <header className='about-header'>
+                <header className='about-header '>
                     <h1 className='primary text-center'>
                         About US
                     </h1>
@@ -113,7 +113,7 @@ function About() {
 
                 <section className='second-section mt-5'>
                     <div className='row'>
-                        <div className='col-md-6'>
+                        <div className='col-md-8'>
                             <h1 className='primary text-start'>
                                 Experience Unmatched
                                 Investment Opportunities with Us
@@ -121,15 +121,18 @@ function About() {
                             <p className='mt-3 white-txt text-start'>
                                 At GUILD Capital, we redefine asset management through innovative strategies and deep market insights. Our strategic partnerships ensure your investments are secure and optimized for success.
                             </p>
+
+                        </div>
+                        <div className='col-md-4'>
+                            <img src={fund} />
+                        </div>
+                        <div className='d-flex  mt-0 second-section-btn'>
                             <button className='fill-button'>
                                 Learn More
                             </button>
                             <button className='mx-3 outline-button'>
                                 Join Now
                             </button>
-                        </div>
-                        <div className='col-md-6'>
-                            <img src={fund} />
                         </div>
                     </div>
                 </section>
@@ -184,79 +187,81 @@ function About() {
 
 
                 <section className='last-section mb-5 mt-5'>
-                    <h1 className='primary text-center'>
+                    <h1 className='primary text-center last-h1'>
                         What Makes Us Different ?
+                    </h1>
+                    <div className="row main mt-4">
+                        <div className="left-hand col-md-6 d-flex align-items-stretch  align-items-center mt-2 ">
 
-                        <div className="row  mt-4">
-                            <div className="left-hand col-md-6 d-flex align-items-stretch  align-items-center mt-2 ">
+                            <div className="last-card d-flex flex-column   w-100   justify-content-center">
 
-                                <div className="last-card d-flex flex-column   w-100   justify-content-center">
+                                <center>
 
-                                    <center>
+                                    <img src={aboutLast1} alt="Performance" />
 
-                                        <img src={aboutLast1} alt="Performance" />
-
-                                    </center>
-                                    <div className='d-flex flex-column justify-content-start'>
-                                        <h1 className="white-txt text-start fst-italic">
-                                            Performance <br></br>
-                                            Based Model
-                                        </h1>
-                                        <p className="white-txt text-start">
-                                            We offer tailored risk management solutions, including stop-loss limits and diversified strategies, to protect your capital and optimize returns.
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="right-hand col-md-6 d-flex flex-column justify-content-start mt-2">
-                                <div className="last-card mb-3">
-                                    <center>
-                                        <img src={aboutLast2} alt="Performance" />
-                                    </center>
+                                </center>
+                                <div className='d-flex flex-column justify-content-start'>
                                     <h1 className="white-txt text-start fst-italic">
-                                        Customized
-                                        Risk Management
+                                        Performance <br></br>
+                                        Based Model
                                     </h1>
                                     <p className="white-txt text-start">
                                         We offer tailored risk management solutions, including stop-loss limits and diversified strategies, to protect your capital and optimize returns.
                                     </p>
                                 </div>
-                                <div className="last-card">
-                                    <center>
-                                        <img src={aboutLast4} alt="Performance" />
-                                    </center>
+
+                            </div>
+                        </div>
+                        <div className="right-hand col-md-6 d-flex flex-column justify-content-start mt-2">
+                            <div className="last-card mb-3">
+                                <div className='d-flex align-items-center flex-wrap'>
+                                    <img src={aboutLast2} alt="Performance" className='' />
+
+                                    <h1 className="white-txt text-start fst-italic">
+                                        Customized
+                                        Risk Management
+                                    </h1>
+                                </div>
+
+                                <p className="white-txt text-start">
+                                    We offer tailored risk management solutions, including stop-loss limits and diversified strategies, to protect your capital and optimize returns.
+                                </p>
+                            </div>
+                            <div className="last-card">
+                                <div className='d-flex align-items-center flex-wrap'>
+                                    <img src={aboutLast4} alt="Performance" />
+
                                     <h1 className="white-txt text-start fst-italic">
                                         Transparency &
                                         Communication
+                                    </h1>      </div>
+                                <p className="white-txt text-start">
+                                    We prioritize clear, transparent communication with regular updates and detailed reports, ensuring you are always informed about your investments.
+                                </p>
+                            </div>
+                        </div>
+                        <div className=' col-md-12  mt-3'>
+                            <div className="last-card row gap-3">
+                                <div className=" col-md-3">
+                                    <img src={aboutLast3} alt="Performance" />
+                                </div>
+
+                                <div className="col-md-8 mt-5">
+                                    <h1 className="white-txt text-start fst-italic">
+                                        Expertise & <br></br>
+                                        Innovation
                                     </h1>
                                     <p className="white-txt text-start">
-                                        We prioritize clear, transparent communication with regular updates and detailed reports, ensuring you are always informed about your investments.
+                                        Our team of seasoned professionals utilizes cutting-edge technology and innovative strategies to stay ahead of market trends and deliver exceptional results.
                                     </p>
                                 </div>
-                            </div>
-                            <div className=' col-md-12 mt-3'>
-                                <div className="last-card row gap-3">
-                                    <div className=" col-md-3">
-                                        <img src={aboutLast3} alt="Performance" />
-                                    </div>
-
-                                    <div className="col-md-8 mt-5">
-                                        <h1 className="white-txt text-start fst-italic">
-                                            Expertise & <br></br>
-                                            Innovation
-                                        </h1>
-                                        <p className="white-txt text-start">
-                                            Our team of seasoned professionals utilizes cutting-edge technology and innovative strategies to stay ahead of market trends and deliver exceptional results.
-                                        </p>
-                                    </div>
-                                </div>
-
                             </div>
 
                         </div>
 
-                    </h1>
+                    </div>
+
+
                 </section>
             </div >
         </div >

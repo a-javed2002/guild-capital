@@ -9,8 +9,18 @@
  }
 
  @font-face {
+     font-family: 'PlayfairDisplay-BlackItalic';
+     src: url('../assets/Fonts/Playfair%20Display/PlayfairDisplay-BlackItalic.ttf') format('truetype');
+ }
+
+ @font-face {
      font-family: 'Manrope';
      src: url('../assets/Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+ }
+
+ @font-face {
+     font-family: 'Manrope-Regular';
+     src: url('../assets/Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
  }
 
  @font-face {
@@ -27,6 +37,14 @@
      font-family: 'Manrope-Bold';
      src: url('../assets/Fonts/Manrope/Manrope-Bold.ttf') format('truetype');
  }
+
+ @font-face {
+     font-family: 'Manrope-ExtraBold';
+     src: url('../assets/Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
+ }
+
+
+
 
  .MuiPaper-root,
  footer h1 {
@@ -67,6 +85,7 @@
      font-weight: bold;
      width: auto;
      border: none;
+     font-family: 'Manrope-SemiBold', serif;
  }
 
  .outline-button {
@@ -77,7 +96,9 @@
      color: #FFFFFF;
      font-size: 16px;
      cursor: pointer;
+     font-family: 'Manrope-SemiBold', serif;
  }
+
 
  .footer {
      background: linear-gradient(180deg, #000000 0%, #4B596F 100%);
@@ -134,12 +155,28 @@
      border: 1px solid #ccc;
      border-radius: 25px;
      outline: none;
-     max-width: 359px;
+     width: 74%;
      background-color: transparent !important;
      color: #FFFFFF !important;
      caret-color: #FFFFFF;
  }
 
+ @media (max-width: 768px) {
+
+
+     footer .subscribe-form input {
+
+         width: 100%;
+
+     }
+
+     footer .subscribe-form button {
+
+         width: 100%;
+
+     }
+
+ }
 
  .subscribe-form input::placeholder {
      color: #FFFFFF !important;
@@ -153,9 +190,9 @@
      border-color: #FFFFFF;
  }
 
- @media (max-width:768px)  {
-     footer .link-main{
-       margin-left: 10px; 
+ @media (max-width:768px) {
+     footer .link-main {
+         margin-left: 10px;
      }
  }
 

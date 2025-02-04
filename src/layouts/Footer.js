@@ -26,7 +26,7 @@ const Footer = () => {
                         </div>
 
 
-                        <div className="subscribe-form d-flex mt-2">
+                        <div className="subscribe-form d-flex mt-2 flex-wrap">
                             <input type="email" className="form-control me-2" placeholder="Your Email" />
                             <button className="btn  fill-button">Subscribe</button>
                         </div>
