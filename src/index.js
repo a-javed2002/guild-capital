@@ -17,6 +17,7 @@ import './assets/Fonts/Manrope/Manrope-Regular.ttf';
 import './assets/Fonts/Manrope/Manrope-Bold.ttf';
 import './assets/Fonts/Manrope/Manrope-ExtraBold.ttf';
 import './assets/Fonts/Manrope/Manrope-Regular.ttf';
+import './assets/Fonts/Manrope/Manrope-Medium.ttf';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

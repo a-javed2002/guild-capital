@@ -36,6 +36,8 @@
  @font-face {
      font-family: 'Manrope-Bold';
      src: url('../assets/Fonts/Manrope/Manrope-Bold.ttf') format('truetype');
+     font-weight: bold;
+     font-style: normal;
  }
 
  @font-face {
@@ -44,7 +46,15 @@
  }
 
 
+ @font-face {
+     font-family: 'Manrope-ExtraBold';
+     src: url('../assets/Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
+ }
 
+ @font-face {
+     font-family: 'Manrope-Medium';
+     src: url('../assets/Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+ }
 
  .MuiPaper-root,
  footer h1 {
@@ -55,6 +65,7 @@
  .MuiPaper-root,
  footer p {
      font-family: 'Manrope', serif;
+     line-height: 160%;
  }
 
  .MuiPaper-root,
@@ -75,12 +86,12 @@
  }
 
  .fill-button {
-     padding: 10px 20px;
-     border-radius: 25px;
+     padding: 15px 25px;
+     border-radius: 999px;
      border: 2px solid #FFFFFF;
      background-color: #FFFFFF;
      color: #0E192B;
-     /* font-size: 20px; */
+     font-size: 1.375rem;
      cursor: pointer;
      font-weight: bold;
      width: auto;
@@ -90,7 +101,7 @@
 
  .outline-button {
      padding: 10px 20px;
-     border-radius: 30px;
+     border-radius: 999px;
      border: 2px solid #FFFFFF;
      background-color: #0E192B;
      color: #FFFFFF;
@@ -100,11 +111,89 @@
  }
 
 
+
+ .MuiButtonBase-root.MuiButton-root {
+     font-family: 'Manrope-SemiBold', sans-serif;
+     font-size: clamp(1rem, 2.5vw, 1.375rem);
+     line-height: 110%;
+ }
+
+ .navs-item {
+     text-transform: capitalize !important;
+ }
+
+ @media (max-width:2560px) and (min-width: 1450px) {
+
+     .css-1984w2y {
+         gap: 77px !important;
+     }
+
+     .css-yg49xf-MuiToolbar-root {
+         min-height: 122px !important;
+     }
+ }
+
+ @media (max-width:1449px) and (min-width: 1023px) {
+
+     .css-1984w2y {
+         gap: 40px !important;
+     }
+
+     .css-yg49xf-MuiToolbar-root {
+         min-height: 100px !important;
+     }
+
+     .MuiButtonBase-root.MuiButton-root {
+
+         font-size: clamp(1rem, 2.5vw, 1rem);
+
+     }
+
+ }
+
+ .navs-btn {
+     padding: 15px 25px !important;
+     background-color: #A1624D !important;
+     border-radius: 999px !important;
+     font-size: clamp(1rem, 2.5vw, 1.25rem);
+
+ }
+
+ .nav-logo {
+     height: 63.15px;
+     width: 67.23px;
+ }
+
  .footer {
      background: linear-gradient(180deg, #000000 0%, #4B596F 100%);
      color: white;
      padding: 40px 20px;
-     font-family: "Poppins", sans-serif;
+
+ }
+
+
+
+ @media (max-width:2560px) and (min-width: 1450px) {
+
+     .footer-spacing {
+         width: 378px;
+         ;
+     }
+
+     footer .center-spacing {
+         width: 0px;
+     }
+ }
+
+ @media (max-width:1449px) and (min-width: 1023px) {
+
+     .footer-spacing {
+         width: 100px;
+     }
+
+     footer .center-spacing {
+         width: 128px;
+     }
  }
 
  .footer-container {
@@ -116,6 +205,15 @@
  /* .footer-left {
     width: 40%;
 } */
+ .footer-main-head {
+     font-size: 1.875rem;
+     
+     font-family: 'Manrope-SemiBold', sans-serif;
+ }
+ footer .contact-info p{
+    font-size: 0.875rem;
+     font-family: 'Manrope-Regular', sans-serif;
+ }
 
  .footer-logo {
      width: 80px;
@@ -123,7 +221,8 @@
  }
 
  .footer-left p {
-     font-size: 14px;
+     font-family: 'Manrope-Medium', sans-serif;
+     font-size: 1rem;
      opacity: 0.8;
  }
 
@@ -134,6 +233,7 @@
  }
 
  .footer-links p {
+     font-family: 'Manrope-Regular', sans-serif;
      cursor: pointer;
      transition: 0.3s;
  }
@@ -155,11 +255,17 @@
      border: 1px solid #ccc;
      border-radius: 25px;
      outline: none;
-     width: 74%;
+     width: 69%;
      background-color: transparent !important;
      color: #FFFFFF !important;
      caret-color: #FFFFFF;
  }
+
+ footer .social-icons img {
+     width: 30.47px;
+     height: 30.58px;
+ }
+
 
  @media (max-width: 768px) {
 
@@ -210,8 +316,9 @@
  }
 
  .footer-bottom {
+     font-family: 'Manrope-Regular', sans-serif;
      text-align: center;
-     font-size: 12px;
+     font-size: 0.845rem;
      margin-top: 30px;
      opacity: 0.7;
  }

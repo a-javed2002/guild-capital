@@ -1,15 +1,18 @@
 .network-icon {
-    height: 20px;
+    height: 29px;
     margin-top: 2px;
 }
 
 .Home h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.375rem;
+    font-size: clamp(2.5rem, 6vw, 4.375rem);
+    line-height: 120%;
 }
 
 .Home p {
-    font-family: 'Manrope', serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 160%;
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
 .Home h2,
@@ -17,11 +20,58 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Manrope', serif;
+    font-family: 'Manrope', sans-serif;
+}
+
+.rem7-marginTop {
+    margin-top: 7rem;
 }
 
 .Home .home-header {
-    margin-top: 200px;
+    margin-top: 150px;
+}
+
+.Home .home-header p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 160%;
+    font-family: 'Manrope-Medium', sans-serif;
+}
+
+.Home .home-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4.375rem);
+    line-height: 120%;
+}
+
+.Home .home-header .vedio2 {
+    border-radius: 50px !important;
+    object-fit: cover;
+    width: 100%;
+}
+
+.Home .vedio1-container {
+    width: 979px;
+    height: 541px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    border-top: 5px solid #BFB4B4;
+    border-left: 5px solid #BFB4B4;
+    border-right: 5px solid #BFB4B4;
+
+    /* Simulated depth */
+    box-shadow: -3px -3px 5px #BFB4B4,
+        3px -3px 5px #BFB4B4,
+        inset -3px -3px 5px rgba(0, 0, 0, 0.2),
+        inset 3px -3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.Home .second-section .intro {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 160%;
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
 .Home .fund-section .fund-years {
@@ -34,13 +84,16 @@ h6 {
     align-items: center;
     border-radius: 10px;
     font-size: 1.375rem;
+    line-height: 160%;
     padding: 20px 10px 20px 10px;
-    font-family: 'Manrope', serif;
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
 .Home .fund-section h1 {
-    font-family: 'Manrope-SemiBold', serif;
-    font-size: 3.25rem;
+    font-family: 'Manrope-SemiBold', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+
+    line-height: 140%;
 }
 
 .Home .fund-section .fund-txt {
@@ -65,8 +118,9 @@ h6 {
 .Home .feature-section .feature-image {
     width: 100%;
     height: 490px;
-
+    border-radius: 30px;
 }
+
 
 .Home .feature-section .left-hand .active h2 {
     color: #A1624D;
@@ -78,20 +132,24 @@ h6 {
         max-width: 31%;
     }
 
-    .Home .feature-section .left-hand .investment-txt {
+    /* .Home .feature-section .left-hand .investment-txt {
         font-family: 'Manrope-SemiBold', serif;
         font-size: 2.813rem;
-    }
+    } */
 
 }
 
 .Home .feature-section .left-hand .investment-txt {
-    font-family: 'Manrope-SemiBold', serif;
-    font-size: 1.813rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.813rem);
+
+    line-height: 140%;
+    font-family: 'Manrope-SemiBold', sans-serif;
 }
 
 .Home .feature-section .feature-image-txt {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+
+    font-family: 'Manrope-Bold', sans-serif;
 }
 
 .Home .potiential-setion .slider-card {
@@ -108,8 +166,8 @@ h6 {
 }
 
 .Home .potiential-setion .potiential-intro {
-    font-size: 1.5rem;
-    font-family: 'Manrope-Regular', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-family: 'Manrope-Regular', sans-serif;
 }
 
 
@@ -119,8 +177,6 @@ h6 {
 
 }
 
-/* .slider-card:hover {
-    transform: scale(1.7);   } */
 
 .Home .potiential-setion .slider-card .slider-image {
     height: 250px;
@@ -139,27 +195,26 @@ h6 {
 
 .Home .customer-experience .counter h1 {
     font-size: 4.688rem;
-    font-family: 'Manrope-Bold', serif;
+    font-family: 'Manrope-Bold', sans-serif;
 }
 
-.Home .customer-experience {
-    margin-top: 5rem;
-}
+
 
 .Home .customer-experience .customer-experience-intro {
-    font-size: 1.5rem;
-
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
 .Home .customer-experience .counter p {
     font-size: 1.375rem;
-    font-family: 'Manrope-SemiBold', serif;
+    font-family: 'Manrope-SemiBold', sans-serif;
     text-align: center;
 }
 
 .Home .customer-experience .vedio2 {
     border-radius: 50px !important;
     object-fit: cover;
+    width: 100%;
 }
 
 .Home .vedio2-container {
@@ -187,13 +242,19 @@ h6 {
 
 .Home .insight-section .insight-tab {
     font-size: 1.375rem;
-    font-family: 'Manrope-SemiBold', serif;
+    font-family: 'Manrope-SemiBold', sans-serif;
     font-weight: 500;
 }
 
 .Home .insight-section .insight-content .insight-card {
     width: 300px;
     padding: 10px;
+
+}
+
+.Home .insight-section .insight-content .insight-card h5 {
+    font-size: clamp(1.2rem, 3vw, 1.563rem);
+    line-height: 140%;
 
 }
 
@@ -212,14 +273,14 @@ h6 {
 
 }
 
-@media (max-width:2560px) and (min-width: 1440px) {
+@media (max-width:2560px) and (min-width: 1500px) {
 
     .Home .insight-section .insight-content {
-        width: 41%;
+        width: 52%;
     }
 }
 
-@media (max-width:1441px) and (min-width: 1023px) {
+@media (max-width:1499px) and (min-width: 1000px) {
 
     .Home .insight-section .insight-content {
         width: 80%;
@@ -240,12 +301,21 @@ h6 {
     }
 }
 
+
 .Home .testinomial .h1 {
     font-size: 75px;
 }
 
-.Home .testinomial .intro h3 {
-    font-size: 2rem;
+.Home .testinomial .intro p {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+
+    font-family: 'Manrope-Regular', sans-serif;
+    line-height: 140%;
+}
+
+.Home .Testimonials-quote-img {
+    width: 70.02px;
+    height: 56px;
 }
 
 @media (max-width: 768px) {
@@ -258,15 +328,17 @@ h6 {
 .Home .testinomial .testinomial-card p {
     color: #525252;
     font-size: 0.875rem;
+    font-family: 'Manrope-Regular', sans-serif;
 }
 
 .Home .testinomial .testinomial-card h5 {
-    font-family: 'Manrope-SemiBold', serif;
+    font-family: 'Manrope-SemiBold', sans-serif;
     font-size: 1.375rem;
+    line-height: 140%;
 }
 
-F .Home .last-section h1 {
-    font-size: 70px;
+.Home .last-section .btn-container {
+    width: 100%;
 }
 
 .Home .last-section .box img {
@@ -277,8 +349,23 @@ F .Home .last-section h1 {
 .Home .last-section .box {
     padding: 15px;
     background: linear-gradient(180deg, #000000 0%, #000000 0%, #2C3F60 100%);
+    max-width: 1196px;
+    border-radius: 30px;
+    min-height: 500px;
 }
 
+.Home .last-section .box h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-family: 'Playfair Display', serif;
+    line-height: 120%;
+}
+
+.Home .last-section .box p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+
+    font-family: 'Manrope-Bold', sans-serif;
+
+}
 
 
 /* Default desktop styles */
@@ -307,9 +394,11 @@ F .Home .last-section h1 {
 }
 
 .Home {
-
     background-image: url('../assets/images/Index.png');
-    background-size: contain;
+    background-size: cover;
+    /* Ensures it covers full screen */
+    background-position: center center;
+    /* Keeps the important part in view */
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
@@ -430,12 +519,14 @@ F .Home .last-section h1 {
 
 .Home .slick-slide.slider-middle .slider-card h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.75rem;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+
 }
 
 .Home .slick-slide.slider-middle .slider-card p {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.875rem;
+    font-family: 'Manrope-Bold', sans-serif;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+
 }
 
 /* .slick-slide.slider-middle .slider-card h2 {

@@ -90,7 +90,7 @@ function About() {
     }, [categories.length]);
 
     return (
-        <div className='About ' style={{backgroundColor:'red'}}>
+        <div className='About ' >
             <div className='container'>
                 <header className='about-header '>
                     <h1 className='primary text-center'>

@@ -44,7 +44,7 @@ function Home() {
         speed: 1,
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         centerMode: true,
         centerPadding: '150',
         initialSlide: 1,
@@ -94,16 +94,16 @@ function Home() {
         if (slickSliderInstance && slickSliderInstance.innerSlider) {
             const slickTrack = slickSliderInstance.innerSlider.list;
             if (!slickTrack) return;
-    
+
             const slickSlides = slickTrack.querySelectorAll('.slick-slide');
             if (!slickSlides.length) return;
-    
+
             // Check screen width using window.innerWidth
             if (window.innerWidth > 425) {
                 slickSlides.forEach((slide) => {
                     slide.classList.remove('slider-middle');
                 });
-    
+
                 slickSlides.forEach((slide, i) => {
                     if (slide.classList.contains('slick-current')) {
                         const nextSlide = slickSlides[i + 1];
@@ -115,16 +115,16 @@ function Home() {
 
                 const dots = document.querySelectorAll('.slick-dots li');
                 if (!dots.length) return;
-        
+
                 const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
-        
+
                 if (activeDot) {
                     console.log("Active Dot: ", activeDot);
                     dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
-        
+
                     const activeIndex = Array.from(dots).indexOf(activeDot);
                     console.log("Active Dot Index: ", activeIndex);
-        
+
                     const nextDot = dots[activeIndex + 1] || dots[activeIndex];
                     if (nextDot) {
                         nextDot.classList.add('slider-dot-middle');
@@ -134,7 +134,7 @@ function Home() {
                 slickSlides.forEach((slide) => {
                     slide.classList.remove('slider-middle');
                 });
-    
+
                 slickSlides.forEach((slide) => {
                     if (slide.classList.contains('slick-current')) {
                         slide.classList.add('slider-middle');
@@ -143,37 +143,37 @@ function Home() {
 
                 const dots = document.querySelectorAll('.slick-dots li');
                 if (!dots.length) return;
-        
+
                 const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
-        
+
                 if (activeDot) {
                     console.log("Active Dot: ", activeDot);
                     dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
-        
+
                     const activeIndex = Array.from(dots).indexOf(activeDot);
                     console.log("Active Dot Index: ", activeIndex);
-        
-                    const nextDot = dots[activeIndex ] || dots[activeIndex];
+
+                    const nextDot = dots[activeIndex] || dots[activeIndex];
                     if (nextDot) {
                         nextDot.classList.add('slider-dot-middle');
                     }
                 }
             }
-    
+
             // Handle dots
-       
+
         }
     }, [currentSlide]);
-    
+
     const handleLeftHover = () => {
-        // if (sliderRef.current) {
-        //     sliderRef.current.slickPrev();
-        // }
+        if (sliderRef.current) {
+            sliderRef.current.slickPrev();
+        }
     };
     const handleRightHover = () => {
-        // if (sliderRef.current) {
-        //     sliderRef.current.slickNext();
-        // }
+        if (sliderRef.current) {
+            sliderRef.current.slickNext();
+        }
     };
 
 
@@ -293,15 +293,15 @@ function Home() {
         All: [
             {
                 img: insight3,
-                title: 'Retirement Timing – Choosing the Right Time to Retire for Financial Success',
+                title: 'Goal Balancing – Saving for Multiple Financial Objectives Without Sacrifice',
             },
             {
                 img: insight1,
-                title: 'Savings Strategies – Building a Strong Foundation for Financial Security',
+                title: 'Retirement Timing – Choosing the Right Time to Retire for Financial Success',
             },
             {
                 img: insight2,
-                title: 'Goal Balancing – Saving for Multiple Financial Objectives Without Sacrifice',
+                title: 'Savings Strategies – Building a Strong Foundation for Financial Security',
             },
         ],
         Borrowing: [
@@ -358,7 +358,7 @@ function Home() {
 
     return (
 
-        <header className="Home " >
+        <div className="Home " >
 
             <section style={{ position: 'relative' }} className='home-header'>
 
@@ -372,14 +372,17 @@ function Home() {
                 <p className="white-txt text-center">
                     Join our platform to streamline your investments and enhance your engagement. Experience real-time <br></br> tracking of agent performance and make informed decisions with ease.
                 </p>
-                <div className={`video-container ${isFullScreen ? "fullscreen" : "normal"}`}>
-                    <video autoPlay loop muted className='vedio1' >
-                        <source src={vedio1} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+                <div className='video-container mt-5'>
+                    <div className={`vedio1-container ${isFullScreen ? "fullscreen" : "normal"}`}>
 
-                <div className="d-flex justify-content-center gap-3 mt-4">
+
+                        <video autoPlay loop muted className='vedio1' >
+                            <source src={vedio1} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div className="d-flex justify-content-center gap-3 mt-5">
                     <button
                         className="fill-button "
                     >
@@ -393,71 +396,71 @@ function Home() {
                 </div>
             </section>
 
-            <div className='home-second mt-5'>
+            <div className='home-second rem7-marginTop'>
                 <h1 className="primary text-center">Our Diverse Network of Partners</h1>
                 <div className="d-flex gap-4 justify-content-center mt-5 flex-wrap">
                     <div className="d-flex gap-2 ">
                         <img src={ShapeImage} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Boltshift</span>
+                        <span className="white-txt mt-1">Boltshift</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage2} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Lightbox</span>
+                        <span className="white-txt mt-1">Lightbox</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage3} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">FeatherDev</span>
+                        <span className="white-txt mt-1">FeatherDev</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage4} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Spherule</span>
+                        <span className="white-txt mt-1">Spherule</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage5} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Nietzsche</span>
+                        <span className="white-txt mt-1">Nietzsche</span>
                     </div>
 
                     <div className="d-flex gap-2">
                         <img src={ShapeImage} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Boltshift</span>
+                        <span className="white-txt  mt-1">Boltshift</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage2} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Lightbox</span>
+                        <span className="white-txt mt-1">Lightbox</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage3} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">FeatherDev</span>
+                        <span className="white-txt  mt-1">FeatherDev</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage4} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Spherule</span>
+                        <span className="white-txt  mt-1">Spherule</span>
                     </div>
                     <div className="d-flex gap-2">
                         <img src={ShapeImage5} className="network-icon" alt="Shape" />
 
-                        <span className="white-txt">Nietzsche</span>
+                        <span className="white-txt  mt-1">Nietzsche</span>
                     </div>
                 </div>
             </div>
 
-            <div className="mt-5 container ">
+            <section className="rem7-marginTop container second-section">
                 <h1 className="text-center primary">
                     Unveiling Guilds Story
                 </h1>
-                <p className="text-center white-txt mt-4">
+                <p className="text-center white-txt mt-4 intro">
                     The platform streamlines investments, enhances user engagement, and tracks agent <br></br> performance, catering to users, sales agents, and administrators.
                 </p>
-
+                i want when i came to this section main scroll scroll but screen not move only category index update till categories.length or categories[0]
                 <div className="row fund-section mt-5" ref={secondSectionRef} style={{ minHeight: '400px' }}>
 
 
@@ -478,14 +481,14 @@ function Home() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </section>
             <div className="mt-5 feature-section container ">
                 <h1 className="text-center primary">
                     Guild’s Key Features
                 </h1>
 
                 <div className="row mt-5 justify-content-center" ref={thirdSectionRef} style={{ minHeight: '400px' }}>
-                    <div className="col-lg-6 left-hand">
+                    <div className="col-lg-6 left-hand mt-2">
                         {categories2.map((category) => (
 
                             <div className={`d-flex gap-4  ${activeCategory2 === category.id ? "active" : ""}`} key={category.id}>
@@ -498,7 +501,7 @@ function Home() {
 
                     </div>
 
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 mt-2">
                         {categories2[activeCategory2] && (
                             <img src={categories2[activeCategory2].image} className="feature-image" alt="Feature" />
                         )}
@@ -546,21 +549,21 @@ function Home() {
                     <Slider {...settings} ref={sliderRef} className='row'>
                         <div className=" slider-card d-flex flex-column justify-content-center align-items-center">
                             <img src={slider1} className="slider-image" />
-                            <h2 className="white-txt text-center">1 Unlock Your Investment</h2>
+                            <h2 className="white-txt text-center"> Unlock Your Investment</h2>
                             <p className="white-txt text-center">
                                 Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
                             </p>
                         </div>
                         <div className="slider-card d-flex flex-column justify-content-center align-items-center">
                             <img src={slider2} className="slider-image" />
-                            <h2 className="white-txt text-center">2 Unlock Your Investment</h2>
+                            <h2 className="white-txt text-center"> Unlock Your Investment</h2>
                             <p className="white-txt text-center">
                                 Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
                             </p>
                         </div>
                         <div className="slider-card d-flex flex-column justify-content-center align-items-center">
                             <img src={slider3} className="slider-image" />
-                            <h2 className="white-txt text-center">3 Unlock Your Investment</h2>
+                            <h2 className="white-txt text-center"> Unlock Your Investment</h2>
                             <p className="white-txt text-center">
                                 Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
                             </p>
@@ -574,13 +577,13 @@ function Home() {
                 </div>
             </div>
 
-            <section className=' customer-experience'>
+            <section className='rem7-marginTop customer-experience'>
                 <h1 className='primary text-center'> Improves Customer Experiences</h1>
-                <h5 className='white-txt text-center customer-experience-intro mt-3'>
+                <p className='white-txt text-center customer-experience-intro mt-3'>
                     Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. <br></br> Nibh est vitae suspendisse parturient sed lorem eu.
-                </h5>
+                </p>
 
-                <div className='d-flex justify-content-around flex-wrap mt-5 counter '>
+                <div className='d-flex justify-content-around flex-wrap rem7-marginTop  counter '>
                     <div>
                         <h1 className='primary text-center'>41.5%</h1>
                         <p className='white-txt'>Bitcoin Dominance</p>
@@ -595,8 +598,8 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='d-flex justify-content-center'>
-                    <div className='d-flex justify-content-center mt-5 vedio2-container'>
+                <div className='d-flex justify-content-center rem7-marginTop'>
+                    <div className='d-flex justify-content-center vedio2-container'>
                         <video autoPlay loop muted className='vedio2 '  >
                             <source src={vedio2} type="video/mp4" />
                             Your browser does not support the video tag.
@@ -608,7 +611,7 @@ function Home() {
 
 
 
-            <div className='mt-5 insight-section'>
+            <div className='rem7-marginTop insight-section'>
                 <h1 className='primary text-center'>Insights</h1>
 
                 <div className='d-flex gap-5 justify-content-center flex-wrap mt-5'>
@@ -623,7 +626,7 @@ function Home() {
                     ))}
                 </div>
                 <center>
-                    <div className='mt-5 insight-content d-flex justify-content-center flex-wrap gap-3'>
+                    <div className='mt-5 insight-content d-flex justify-content-center flex-wrap gap-5'>
                         {insights[activeTab].map((insight, index) => (
                             <div key={index} className='insight-card'>
                                 <img src={insight.img} className="" alt={insight.title} />
@@ -635,22 +638,22 @@ function Home() {
                         ))}
                     </div>
                 </center>
-                <div className='d-flex justify-content-center'>
-                    <button className="fill-button mt-5">Explore All</button>
+                <div className='d-flex justify-content-center mt-5'>
+                    <button className="fill-button ">Explore All</button>
                 </div>
             </div>
 
-            <div className='mt-5 testinomial'>
+            <div className='mt-5 testinomial container'>
                 <h1 className='primary text-center'> Nextronium Testimonials</h1>
-                <div className='row mt-5 '>
-                    <div className='col-lg-4 col-sm-2 mb-2 mx-3'>
-                        <img src={vector} className="" />
+                <div className='row mt-5  '>
+                    <div className='col-lg-4 col-sm-2 mb-2 mx-3 d-flex justify-content-center align-item-center'>
+                        <img src={vector} className="Testimonials-quote-img " />
 
                     </div>
                     <div className='col-lg-7 col-sm-10 intro'>
-                        <h3 className='white-txt p-3 ' >
+                        <p className='white-txt p-3 ' >
                             "Joining this platform was a game-changer for me. The educational resources helped me understand crypto trading, and the community support is invaluable. Highly recommended!"
-                        </h3>
+                        </p>
                     </div>
                 </div>
 
@@ -692,35 +695,44 @@ function Home() {
             </div>
 
             <section className='last-section mt-5 mb-5'>
+
+
                 <h1 className='primary text-center'>
                     Discover the Guild Platform:
+                </h1>
+                <h1 className='primary text-center'>
                     Your Gateway to Smart Investment Solutions
                 </h1>
 
-                <div className='row box mt-5'>
-                    <div className='col-lg-5'>
-                        <h2 className='white-txt '>
-                            Unlock Your
-                            Investment Potential
-                            with Us
-                        </h2>
-                        <p className='white-txt '>
+                <center>
+                    <div className='row box mt-5 justify-content-center'>
+                        <div className='col-lg-5 p-2 p-md-5 d-flex flex-column justify-content-center align-items-center'>
+                            <h2 className='white-txt text-start'>
+                                Unlock Your
+                                Investment Potential
+                                with Us
+                            </h2>
+                            <p className='white-txt text-start'>
 
-                            Experience a seamless investment journey with our platform. We prioritize user engagement and provide tools to track your performance effectively.
-                        </p>
+                                Experience a seamless investment journey with our platform. We prioritize user engagement and provide tools to track your performance effectively.
+                            </p>
 
-                        <button
-                            className="fill-button mt-5"
-                        >
-                            Get Started Now
-                        </button>
+                            <div className='d-flex justify-content-start btn-container'>
+                                <button
+                                    className="fill-button mt-5"
+                                >
+                                    Get Started Now
+                                </button>
+                            </div>
+                        </div>
+                        <div className='col-lg-7 d-flex justify-content-center'>
+                            <img src={analytics} className="" alt="Shape" />
+                        </div>
                     </div>
-                    <div className='col-lg-7 d-flex justify-content-center'>
-                        <img src={analytics} className="" alt="Shape" />
-                    </div>
-                </div>
+                </center>
+
             </section>
-        </header>
+        </div>
 
 
     );

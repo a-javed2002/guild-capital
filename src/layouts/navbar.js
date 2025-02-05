@@ -16,7 +16,7 @@ const Navbar = () => {
     const handleNavigation = (page) => {
         let path = "/";
         if (page === "About Us") path = "/about";
-        if (page === "What We Offer") path = "/what-we-offer";
+        if (page === "What We Offer Us") path = "/what-we-offer";
         if (page === "Performance") path = "/performance";
         if (page === "Insights") path = "/Insight";
 
@@ -33,14 +33,14 @@ const Navbar = () => {
             <Toolbar sx={{ justifyContent: "space-between" }}>
 
                 <a href="/">
-                    <Typography variant="h6" component="div" sx={{ fontWeight: "bold" }}>
+                    <Typography variant="h6" component="div" sx={{ fontWeight: "bold" }} className="nav-logo">
                         <img src={logo2} alt="Logo" />
                     </Typography>
 
                 </a>
                 <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
                     {navItems.map((item) => (
-                        <Button key={item} sx={{ color: "#fff", fontSize: "1rem" }} onClick={() => handleNavigation(item)}>
+                        <Button className="navs-item" key={item} sx={{ color: "#fff", fontSize: "1rem" }} onClick={() => handleNavigation(item)}>
                             {item}
                         </Button>
                     ))}
@@ -48,8 +48,8 @@ const Navbar = () => {
 
                 {/* LOGIN & GET STARTED (HIDDEN ON MOBILE) */}
                 <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 2 }}>
-                    <Button sx={{ color: "#fff", fontSize: "1rem" }}>Login</Button>
-                    <Button sx={{ backgroundColor: "#b1715a", color: "#fff", borderRadius: "20px", paddingX: 3, fontSize: "1rem" }}>
+                    <Button className="navs-item" sx={{ color: "#fff", fontSize: "1rem" }}>Login</Button>
+                    <Button className="navs-btn navs-item" sx={{  color: "#fff", borderRadius: "20px", paddingX: 3, fontSize: "1rem" }}>
                         Get Started
                     </Button>
                 </Box>
@@ -71,7 +71,7 @@ const Navbar = () => {
                         <ListItemText primary="Login" />
                     </ListItem>
                     <center>
-                        <ListItem button sx={{ backgroundColor: "#b1715a", color: "#fff", borderRadius: "10px", textAlign: "center", width: '200px' }}>
+                        <ListItem className="navb-btn" button sx={{ backgroundColor: "#A1624D", color: "#fff", borderRadius: "10px", textAlign: "center", width: '200px' }}>
                             <ListItemText primary="Get Started" />
                         </ListItem>
                     </center>
