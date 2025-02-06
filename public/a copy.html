@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Card Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slider-container {
+            width: 80%;
+            overflow: hidden; /* Hides the overflowing slides */
+            position: relative;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease; /* Smooth transition for sliding */
+        }
+
+        .slider-item {
+            width: calc(33.333% - 10px); /* Show 3 items per slide with some margin */
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: transform 0.3s ease, height 0.3s ease;
+            margin-right: 10px; /* Space between slides */
+        }
+
+        .slider-item:hover {
+            transform: scale(1.1); /* Grow the hovered item */
+            height: 250px; /* Increase height of hovered item */
+        }
+
+        /* Navigation buttons */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+            <!-- Slider Items -->
+            <div class="slider-item">Card 1</div>
+            <div class="slider-item">Card 2</div>
+            <div class="slider-item">Card 3</div>
+            <div class="slider-item">Card 4</div>
+            <div class="slider-item">Card 5</div>
+            <div class="slider-item">Card 6</div>
+            <div class="slider-item">Card 7</div>
+            <div class="slider-item">Card 8</div>
+            <div class="slider-item">Card 9</div>
+            <div class="slider-item">Card 10</div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="nav-button prev-button" onclick="moveSlide('prev')">&#10094;</button>
+        <button class="nav-button next-button" onclick="moveSlide('next')">&#10095;</button>
+    </div>
+
+    <script>
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        let slideIndex = 0; // Keep track of the current slide position
+        const totalSlides = document.querySelectorAll('.slider-item').length;
+        const slidesPerView = 3; // Display 3 slides at once
+
+        // Function to move the slider
+        function moveSlide(direction) {
+            const slideWidth = document.querySelector('.slider-item').offsetWidth + 10; // Get slide width including margin
+
+            // Move by 3 slides at a time
+            if (direction === 'next') {
+                if (slideIndex < totalSlides - slidesPerView) { // Ensure not exceeding the total slides
+                    slideIndex += slidesPerView; // Move 3 slides forward
+                }
+            } else if (direction === 'prev') {
+                if (slideIndex > 0) { // Prevent going below 0
+                    slideIndex -= slidesPerView; // Move 3 slides backward
+                }
+            }
+
+            // Apply the transform to move the slider
+            sliderWrapper.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
+        }
+
+    </script>
+
+</body>
+</html>

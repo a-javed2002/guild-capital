@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import "../styles/main.css";
 import logo2 from '../assets/images/Logo2.png';
-
+import logosvg from '../assets/images/logo-svg.svg';
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const navigate = useNavigate(); // Hook for navigation
@@ -24,17 +24,36 @@ const Navbar = () => {
         setMobileOpen(false); // Close drawer after navigation (on mobile)
     };
 
-    const navItems = ["About Us", "What We Offer", "Performance", "Insights"];
+    const navItems = ["About Us", "What We Offer Us", "Performance", "Insights"];
+    const [scrolling, setScrolling] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const toolbar = document.querySelector('.css-yg49xf-MuiToolbar-root');
+            if (toolbar) {
+                if (window.scrollY > 10) {
+                    toolbar.style.setProperty('min-height', '80px', 'important');
+                } else {
+                    toolbar.style.setProperty('min-height', '150px', 'important');
+                }
+            }
+        };
 
+        window.addEventListener("scroll", handleScroll);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return (
 
 
-        <AppBar position="fixed" sx={{ backgroundColor: "#0d1626", paddingX: { xs: 2, md: 10 }, zIndex: 1100, }}>
-            <Toolbar sx={{ justifyContent: "space-between" }}>
+        <AppBar position="fixed" sx={{ paddingX: { xs: 2, md: 10 }, zIndex: 1100, }}>
+            <Toolbar sx={{ justifyContent: "space-between", }} className="mt-4">
 
                 <a href="/">
                     <Typography variant="h6" component="div" sx={{ fontWeight: "bold" }} className="nav-logo">
-                        <img src={logo2} alt="Logo" />
+                        <img src={logosvg} alt="Logo" />
                     </Typography>
 
                 </a>
@@ -49,7 +68,7 @@ const Navbar = () => {
                 {/* LOGIN & GET STARTED (HIDDEN ON MOBILE) */}
                 <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 2 }}>
                     <Button className="navs-item" sx={{ color: "#fff", fontSize: "1rem" }}>Login</Button>
-                    <Button className="navs-btn navs-item" sx={{  color: "#fff", borderRadius: "20px", paddingX: 3, fontSize: "1rem" }}>
+                    <Button className="navs-btn navs-item" sx={{ color: "#fff", borderRadius: "20px", paddingX: 3, fontSize: "1rem" }}>
                         Get Started
                     </Button>
                 </Box>

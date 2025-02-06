@@ -10,7 +10,8 @@ import About from './pages/About';
 import Insight from './pages/Insight';
 import Performance from './pages/perfomance';
 import './assets/Fonts/Playfair Display/PlayfairDisplay-MediumItalic.ttf';
-import './assets/Fonts/Playfair Display/PlayfairDisplay-BlackItalic.ttf';
+import './assets/Fonts/Playfair Display/PlayfairDisplay-BoldItalic.ttf';
+import './assets/Fonts/Playfair Display/PlayfairDisplay-Bold.ttf';
 import './assets/Fonts/Manrope/Manrope-Medium.ttf';
 import './assets/Fonts/Manrope/Manrope-SemiBold.ttf';
 import './assets/Fonts/Manrope/Manrope-Regular.ttf';
@@ -22,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/what-we-offer" element={<What_we />} />
@@ -30,7 +31,7 @@ root.render(
         <Route path="/Insight" element={<Insight />} />
         <Route path="/performance" element={<Performance />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   </React.StrictMode>
 );

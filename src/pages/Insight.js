@@ -7,17 +7,18 @@ import insight7 from "../assets/images/Insight7.png";
 import insight8 from "../assets/images/Insight8.png";
 import insight9 from "../assets/images/Insight9.png";
 import insight10 from "../assets/images/Insight10.png";
-
+import Navbar from '../layouts/navbar';
+import Footer from '../layouts/Footer';
 
 function Insight() {
     return (
-        <div className="insight">
+        <div className="insight">         <Navbar />
             <div className="container">
                 <header className="insight-header">
                     <h1 className="primary text-center fst-italic">
                         Explore Our Comprehensive Financial Services Tailored Just for You
                     </h1>
-                    <p className="white-txt text-center mt-5">
+                    <p className="white-txt text-center mt-5 font-base">
                         Discover innovative solutions tailored to your financial needs. Start your journey towards smarter savings, investing, and planning.
                     </p>
 
@@ -37,32 +38,34 @@ function Insight() {
                     <h1 className="primary text-center fst-italic">
                         Insights
                     </h1>
-                    <div className="second-tabs mt-5 d-flex justify-content-center gap-5 flex-wrap">
-                        <button className="outline-button active">
-                            All
-                        </button>
-                        <button className="outline-button">
-                            Borrowing
-                        </button>
-                        <button className="outline-button">
-                            Earning
-                        </button>
-                        <button className="outline-button">
-                            Investing
-                        </button>
-                        <button className="outline-button">
-                            Planning
-                        </button>
-                        <button className="outline-button">
-                            Saving
-                        </button>
+                    <center>
+                        <div className="second-tabs mt-5 d-flex justify-content-center gap-5 flex-wrap">
+                            <button className="outline-button active">
+                                All
+                            </button>
+                            <button className="outline-button">
+                                Borrowing
+                            </button>
+                            <button className="outline-button">
+                                Earning
+                            </button>
+                            <button className="outline-button">
+                                Investing
+                            </button>
+                            <button className="outline-button">
+                                Planning
+                            </button>
+                            <button className="outline-button">
+                                Saving
+                            </button>
 
-                    </div>
+                        </div>
+                    </center>
 
                     <div className=" d-flex insight-container gap-3  mt-5  flex-wrap  justify-content-center">
                         <div className="insight-card ">
                             <img src={insight9} />
-                            <h4 className="primary text-start mt-2">
+                            <h4 className="primary text-start mt-3">
                                 Savings Strategies – Building a Strong Foundation for Financial Security
                             </h4>
                             <p className="white-txt mt-3">
@@ -157,8 +160,8 @@ function Insight() {
                     </div>
                 </section>
 
-                <section className="insight-third mt-5 mb-5">
-                    <div className="row ">
+                <section className="insight-third rem7-marginTop d-flex justify-content-center ">
+                    <div className="row insight-box">
                         <div className="col-md-5 d-flex flex-column justify-content-center">
                             <h1 className="white-txt text-start fst-italic">
                                 Stay Updated with Our Insights
@@ -179,7 +182,7 @@ function Insight() {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div>         <Footer />
         </div>
     );
 }

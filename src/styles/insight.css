@@ -1,24 +1,28 @@
 .insight {
     background-image: url('../assets/images/Insights-Bg.png');
-    background-size: cover;
+    background-size: contain;
+    background-position: center center; 
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .insight .insight-header {
 
-    margin-top: 7rem;
+    margin-top: 11rem;
 
 }
 
 .insight h1 {
     font-family: 'Playfair Display', serif;
+    line-height: 120%;
 
 }
 
 .insight p {
     font-family: 'Manrope', serif;
+    line-height: 160%;
 }
 
 .insight h2,
@@ -41,6 +45,7 @@ h6 {
 
 .insight .insight-header p {
     font-size: 1.5rem;
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -58,6 +63,26 @@ h6 {
     background-color: #33394A;
     border-radius: 50px;
     padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+@media (max-width: 2580px) and (min-width: 1440px) {
+    .insight .insight-second .second-tabs {
+        width: 84%;
+    }
+}
+@media (max-width: 1439px) and (min-width: 767px) {
+    .insight .insight-second .second-tabs {
+        width: 98%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .insight .insight-second .second-tabs {
+        width: 100%;
+    }
 }
 
 .insight .insight-second .second-tabs .active {
@@ -69,13 +94,17 @@ h6 {
 .insight .insight-second .outline-button {
     background-color: #33394A !important;
     border-radius: 10px !important;
-
+    font-size: 1.25rem;
+    font-family: 'Manrope-Medium', sans-serif;
+    border-radius: 6.07px !important;
+    padding: 12.14px 28px;
+    height: 51px;
 }
 
 .insight .insight-second .insight-card {
     background-color: #33394A;
     padding: 28px 24px 28px 24px;
-    border-radius: 24px;
+    border-radius: 22px;
 }
 
 .insight .insight-second .insight-card img {
@@ -91,6 +120,7 @@ h6 {
 .insight .insight-second .insight-card p {
     font-size: 0.875rem;
     font-family: 'Manrope-Regular', serif;
+    line-height: 170%;
 }
 
 .insight .insight-second .insight-card .insight-container {
@@ -108,12 +138,13 @@ h6 {
     max-width: 100%;
 }
 
+
 .insight .insight-third .insight-subcribtion input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 25px;
     outline: none;
-    width: 80%;
+    width: 70%;
     background-color: transparent !important;
     color: #FFFFFF !important;
     caret-color: #FFFFFF;
@@ -138,7 +169,7 @@ h6 {
 
 .insight .insight-second .insight-container h4 {
     font-size: 1.25rem;
-    font-family: 'Manrope-Bold', serif;
+    font-family: 'PlayfairDisplay-Bold', serif;
 }
 
 
@@ -167,18 +198,27 @@ h6 {
 
 
 .insight .insight-third {
-    padding: 20px;
-    background: linear-gradient(#000000 0%, #000000 0%, #2C3F60 100%);
-    border-radius: 30px;
 
+
+    border-radius: 30px;
+    margin-bottom: 7rem;
+}
+
+.insight .insight-third .insight-box {
+    width: 1065px;
+    background: linear-gradient(#000000 0%, #000000 0%, #2C3F60 100%);
+    padding: 50px 30px;
+    min-height: 500px;
 }
 
 .insight .insight-third .first {
     font-size: 1.5rem;
     font-family: 'Manrope-SemiBold', serif;
+    line-height: 140%;
 }
 
 .insight .insight-third .second {
-    font-size: 1.25rem;
+    font-size: 1.23rem;
     font-family: 'Manrope-SemiBold', serif;
+    line-height: 140%;
 }

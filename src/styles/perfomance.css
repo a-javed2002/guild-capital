@@ -1,51 +1,35 @@
 .perfomance-main .perfomance-header {
 
-    margin-top: 7rem;
+    margin-top: 11rem;
 
 }
 
 .perfomance-main {
     background-image: url('../assets/images/performance.png');
-    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
+    background-size: contain;
+    background-position: center center;
 }
 
 .perfomance-main h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.375rem;
+    line-height: 120%;
+
 }
 
 .perfomance-main p {
     font-family: 'Manrope', serif;
+    line-height: 160%;
 }
 
-.perfomance-main h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Manrope', serif;
-}
-
-.perfomance-main .perfomance-header h1 {
-    font-size: 6.25rem;
-
-}
-
-@media (max-width: 768px) {
 
 
-    .perfomance-main .perfomance-header h1 {
-        font-size: 3.25rem;
-
-    }
-
-}
 
 .perfomance-main .perfomance-header p {
-    font-size: 1.5rem;
+    font-family: 'Manrope-Medium', sans-serif;
 
 }
 
@@ -57,23 +41,25 @@ h6 {
 }
 
 .perfomance-main .perfomance-header .perfomace-card .fill-button {
-    border-radius: 10px;
+    border-radius: 14px;
     width: 100%;
+    /* padding: 30px 40px; */
+    height: 66px;
+    font-size: 1.5rem;
+    line-height: 100%;
 }
 
 .perfomance-main .perfomance-header .perfomace-card img {
     height: 350px;
     width: 100%;
-    ;
     display: block;
-
-    border-radius: 20px;
+    border-radius: 24px;
 }
 
 .perfomance-main .perfomance-header .perfomace-card p {
-
+    margin-top: 1.5rem;
     font-family: 'Manrope-ExtraBold', serif;
-    font-size: 1.563rem;
+    line-height: 140%;
 }
 
 .perfomance-main .perfomance-header .d-flex.flex-wrap {
@@ -120,12 +106,14 @@ h6 {
 
 .perfomance-main .perfomance-second .perfomance-card2 h2 {
     font-family: 'Manrope-ExtraBold', serif;
-    font-size: 1.875rem;
+    line-height: 140%;
+
 }
 
 .perfomance-main .perfomance-second .perfomance-card2 p {
     font-family: 'Manrope-SemiBold', serif;
-    font-size: 1.5rem;
+
+    line-height: 140%;
 }
 
 .perfomance-main .perfomance-third {
@@ -138,8 +126,8 @@ h6 {
 
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card {
     background-color: #262D3C;
-    border-radius: 20px;
-    padding: 15px;
+    border-radius: 38px;
+    padding: 21px;
 }
 
 .perfomance-main .perfomance-third .main {
@@ -148,6 +136,7 @@ h6 {
 
 .perfomance-main .perfomance-third .main2 {
     font-size: 4rem;
+    line-height: 160%;
 }
 
 @media (max-width: 768px) {
@@ -158,14 +147,17 @@ h6 {
 
 .perfomance-main .perfomance-third .main3 {
     font-size: 2rem;
+    font-family: 'Manrope-Medium', sans-serif;
+    line-height: 160%;
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card h2 {
+    font-family: 'Manrope-Bold', sans-serif;
     font-size: 1.625rem;
 }
 
 .perfomance-third .perfomance-container3 .sidebar-card .active {
-    font-family: '/PlayfairDisplay-BlackItalic', serif;
+    font-family: 'PlayfairDisplay-BoldItalic', serif !important;
     color: #A1624D;
     font-style: italic;
 }
@@ -181,6 +173,7 @@ h6 {
     font-weight: 700;
     font-size: 9.375rem;
     font-family: 'Manrope-Bold', serif;
+    line-height: 100%;
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand img {
@@ -200,6 +193,7 @@ h6 {
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand p {
     font-size: 1.5rem;
     font-family: 'Manrope-Regular', serif;
+    line-height: 100%;
 
 }
 
@@ -208,16 +202,11 @@ h6 {
     height: 350px;
     background: linear-gradient(#A96349, #FFFFFF);
     position: absolute;
+    margin-right: 30px;
 
 }
 
-.perfomance-main .perfomance-third .perfomance-container3 .last-divider {
-    width: 2px;
-    height: 350px;
-    background: linear-gradient(#A96349, #FFFFFF);
-    position: absolute;
 
-}
 
 @media (max-width: 768px) {
     .perfomance-main .perfomance-third .perfomance-container3 .last-divider {

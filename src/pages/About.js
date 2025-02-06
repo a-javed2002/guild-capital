@@ -13,7 +13,8 @@ import vector9 from '../assets/images/vector9.png';
 import aboutLast1 from '../assets/images/About-Last1.png';
 import aboutLast2 from '../assets/images/About-Last2.png';
 import aboutLast3 from '../assets/images/About-Last3.png';
-import aboutLast4 from '../assets/images/About-Last4.png';
+import aboutLast4 from '../assets/images/About-Last4.png';import Navbar from '../layouts/navbar';
+import Footer from '../layouts/Footer';
 function About() {
     const [activeCategory, setActiveCategory] = useState(0);
     const thirdSectionRef = useRef(null);
@@ -91,12 +92,13 @@ function About() {
 
     return (
         <div className='About ' >
+                  <Navbar />
             <div className='container'>
-                <header className='about-header '>
-                    <h1 className='primary text-center'>
+                <header className='about-header rem7-marginTop'>
+                    <h1 className='primary text-center font-7xl'>
                         About US
                     </h1>
-                    <p className='text-center white-txt'>
+                    <p className='text-center white-txt font-base mt-5'>
                         At GUILD Capital, we are at the forefront of asset management, dedicated to transforming the investment landscape through innovation and expertise. Our specialization in commodities and currencies allows us to navigate complex market dynamics and consistently deliver superior investment outcomes.
                         <br></br>
                         <br></br>
@@ -111,22 +113,17 @@ function About() {
                     </p>
                 </header>
 
-                <section className='second-section mt-5'>
+                <section className='second-section rem7-marginTop '>
                     <div className='row'>
-                        <div className='col-md-8'>
-                            <h1 className='primary text-start'>
+                        <div className='col-md-7'>
+                            <h1 className='primary text-start font-5xl  '>
                                 Experience Unmatched
                                 Investment Opportunities with Us
                             </h1>
-                            <p className='mt-3 white-txt text-start'>
+                            <p className='mt-3 white-txt text-start font-base '>
                                 At GUILD Capital, we redefine asset management through innovative strategies and deep market insights. Our strategic partnerships ensure your investments are secure and optimized for success.
                             </p>
-
-                        </div>
-                        <div className='col-md-4'>
-                            <img src={fund} />
-                        </div>
-                        <div className='d-flex  mt-0 second-section-btn'>
+                            <div className='d-flex  mt-5 second-section-btn'>
                             <button className='fill-button'>
                                 Learn More
                             </button>
@@ -134,6 +131,11 @@ function About() {
                                 Join Now
                             </button>
                         </div>
+                        </div>
+                        <div className='col-md-4'>
+                            <img src={fund} />
+                        </div>
+                   
                     </div>
                 </section>
 
@@ -142,7 +144,7 @@ function About() {
 
 
 
-                <section className='third-section  mt-5' ref={thirdSectionRef} >
+                <section className='third-section rem7-marginTop ' ref={thirdSectionRef} >
                     <div className="innovation-container">
 
                         <div className="sidebar mt-3">
@@ -164,12 +166,12 @@ function About() {
                                 <span className="italic white-txt">{categories[activeCategory].title}</span><br />
                                 <span className="bold white-txt">Fuel Success</span>
                             </h1>
-                            <p className='white-txt'>{categories[activeCategory].text}</p>
-                            <p className='white-txt'>
+                            <p className='white-txt font-xl mt-4'>{categories[activeCategory].text}</p>
+                            <p className='white-txt font-xl '>
                                 Innovation is at the heart of our approach, driving us to continually
                                 evolve and stay ahead of market trends.
                             </p>
-                            <button className="fill-button">Join now →</button>
+                            <button className="fill-button mt-5">Join now →</button>
                         </div>
                     </div>
                 </section>
@@ -190,8 +192,8 @@ function About() {
                     <h1 className='primary text-center last-h1'>
                         What Makes Us Different ?
                     </h1>
-                    <div className="row main mt-4">
-                        <div className="left-hand col-md-6 d-flex align-items-stretch  align-items-center mt-2 ">
+                    <div className="row main mt-5">
+                        <div className="left-hand col-md-5 d-flex align-items-stretch  align-items-center mt-2 ">
 
                             <div className="last-card d-flex flex-column   w-100   justify-content-center">
 
@@ -205,22 +207,24 @@ function About() {
                                         Performance <br></br>
                                         Based Model
                                     </h1>
-                                    <p className="white-txt text-start">
+                                    <p className="white-txt text-start mt-4">
                                         We offer tailored risk management solutions, including stop-loss limits and diversified strategies, to protect your capital and optimize returns.
                                     </p>
                                 </div>
 
                             </div>
                         </div>
-                        <div className="right-hand col-md-6 d-flex flex-column justify-content-start mt-2">
+                        <div className="right-hand col-md-7 d-flex flex-column justify-content-start mt-2">
                             <div className="last-card mb-3">
                                 <div className='d-flex align-items-center flex-wrap'>
                                     <img src={aboutLast2} alt="Performance" className='' />
 
-                                    <h1 className="white-txt text-start fst-italic">
-                                        Customized
+                                 <div>
+                                 <h1 className="white-txt text-start fst-italic">
+                                        Customized <br></br>
                                         Risk Management
                                     </h1>
+                                 </div>
                                 </div>
 
                                 <p className="white-txt text-start">
@@ -232,7 +236,7 @@ function About() {
                                     <img src={aboutLast4} alt="Performance" />
 
                                     <h1 className="white-txt text-start fst-italic">
-                                        Transparency &
+                                        Transparency & <br></br>
                                         Communication
                                     </h1>      </div>
                                 <p className="white-txt text-start">
@@ -263,7 +267,7 @@ function About() {
 
 
                 </section>
-            </div >
+            </div >         <Footer />
         </div >
 
     );

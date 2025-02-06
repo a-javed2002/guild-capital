@@ -34,6 +34,148 @@ import vedio2 from '../assets/vedio/home-two.mp4';
 import Navbar from '../layouts/navbar';
 import Footer from '../layouts/Footer';
 function Home() {
+    const sliderRef = useRef(null);
+    const [currentSlide, setCurrentSlide] = useState(1);  // Default to the middle slide on load
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 1,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        centerMode: true,
+        centerPadding: '0',
+        initialSlide: -1,
+        autoplay: false,
+        //   autoplaySpeed: 1000,
+        afterChange: (index) => {
+            setCurrentSlide(index);
+        },
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    centerPadding: '200',
+                },
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerPadding: '0',
+                },
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerPadding: '120',
+                },
+            },
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerPadding: '140',
+                },
+            },
+        ],
+
+    };
+    useEffect(() => {
+        const slickSliderInstance = sliderRef.current;
+        if (slickSliderInstance && slickSliderInstance.innerSlider) {
+            const slickTrack = slickSliderInstance.innerSlider.list;
+            if (!slickTrack) return;
+
+            const slickSlides = slickTrack.querySelectorAll('.slick-slide');
+            if (!slickSlides.length) return;
+
+            // Check screen width using window.innerWidth
+            if (window.innerWidth > 425) {
+                slickSlides.forEach((slide) => {
+                    slide.classList.remove('slider-middle');
+                });
+
+                slickSlides.forEach((slide, i) => {
+                    if (slide.classList.contains('slick-current')) {
+                        const nextSlide = slickSlides[i + 1];
+                        if (nextSlide) {
+                            nextSlide.classList.add('slider-middle');
+                        }
+                    }
+                });
+
+                const dots = document.querySelectorAll('.slick-dots li');
+                if (!dots.length) return;
+
+                const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
+
+                if (activeDot) {
+                    console.log("Active Dot: ", activeDot);
+                    dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
+
+                    const activeIndex = Array.from(dots).indexOf(activeDot);
+                    console.log("Active Dot Index: ", activeIndex);
+
+                    const nextDot = dots[activeIndex + 1] || dots[activeIndex];
+                    if (nextDot) {
+                        nextDot.classList.add('slider-dot-middle');
+                    }
+                }
+            } else {
+                slickSlides.forEach((slide) => {
+                    slide.classList.remove('slider-middle');
+                });
+
+                slickSlides.forEach((slide) => {
+                    if (slide.classList.contains('slick-current')) {
+                        slide.classList.add('slider-middle');
+                    }
+                });
+
+                const dots = document.querySelectorAll('.slick-dots li');
+                if (!dots.length) return;
+
+                const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
+
+                if (activeDot) {
+                    console.log("Active Dot: ", activeDot);
+                    dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
+
+                    const activeIndex = Array.from(dots).indexOf(activeDot);
+                    console.log("Active Dot Index: ", activeIndex);
+
+                    const nextDot = dots[activeIndex] || dots[activeIndex];
+                    if (nextDot) {
+                        nextDot.classList.add('slider-dot-middle');
+                    }
+                }
+            }
+
+            // Handle dots
+
+        }
+    }, [currentSlide]);
+
+    const handleLeftHover = () => {
+        if (sliderRef.current) {
+            sliderRef.current.slickPrev();
+        }
+    };
+    const handleRightHover = () => {
+        if (sliderRef.current) {
+            sliderRef.current.slickNext();
+        }
+    };
+
+
 
 
 
@@ -212,52 +354,7 @@ function Home() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [shrunkIndex, setShrunkIndex] = useState([]);
-    const swiperRef = useRef(null);
 
-    useEffect(() => {
-        if (!swiperRef.current) return;
-
-        const swiper = new window.Swiper(swiperRef.current, {
-            slidesPerView: 3,  // Number of visible slides (desktop)
-            spaceBetween: 20,  // Space between slides
-            loop: true,  // Infinite loop
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                1024: { slidesPerView: 3 }, // Large screens
-                768: { slidesPerView: 2 }, // Tablets
-                480: { slidesPerView: 1 },  // Mobile
-            },
-        });
-
-        return () => {
-            if (swiper) {
-                swiper.destroy();
-            }
-        };
-    }, []);
-
-    // Hover effect functions
-    const handleMouseEnter = (index) => {
-        setHoveredIndex(index);
-        // Add all other slides except the hovered one to shrunkIndex
-        setShrunkIndex((prev) => {
-            return [...prev, ...Array.from({ length: 6 }).map((_, i) => i).filter(i => i !== index)];
-        });
-    };
-
-    const handleMouseLeave = () => {
-        setHoveredIndex(null);
-        setShrunkIndex([]);  // Reset shrunk effect when mouse leaves
-    };
     return (
 
         <div className="Home " >
@@ -422,50 +519,61 @@ function Home() {
                     Experience a seamless investment journey with our platform. We prioritize user engagement and provide tools<br></br>
                     to track your performance effectively.
                 </p>
-                <div className="slider-container mt-5" >
-                    {/* 
+
+                <div className="slider-container mt-5" style={{ position: 'relative' }}>
+                    <div
+                        className="hover-zone left-zone"
+                        onMouseEnter={handleLeftHover}
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            height: '100%',
+                            width: '20%',
+                            zIndex: 2,
+                        }}
+                    />
+                    <div
+                        className="hover-zone right-zone"
+                        onMouseEnter={handleRightHover}
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            right: 0,
+                            height: '100%',
+                            width: '20%',
+                            zIndex: 2,
+                        }}
+                    />
                     <Slider {...settings} ref={sliderRef} className='row'>
-                        {[slider1, slider2, slider3, slider3, slider3, slider3, slider3].map((slider, index) => (
-                            <div
-                                key={index}
-                                className={`slider-card d-flex flex-column justify-content-center align-items-center ${hoveredIndex === index ? "hovered" : ""}`}
-                                onMouseEnter={() => setHoveredIndex(index)}
-                                onMouseLeave={() => setHoveredIndex(null)}
-                            >
-                                <img src={slider} className="slider-image" />
-                                <h2 className="white-txt text-center"> Unlock Your Investment</h2>
-                                <p className="white-txt text-center">
-                                    Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
-                                </p>
-                            </div>
-                        ))}
-                    </Slider> */}
-
-                    <div className="swiper mySwiper" ref={swiperRef}>
-                        <div className="swiper-wrapper">
-                            {[slider1, slider2, slider3, slider3, slider3].map((sliderImage, index) => (
-                                <div
-                                    key={index}
-                                    className={`swiper-slide d-flex flex-column justify-content-center align-items-center ${hoveredIndex === index ? 'hovered' : ''} ${shrunkIndex.includes(index) ? 'shrunk' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter(index)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <img src={sliderImage} alt={`Slide ${index + 1}`} />
-                                    <h2 className="white-txt text-center"> Unlock Your Investment</h2>
-                                    <p className="white-txt text-center">
-                                        Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
-                                    </p>
-                                </div>
-                            ))}
+                        <div className=" slider-card d-flex flex-column justify-content-center align-items-center">
+                            <img src={slider1} className="slider-image" />
+                            <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+                            <p className="white-txt text-center">
+                                Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+                            </p>
                         </div>
+                        <div className="slider-card d-flex flex-column justify-content-center align-items-center">
+                            <img src={slider2} className="slider-image" />
+                            <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+                            <p className="white-txt text-center">
+                                Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+                            </p>
+                        </div>
+                        <div className="slider-card d-flex flex-column justify-content-center align-items-center">
+                            <img src={slider3} className="slider-image" />
+                            <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+                            <p className="white-txt text-center">
+                                Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+                            </p>
+                        </div>
+                    </Slider>
 
-
-                        <div className="swiper-pagination" />
-                    </div>
+                    {/* You can add a visual indicator for the active slide */}
+                    {/* <div>
+                        <h3 className='white-txt'>Current Slide Index: {currentSlide}</h3>
+                    </div> */}
                 </div>
-
-
-
             </div>
 
             <section className='rem7-marginTop customer-experience'>

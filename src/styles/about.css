@@ -1,14 +1,19 @@
 .About {
     background-image: url('../assets/images/About-Us-bg.png');
-    background-size: cover;
+
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
+    background-size: contain;
+    background-position: center center;
 }
+
 
 .About h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.375rem;
+    line-height: 120%;
+
 }
 
 .About h2,
@@ -19,27 +24,17 @@ h6 {
     font-family: 'Manrope', serif;
 }
 
+
 .About p {
-    font-family: 'Manrope', serif;
+    font-family: 'Manrope', sans-serif;
+    line-height: 160%;
 }
 
-.About .about-header h1 {
-    font-size: 7.5rem;
-
-
-}
 
 .About .about-header p {
-    font-size: 1.5rem;
-
-
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
-.About .about-header {
-
-    margin-top: 5rem;
-
-}
 
 .About .innovation-container {
     display: flex;
@@ -58,12 +53,8 @@ h6 {
     max-width: 100%;
 }
 
-.About .second-section h1 {
-    font-size: 3.25rem;
-}
-
 .About .second-section p {
-    font-size: 1.5rem;
+    font-family: 'Manrope-Medium', sans-serif;
 }
 
 .About .second-section-btn {
@@ -84,20 +75,20 @@ h6 {
 }
 
 .About .icon {
-    width: 100px;
-    height: 100px;
+    width: 144px;
+    height: 144px;
     background: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 20px;
+
     /* margin-right: 20px; */
 }
 
 .About .icon img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     max-width: 100%;
 }
 
@@ -105,15 +96,20 @@ h6 {
     flex: 1;
     background: linear-gradient(to bottom, #29303e, #9f614c);
     padding: 30px;
-    min-height: 518px;
-    /* Allows growth */
-    max-height: 600px;
-    /* Prevents exceeding 600px */
+    min-height: 709px;
+
+    max-height: 850px;
+
     border-radius: 24px;
 }
 
+.About .content .fill-button {
+    height: 54px;
+}
+
 .About .content p {
-    font-size: 2rem;
+
+    line-height: 150%;
 }
 
 .About h2 {
@@ -133,7 +129,7 @@ h6 {
 .About .third-section .innovation-container .sidebar .active {
     border-top-left-radius: 9999px;
     border-bottom-left-radius: 9999px;
-    width: 130px;
+    width: 182px;
 }
 
 .About .last-section .last-card {

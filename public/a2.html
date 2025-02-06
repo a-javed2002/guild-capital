@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .carousel-container {
+            width: 80%;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 33.33%; /* Each item takes 1/3 of the container */
+            height: 300px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: flex 0.3s ease, height 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .carousel-item:hover {
+            flex: 1.2; /* Slightly enlarge the item on hover */
+            height: 350px;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .control-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .control-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carousel-container position-relative">
+        <div class="carousel-wrapper" id="carouselWrapper">
+            <div class="carousel-item" onclick="moveSlideTo(0)">Item 1</div>
+            <div class="carousel-item" onclick="moveSlideTo(1)">Item 2</div>
+            <div class="carousel-item" onclick="moveSlideTo(2)">Item 3</div>
+            <div class="carousel-item" onclick="moveSlideTo(3)">Item 4</div>
+            <div class="carousel-item" onclick="moveSlideTo(4)">Item 5</div>
+        </div>
+        <div class="carousel-controls">
+            <button class="control-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="control-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        // Move to the specific slide
+        function moveSlideTo(index) {
+            currentIndex = index;
+            const carouselWrapper = document.getElementById('carouselWrapper');
+            carouselWrapper.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+        }
+
+        // Move by one item either left or right
+        function moveSlide(direction) {
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            const carouselWrapper = document.getElementById('carouselWrapper');
+            carouselWrapper.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
