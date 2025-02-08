@@ -1,0 +1,162 @@
+body {
+    background-color: #0E192B;
+    /* background-color: #FFFFFF; */
+}
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../Fonts/Playfair-Display/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'PlayfairDisplay-BoldItalic';
+    src: url('../Fonts/Playfair-Display/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay-Bold';
+    src: url('../Fonts/Playfair-Display/PlayfairDisplay-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('../Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Regular';
+    src: url('../Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-SemiBold';
+    src: url('../Fonts/Manrope/Manrope-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Regular';
+    src: url('../Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Bold';
+    src: url('../Fonts/Manrope/Manrope-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope-ExtraBold';
+    src: url('../Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Manrope-ExtraBold';
+    src: url('../Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Medium';
+    src: url('../Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+}
+
+.font-xsm {
+    font-size: clamp(0.75rem, 1vw + 0.5rem, 1rem);
+}
+
+.font-sm {
+    font-size: clamp(0.875rem, 1vw + 0.75rem, 1.25rem);
+}
+
+.font-sm2 {
+    font-size: clamp(0.875rem, 1vw + 0.75rem, 1.3rem);
+}
+
+.font-base {
+    font-size: clamp(1rem, 1vw + 1rem, 1.3rem);
+}
+
+.font-basex2 {
+    font-size: clamp(1rem, 4vw + 0.5rem, 1.5rem);
+}
+
+
+
+.font-lg {
+    font-size: clamp(1.125rem, 1vw + 1.125rem, 1.875rem);
+}
+
+
+.font-xl {
+    font-size: clamp(1.25rem, 1vw + 1.25rem, 2rem);
+}
+
+.font-2xl {
+    font-size: clamp(1.5rem, 1vw + 1.5rem, 2.5rem);
+}
+
+.font-3xl {
+    font-size: clamp(1.875rem, 1vw + 2rem, 3rem);
+}
+
+.font-4xl {
+    font-size: clamp(2.25rem, 1vw + 2.25rem, 3.5rem);
+}
+
+.font-5xl {
+    font-size: clamp(2rem, 5vw + 1rem, 3.75rem) !important;
+}
+
+.font-5xxl {
+    font-size: clamp(1.8rem, 5vw + 1rem, 2.3rem) !important;
+}
+
+.font-6xl {
+    font-size: clamp(3rem, 1vw + 3rem, 4rem);
+}
+
+.font-7xl {
+    font-size: clamp(2rem, 5vw + 1rem, 4.3rem);
+}
+
+.font-7xxl {
+    font-size: clamp(2rem, 5vw + 1rem, 4.5rem);
+}
+
+.font-8xl {
+    font-size: clamp(4rem, 5vw + 1rem, 5rem);
+}
+
+.font-9xl {
+    font-size: clamp(3rem, 10vw + 2rem, 7.5rem);
+}
+
+.rem7-marginTop {
+    margin-top: 7rem;
+}
+
+.rem7-marginbottom {
+    margin-bottom: 7rem;
+}
+
+.rem11-marginTop {
+    margin-top: 11rem;
+}
+
+.rem11-marginbottom {
+    margin-bottom: 11rem;
+}
+.rem15-marginTop {
+    margin-top: 11rem; /* Default for small screens */
+}
+
+@media (max-width: 768px) {
+    .rem15-marginTop {
+        margin-top: 25rem; /* For larger screens */
+    }
+}

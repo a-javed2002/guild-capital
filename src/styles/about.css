@@ -5,8 +5,8 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-size: contain;
-    background-position: center center;
+    background-size: cover;
+    /* background-position: center center; */
 }
 
 
@@ -75,8 +75,8 @@ h6 {
 }
 
 .About .icon {
-    width: 144px;
-    height: 144px;
+    width: 100px;
+    height: 100px;
     background: #333;
     display: flex;
     align-items: center;
@@ -87,8 +87,8 @@ h6 {
 }
 
 .About .icon img {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     max-width: 100%;
 }
 
@@ -96,15 +96,13 @@ h6 {
     flex: 1;
     background: linear-gradient(to bottom, #29303e, #9f614c);
     padding: 30px;
-    min-height: 709px;
-
+    min-height:595px;
     max-height: 850px;
-
     border-radius: 24px;
 }
 
 .About .content .fill-button {
-    height: 54px;
+    height: 47px;
 }
 
 .About .content p {
@@ -129,7 +127,7 @@ h6 {
 .About .third-section .innovation-container .sidebar .active {
     border-top-left-radius: 9999px;
     border-bottom-left-radius: 9999px;
-    width: 182px;
+    width: 120px;
 }
 
 .About .last-section .last-card {
@@ -145,14 +143,14 @@ h6 {
 }
 
 .About .last-section .left-hand .last-card img {
-    height: 320px;
-    width: 407px;
+    height: 300px;
+    width: 300px;
     max-width: 100%;
 }
 
 .About .last-section .right-hand .last-card img {
-    height: 286px;
-    width: 214px;
+    height: 220px;
+    width: 200px;
     max-width: 100%;
 }
 
@@ -163,12 +161,14 @@ h6 {
 }
 
 .About .last-section .main h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 
 }
 
 .About .last-section .main p {
-    font-size: 1.75rem;
+    font-family: 'Manrope-Bold', sans-serif;
+    font-size: 1.4rem;
+    line-height: 150%;
 }
 
 

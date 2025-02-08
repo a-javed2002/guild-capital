@@ -1,1 +1,119 @@
-<div className="grid grid-cols-2 lg:grid-cols-4 max-w-3xl mx-auto py-8"><img alt loading="lazy" width={400} height={400} decoding="async" data-nimg={1} style={{color: 'transparent'}} srcSet="/_next/image?url=%2Finsights%2Fone.png&w=640&q=75 1x, /_next/image?url=%2Finsights%2Fone.png&w=828&q=75 2x" src="/_next/image?url=%2Finsights%2Fone.png&w=828&q=75" /><img alt loading="lazy" width={400} height={400} decoding="async" data-nimg={1} style={{color: 'transparent'}} srcSet="/_next/image?url=%2Finsights%2Ftwo.png&w=640&q=75 1x, /_next/image?url=%2Finsights%2Ftwo.png&w=828&q=75 2x" src="/_next/image?url=%2Finsights%2Ftwo.png&w=828&q=75" /><img alt loading="lazy" width={400} height={400} decoding="async" data-nimg={1} style={{color: 'transparent'}} srcSet="/_next/image?url=%2Finsights%2Fthree.png&w=640&q=75 1x, /_next/image?url=%2Finsights%2Fthree.png&w=828&q=75 2x" src="/_next/image?url=%2Finsights%2Fthree.png&w=828&q=75" /><img alt loading="lazy" width={400} height={400} decoding="async" data-nimg={1} style={{color: 'transparent'}} srcSet="/_next/image?url=%2Finsights%2Ffour.png&w=640&q=75 1x, /_next/image?url=%2Finsights%2Ffour.png&w=828&q=75 2x" src="/_next/image?url=%2Finsights%2Ffour.png&w=828&q=75" /></div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            justify-content: center;
+            color: #ffffff !important;
+        }
+
+
+        .swiper {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            background-color: #262D3C;
+            border-radius: 38px;
+            height: 439px;
+            width: 350.2px !important;
+
+            transition: all 1s ease-in-out;
+            transform-origin: center;
+            transform: perspective(800px);
+            opacity: 1;
+        }
+
+        .swiper-slide h2 {
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+            display: none !important;
+        }
+
+        .swiper-slide h2 {
+            transition: all 1s ease-in-out;
+            display: none !important;
+        }
+
+        .swiper-slide p {
+            font-size: 0.6rem !important;
+            font-family: 'Manrope-Bold', sans-serif;
+        }
+
+        .swiper-slide img {
+            width: 191px;
+            max-width: 100%;
+            height: 211px;
+            border-radius: 10px;
+        }
+
+
+        .swiper-slide:hover {
+            /* transform: scale(1.2); */
+            width: 620.6px !important;
+            border-radius: 38px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            height: 420px;
+
+        }
+
+        .swiper-slide:hover h2 {
+            transform: translateY(0);
+            opacity: 1;
+            display: block !important;
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<div class="swiper-wrapper">
+    <div class="swiper-slide ">
+
+        <img src='' loading="lazy" />
+        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+        <p className="white-txt text-center">
+            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+        </p>
+    </div>
+    <div class="swiper-slide ">
+
+        <img src='' loading="lazy" />
+        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+        <p className="white-txt text-center">
+            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+        </p>
+    </div>
+    <div class="swiper-slide ">
+
+        <img src='' loading="lazy" />
+        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+        <p className="white-txt text-center">
+            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+        </p>
+    </div>
+    <div class="swiper-slide ">
+
+        <img src='' loading="lazy" />
+        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
+        <p className="white-txt text-center">
+            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
+        </p>
+    </div>
+</div>

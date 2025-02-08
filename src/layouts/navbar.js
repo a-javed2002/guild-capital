@@ -8,10 +8,15 @@ import logosvg from '../assets/images/logo-svg.svg';
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const navigate = useNavigate(); // Hook for navigation
-
+    const [scrolling, setScrolling] = useState(false);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    // Scroll to top when page is changed
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [navigate]);
 
     const handleNavigation = (page) => {
         let path = "/";
@@ -25,15 +30,21 @@ const Navbar = () => {
     };
 
     const navItems = ["About Us", "What We Offer Us", "Performance", "Insights"];
-    const [scrolling, setScrolling] = useState(false);
+
     useEffect(() => {
         const handleScroll = () => {
             const toolbar = document.querySelector('.css-yg49xf-MuiToolbar-root');
+            const bg = document.querySelector('.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root');
             if (toolbar) {
                 if (window.scrollY > 10) {
-                    toolbar.style.setProperty('min-height', '80px', 'important');
+                    toolbar.style.setProperty('min-height', '54px', 'important');
+                    bg.style.setProperty('background-color', '#0E192B', 'important');
                 } else {
-                    toolbar.style.setProperty('min-height', '150px', 'important');
+                    toolbar.style.setProperty('min-height', '50px', 'important');
+                   bg.style.setProperty('background-color', 'transparent', 'important');
+                    bg.style.setProperty('box-shadow', 'none', 'important');
+                    // bg.style.setProperty('background-color', '#0E192B', 'important');
+
                 }
             }
         };
@@ -79,15 +90,15 @@ const Navbar = () => {
             </Toolbar>
 
 
-            <Drawer anchor="left" open={mobileOpen} onClose={handleDrawerToggle}>
+            <Drawer anchor="left" open={mobileOpen} onClose={handleDrawerToggle} style={{ backgroundColor: '#0E192B' }}>
                 <List sx={{ width: 250 }}>
                     {navItems.map((item) => (
                         <ListItem button key={item} onClick={() => handleNavigation(item)}>
-                            <ListItemText primary={item} />
+                            <ListItemText primary={item} className="white-txt" />
                         </ListItem>
                     ))}
                     <ListItem button onClick={handleDrawerToggle}>
-                        <ListItemText primary="Login" />
+                        <ListItemText primary="Login" className="white-txt" />
                     </ListItem>
                     <center>
                         <ListItem className="navb-btn" button sx={{ backgroundColor: "#A1624D", color: "#fff", borderRadius: "10px", textAlign: "center", width: '200px' }}>

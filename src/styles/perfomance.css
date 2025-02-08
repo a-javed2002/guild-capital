@@ -1,6 +1,6 @@
 .perfomance-main .perfomance-header {
 
-    margin-top: 11rem;
+    margin-top: 8rem;
 
 }
 
@@ -10,7 +10,7 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
 }
 
@@ -44,8 +44,8 @@
     border-radius: 14px;
     width: 100%;
     /* padding: 30px 40px; */
-    height: 66px;
-    font-size: 1.5rem;
+    height: 60px;
+    font-size: 1.3rem;
     line-height: 100%;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .perfomance-main .perfomance-header .perfomace-card p {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-family: 'Manrope-ExtraBold', serif;
     line-height: 140%;
 }
@@ -80,12 +80,12 @@
 .perfomance-main .perfomance-second .perfomance-container {
     background-color: #262D3C;
     border-radius: 20px;
-    padding: 40px 10px 40px 10px;
+    padding: 30px 10px 30px 10px;
 }
 
-.perfomance-main .perfomance-second h1 {
+/* .perfomance-main .perfomance-second h1 {
     font-size: 5rem;
-}
+} */
 
 @media (max-width: 768px) {
     .perfomance-main .perfomance-second h1 {
@@ -127,15 +127,13 @@
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card {
     background-color: #262D3C;
     border-radius: 38px;
-    padding: 21px;
+    padding: 25px;
 }
 
-.perfomance-main .perfomance-third .main {
-    font-size: 5rem;
-}
+
 
 .perfomance-main .perfomance-third .main2 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 160%;
 }
 
@@ -146,14 +144,14 @@
 }
 
 .perfomance-main .perfomance-third .main3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: 'Manrope-Medium', sans-serif;
     line-height: 160%;
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card h2 {
     font-family: 'Manrope-Bold', sans-serif;
-    font-size: 1.625rem;
+    font-size: 1.3rem;
 }
 
 .perfomance-third .perfomance-container3 .sidebar-card .active {
@@ -171,8 +169,8 @@
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand h1 {
     letter-spacing: -4.5px;
     font-weight: 700;
-    font-size: 9.375rem;
-    font-family: 'Manrope-Bold', serif;
+    font-size: 7rem;
+    font-family: 'Manrope-Bold', sans-serif;
     line-height: 100%;
 }
 
@@ -181,7 +179,7 @@
     width: 138px;
     max-width: 100%;
     display: block;
-    margin: auto;
+    /* margin: auto; */
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand {
@@ -191,7 +189,7 @@
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand p {
-    font-size: 1.5rem;
+
     font-family: 'Manrope-Regular', serif;
     line-height: 100%;
 

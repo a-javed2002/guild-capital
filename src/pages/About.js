@@ -13,8 +13,7 @@ import vector9 from '../assets/images/vector9.png';
 import aboutLast1 from '../assets/images/About-Last1.png';
 import aboutLast2 from '../assets/images/About-Last2.png';
 import aboutLast3 from '../assets/images/About-Last3.png';
-import aboutLast4 from '../assets/images/About-Last4.png';import Navbar from '../layouts/navbar';
-import Footer from '../layouts/Footer';
+import aboutLast4 from '../assets/images/About-Last4.png';
 function About() {
     const [activeCategory, setActiveCategory] = useState(0);
     const thirdSectionRef = useRef(null);
@@ -92,7 +91,7 @@ function About() {
 
     return (
         <div className='About ' >
-                  <Navbar />
+
             <div className='container'>
                 <header className='about-header rem7-marginTop'>
                     <h1 className='primary text-center font-7xl'>
@@ -113,10 +112,10 @@ function About() {
                     </p>
                 </header>
 
-                <section className='second-section rem7-marginTop '>
+                <section className='second-section rem11-marginTop '>
                     <div className='row'>
                         <div className='col-md-7'>
-                            <h1 className='primary text-start font-5xl  '>
+                            <h1 className='primary text-start font-5xxl   '>
                                 Experience Unmatched
                                 Investment Opportunities with Us
                             </h1>
@@ -124,18 +123,18 @@ function About() {
                                 At GUILD Capital, we redefine asset management through innovative strategies and deep market insights. Our strategic partnerships ensure your investments are secure and optimized for success.
                             </p>
                             <div className='d-flex  mt-5 second-section-btn'>
-                            <button className='fill-button'>
-                                Learn More
-                            </button>
-                            <button className='mx-3 outline-button'>
-                                Join Now
-                            </button>
-                        </div>
+                                <button className='fill-button'>
+                                    Learn More
+                                </button>
+                                <button className='mx-3 outline-button'>
+                                    Join Now
+                                </button>
+                            </div>
                         </div>
                         <div className='col-md-4'>
-                            <img src={fund} />
+                            <img src={fund} loading="lazy" />
                         </div>
-                   
+
                     </div>
                 </section>
 
@@ -154,7 +153,7 @@ function About() {
                                     key={cat.id}
                                     className={`icon ${activeCategory === index ? "active" : ""}`}
                                 >
-                                    <img src={cat.image} alt={cat.title} />
+                                    <img src={cat.image} alt={cat.title} loading="lazy" />
                                 </div>
                             ))}
                         </div>
@@ -166,8 +165,8 @@ function About() {
                                 <span className="italic white-txt">{categories[activeCategory].title}</span><br />
                                 <span className="bold white-txt">Fuel Success</span>
                             </h1>
-                            <p className='white-txt font-xl mt-4'>{categories[activeCategory].text}</p>
-                            <p className='white-txt font-xl '>
+                            <p className='white-txt font-basex2 mt-4'>{categories[activeCategory].text}</p>
+                            <p className='white-txt font-basex2  '>
                                 Innovation is at the heart of our approach, driving us to continually
                                 evolve and stay ahead of market trends.
                             </p>
@@ -188,7 +187,7 @@ function About() {
 
 
 
-                <section className='last-section mb-5 mt-5'>
+                <section className='last-section rem11-marginTop  rem7-marginbottom '>
                     <h1 className='primary text-center last-h1'>
                         What Makes Us Different ?
                     </h1>
@@ -199,7 +198,7 @@ function About() {
 
                                 <center>
 
-                                    <img src={aboutLast1} alt="Performance" />
+                                    <img src={aboutLast1} alt="Performance" loading="lazy" />
 
                                 </center>
                                 <div className='d-flex flex-column justify-content-start'>
@@ -217,14 +216,14 @@ function About() {
                         <div className="right-hand col-md-7 d-flex flex-column justify-content-start mt-2">
                             <div className="last-card mb-3">
                                 <div className='d-flex align-items-center flex-wrap'>
-                                    <img src={aboutLast2} alt="Performance" className='' />
+                                    <img src={aboutLast2} alt="Performance" className='' loading="lazy" />
 
-                                 <div>
-                                 <h1 className="white-txt text-start fst-italic">
-                                        Customized <br></br>
-                                        Risk Management
-                                    </h1>
-                                 </div>
+                                    <div>
+                                        <h1 className="white-txt text-start fst-italic">
+                                            Customized <br></br>
+                                            Risk Management
+                                        </h1>
+                                    </div>
                                 </div>
 
                                 <p className="white-txt text-start">
@@ -233,7 +232,7 @@ function About() {
                             </div>
                             <div className="last-card">
                                 <div className='d-flex align-items-center flex-wrap'>
-                                    <img src={aboutLast4} alt="Performance" />
+                                    <img src={aboutLast4} alt="Performance" loading="lazy" />
 
                                     <h1 className="white-txt text-start fst-italic">
                                         Transparency & <br></br>
@@ -247,7 +246,7 @@ function About() {
                         <div className=' col-md-12  mt-3'>
                             <div className="last-card row gap-3">
                                 <div className=" col-md-3">
-                                    <img src={aboutLast3} alt="Performance" />
+                                    <img src={aboutLast3} alt="Performance" loading="lazy"  />
                                 </div>
 
                                 <div className="col-md-8 mt-5">
@@ -267,7 +266,8 @@ function About() {
 
 
                 </section>
-            </div >         <Footer />
+            </div >
+
         </div >
 
     );

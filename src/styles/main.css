@@ -1,398 +1,325 @@
- body {
-     background-color: #0E192B;
-     /* background-color: #FFFFFF; */
- }
-
- @font-face {
-     font-family: 'Playfair Display';
-     src: url('../assets/Fonts/Playfair%20Display/PlayfairDisplay-MediumItalic.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'PlayfairDisplay-BoldItalic';
-     src: url('../assets/Fonts/Playfair%20Display/PlayfairDisplay-BoldItalic.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'PlayfairDisplay-Bold';
-     src: url('../assets/Fonts/Playfair%20Display/PlayfairDisplay-Bold.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'Manrope';
-     src: url('../assets/Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'Manrope-Regular';
-     src: url('../assets/Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'Manrope-SemiBold';
-     src: url('../assets/Fonts/Manrope/Manrope-SemiBold.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'Manrope-Regular';
-     src: url('../assets/Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'Manrope-Bold';
-     src: url('../assets/Fonts/Manrope/Manrope-Bold.ttf') format('truetype');
-     font-weight: bold;
-     font-style: normal;
- }
-
- @font-face {
-     font-family: 'Manrope-ExtraBold';
-     src: url('../assets/Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
- }
-
-
- @font-face {
-     font-family: 'Manrope-ExtraBold';
-     src: url('../assets/Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: 'Manrope-Medium';
-     src: url('../assets/Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
- }
-
- .font-xsm {
-     font-size: clamp(0.75rem, 1vw + 0.5rem, 1rem);
- }
-
- .font-sm {
-     font-size: clamp(0.875rem, 1vw + 0.75rem, 1.25rem);
- }
-
- .font-base {
-     font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
- }
-
- .font-basex2 {
-     font-size: clamp(1rem, 4vw + 0.5rem, 1.563rem);
- }
-
- .font-lg {
-     font-size: clamp(1.125rem, 1vw + 1.125rem, 1.875rem);
- }
-
-
- .font-xl {
-     font-size: clamp(1.25rem, 1vw + 1.25rem, 2rem);
- }
-
- .font-2xl {
-     font-size: clamp(1.5rem, 1vw + 1.5rem, 2.5rem);
- }
-
- .font-3xl {
-     font-size: clamp(1.875rem, 1vw + 2rem, 3rem);
- }
-
- .font-4xl {
-     font-size: clamp(2.25rem, 1vw + 2.25rem, 3.5rem);
- }
-
- .font-5xl {
-     font-size: clamp(2rem, 5vw + 1rem, 3.25rem);
- }
-
- .font-6xl {
-     font-size: clamp(3rem, 1vw + 3rem, 4rem);
- }
-
- .font-7xl {
-     font-size: clamp(2rem, 5vw + 1rem, 4.375rem);
- }
-
- .font-8xl {
-     font-size: clamp(4rem, 5vw + 1rem, 6.25rem);
- }
-
- .font-9xl {
-     font-size: clamp(3rem, 10vw + 2rem, 7.5rem);
- }
-
- .rem7-marginTop {
-     margin-top: 7rem;
- }
-
- .MuiPaper-root,
- footer h1 {
-     font-family: 'Manrope', serif;
-
- }
-
- .MuiPaper-root,
- footer p {
-     font-family: 'Manrope', serif;
-     line-height: 160%;
- }
-
- .MuiPaper-root,
- footer h2,
- h3,
- h4,
- h5,
- h6 {
-     font-family: 'Manrope', serif;
- }
+.MuiPaper-root,
+footer h1 {
+    font-family: 'Manrope', serif;
+
+}
+
+.MuiPaper-root,
+footer p {
+    font-family: 'Manrope', serif;
+    line-height: 160%;
+}
+
+.MuiPaper-root,
+footer h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Manrope', serif;
+}
+
+.primary {
+    color: #A1624D;
+}
 
- .primary {
-     color: #A1624D;
- }
+.white-txt {
+    color: #FFFFFF;
+}
 
- .white-txt {
-     color: #FFFFFF;
- }
+.fill-button {
+    padding: 10px 25px;
+    border-radius: 999px;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+    color: #0E192B;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: auto;
+    border: none;
+    font-family: 'Manrope-SemiBold', serif;
+    line-height: 110%;
+}
 
- .fill-button {
-     padding: 15px 25px;
-     border-radius: 999px;
-     border: 2px solid #FFFFFF;
-     background-color: #FFFFFF;
-     color: #0E192B;
-     font-size: 1.375rem;
-     cursor: pointer;
-     width: auto;
-     border: none;
-     font-family: 'Manrope-SemiBold', serif;
-     line-height: 110%;
- }
+.fill-button:hover {
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.7);
+    /* White glow effect */
+}
 
- .outline-button {
-     padding: 15px 25px;
-     border-radius: 999px;
-     border: 2px solid #FFFFFF;
-     background-color: #0E192B;
-     color: #FFFFFF;
-     font-size: 1.375rem;
-     cursor: pointer;
-     line-height: 110%;
-     font-family: 'Manrope-SemiBold', serif;
- }
+.outline-button {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 2px solid #FFFFFF;
+    background-color: #0E192B;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 110%;
+    font-family: 'Manrope-SemiBold', serif;
+    transition: box-shadow 0.3s ease-in-out;
+}
 
+.outline-button:hover {
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+    /* White glow */
+}
 
 
- .MuiButtonBase-root.MuiButton-root {
-     font-family: 'Manrope-SemiBold', sans-serif;
-     font-size: clamp(1rem, 2.5vw, 1.375rem);
-     line-height: 110%;
- }
 
- .MuiPaper-root {
-     background-color: #0E192B !important;
- }
+.MuiButtonBase-root.MuiButton-root {
+    font-family: 'Manrope-SemiBold', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 110%;
+    height: 50px;
+}
 
- .navs-item {
-     text-transform: capitalize !important;
- }
+.MuiPaper-root {
+    background-color: #0E192B !important;
+}
 
- @media (max-width:2560px) and (min-width: 1450px) {
+.navs-item {
+    text-transform: capitalize !important;
+}
 
-     .css-1984w2y {
-         gap: 77px !important;
-     }
+@media (max-width:2560px) and (min-width: 1450px) {
 
-     .css-yg49xf-MuiToolbar-root {
-         min-height: 122px !important;
-     }
- }
+    .css-1984w2y {
+        gap: 36px !important;
+    }
 
- @media (max-width:1449px) and (min-width: 1023px) {
+    .css-yg49xf-MuiToolbar-root {
+        min-height: 122px !important;
+    }
+}
 
-     .css-1984w2y {
-         gap: 68px !important;
-     }
+@media (max-width:1449px) and (min-width: 1224px) {
 
+    .css-1984w2y {
+        gap: 34px !important;
+    }
 
 
-     .MuiButtonBase-root.MuiButton-root {
 
-         font-size: clamp(1rem, 2.5vw, 1rem);
+    .MuiButtonBase-root.MuiButton-root {
 
-     }
+        font-size: clamp(1rem, 2.5vw, 1rem);
 
- }
+    }
 
- .navs-btn {
-     padding: 15px 25px !important;
-     background-color: #A1624D !important;
-     border-radius: 999px !important;
-     font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
 
- }
+@media (max-width:1224px) {
 
- .nav-logo {
-     height: 63.15px;
-     width: 67.23px;
- }
+    .css-1984w2y {
+        gap: 8px !important;
+    }
 
- .footer {
-     background: linear-gradient(180deg, #000000 0%, #4B596F 100%);
-     color: white;
-     padding: 40px 20px;
+    a .MuiTypography-root.nav-logo img {
+        height: 50px !important;
+        width: 50px !important;
+    }
 
- }
 
+    .MuiButtonBase-root.MuiButton-root {
 
+        font-size: 12px;
 
- @media (max-width:2560px) and (min-width: 1450px) {
+    }
 
-     .footer-spacing {
-         width: 378px;
+}
 
-     }
+.navs-btn {
+    padding: 10px 20px !important;
+    background-color: #A1624D !important;
+    border-radius: 999px !important;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
 
-     footer .center-spacing {
-         width: 0px;
-     }
- }
+}
 
- @media (max-width:1449px) and (min-width: 1023px) {
+.nav-logo img {
+    height: 63.15px !important;
+    width: 67.23px !important;
+}
 
-     .footer-spacing {
-         width: 100px;
-     }
+.footer {
+    background: linear-gradient(180deg, #000000 0%, #4B596F 100%);
+    color: white;
+    padding: 40px 20px;
 
-     footer .center-spacing {
-         width: 128px;
-     }
- }
+}
 
- .footer-container {
 
-     max-width: 1200px;
-     margin: auto;
- }
 
- /* .footer-left {
+@media (max-width:2560px) and (min-width: 1450px) {
+
+    .footer-spacing {
+        width: 378px;
+
+    }
+
+    footer .center-spacing {
+        width: 0px;
+    }
+}
+
+@media (max-width:1449px) and (min-width: 1220px) {
+
+    .footer-spacing {
+        width: 100px;
+    }
+
+    footer .center-spacing {
+        width: 128px;
+    }
+}
+
+@media (max-width:1219px) and (min-width: 768px) {
+
+    .footer-spacing {
+        width: 1px;
+    }
+
+    footer .center-spacing {
+        width: 128px;
+    }
+}
+
+@media (min-width: 600px) {
+    .css-yg49xf-MuiToolbar-root {
+
+        margin-top: 1rem !important;
+    }
+}
+
+.footer-container {
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* .footer-left {
     width: 40%;
 } */
- footer .footer-main-head h1 {
-     font-size: 1.875rem;
+footer .footer-main-head h1 {
+    font-size: 1.875rem;
 
-     font-family: 'Manrope-SemiBold', sans-serif;
- }
+    font-family: 'Manrope-SemiBold', sans-serif;
+}
 
- footer .contact-info p {
-     font-size: 0.875rem;
-     font-family: 'Manrope-Regular', sans-serif;
- }
+footer .contact-info p {
+    font-size: 0.875rem;
+    font-family: 'Manrope-Regular', sans-serif;
+}
 
- .footer-logo {
-     width: 80px;
-     margin-bottom: 15px;
- }
+.footer-logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
 
- .footer-left p {
-     font-family: 'Manrope-Medium', sans-serif;
-     font-size: 1rem;
-     opacity: 0.8;
- }
+.footer-left p {
+    font-family: 'Manrope-Medium', sans-serif;
+    font-size: 1rem;
+    opacity: 0.8;
+}
 
- .footer-links {
-     display: flex;
-     gap: 30px;
-     margin-top: 15px;
- }
+.footer-links {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
 
- .footer-links p {
-     font-family: 'Manrope-Regular', sans-serif;
-     cursor: pointer;
-     transition: 0.3s;
- }
+.footer-links p {
+    font-family: 'Manrope-Regular', sans-serif !important;
+    cursor: pointer;
+    /* transition: 0.3s; */
+    font-size: 1rem !important;
+}
 
- .footer-links p:hover {
-     color: #00aaff;
- }
+.footer-links p:hover {
+    color: #00aaff;
+}
 
- .subscribe-form {
-     display: flex;
-     gap: 10px;
-     margin-top: 10px;
-     width: 100%;
-     font-size: 1.375rem;
- }
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 1.375rem;
+}
 
- .subscribe-form input {
-     padding: 10px;
-     border: 1px solid #ccc;
-     border-radius: 25px;
-     outline: none;
-     width: 69%;
-     background-color: transparent !important;
-     color: #FFFFFF !important;
-     caret-color: #FFFFFF;
- }
+.subscribe-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    width: 69%;
+    background-color: transparent !important;
+    color: #FFFFFF !important;
+    caret-color: #FFFFFF;
+    padding-left: 20px;
+}
 
- footer .social-icons img {
-     width: 30.47px;
-     height: 30.58px;
- }
-
-
- @media (max-width: 768px) {
-
-
-     footer .subscribe-form input {
-
-         width: 100%;
-
-     }
-
-     footer .subscribe-form button {
-
-         width: 100%;
-
-     }
-
- }
-
- .subscribe-form input::placeholder {
-     color: #FFFFFF !important;
-     opacity: 1;
- }
+footer .social-icons img {
+    width: 30.47px;
+    height: 30.58px;
+}
 
 
- .subscribe-form input:focus {
-     background-color: transparent !important;
-     box-shadow: none;
-     border-color: #FFFFFF;
- }
+@media (max-width: 768px) {
 
- @media (max-width:768px) {
-     footer .link-main {
-         margin-left: 10px;
-     }
- }
 
- .contact-info {
-     margin-top: 10px;
-     font-size: 14px;
-     opacity: 0.8;
- }
+    footer .subscribe-form input {
 
- .social-icons {
-     display: flex;
-     gap: 15px;
-     font-size: 24px;
-     margin-top: 10px;
- }
+        width: 100%;
 
- footer .footer-bottom p{
-     font-family: 'Manrope-Regular', sans-serif !important;
+    }
 
-     font-size: 0.845rem !important;
-     margin-top: 30px;
-     opacity: 0.7;
- }
+    footer .subscribe-form button {
 
- .footer-intro {
-     font-size: 1rem;
- }
+        width: 100%;
+
+    }
+
+}
+
+.subscribe-form input::placeholder {
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+
+.subscribe-form input:focus {
+    background-color: transparent !important;
+    box-shadow: none;
+    border-color: #FFFFFF;
+}
+
+@media (max-width:768px) {
+    footer .link-main {
+        margin-left: 10px;
+    }
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+footer .footer-bottom p {
+    font-family: 'Manrope-Regular', sans-serif !important;
+    font-size: 0.845rem !important;
+    margin-top: 30px;
+    opacity: 0.7;
+}
+
+.footer-intro {
+    font-size: 1rem;
+}
