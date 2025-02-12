@@ -4,116 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scroll Resize Animation (Video)</title>
     <style>
-        .swiper-wrapper {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 200vh;
+            /* Extra height for scrolling */
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 3px;
-            justify-content: center;
-            color: #ffffff !important;
+            justify-content: flex-start;
+            background-color: #f4f4f4;
         }
 
+        /* Video starts full screen */
+        .header-video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            transition: width 1s ease-in-out, height 1s ease-in-out;
+        }
 
-        .swiper {
+        .content {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .home-header {
+            text-align: center;
+            padding: 20px;
+            position: absolute;
             width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            z-index: -1;
+            transition: opacity 0.5s ease-in-out;
         }
-
-        .swiper-slide {
-            background-color: #262D3C;
-            border-radius: 38px;
-            height: 439px;
-            width: 350.2px !important;
-
-            transition: all 1s ease-in-out;
-            transform-origin: center;
-            transform: perspective(800px);
-            opacity: 1;
-        }
-
-        .swiper-slide h2 {
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-            opacity: 0;
-            transform: translateY(20px);
-            display: none !important;
-        }
-
-        .swiper-slide h2 {
-            transition: all 1s ease-in-out;
-            display: none !important;
-        }
-
-        .swiper-slide p {
-            font-size: 0.6rem !important;
-            font-family: 'Manrope-Bold', sans-serif;
-        }
-
-        .swiper-slide img {
-            width: 191px;
-            max-width: 100%;
-            height: 211px;
-            border-radius: 10px;
-        }
-
-
-        .swiper-slide:hover {
-            /* transform: scale(1.2); */
-            width: 620.6px !important;
-            border-radius: 38px;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-            height: 420px;
-
-        }
-
-        .swiper-slide:hover h2 {
-            transform: translateY(0);
-            opacity: 1;
-            display: block !important;
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
-        }
-
 
     </style>
 </head>
 
 <body>
 
+
+    <video class="header-video" id="headerVideo" autoplay loop muted>
+        <source src="C:\Users\kk\Desktop\Structure\Freelance\Web\Sheery\guild-capital\src\assets\vedio\home-one.mp4"
+            type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h1>Scroll Down to See Effect</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Keep scrolling to see the effect.</p>
+    </div>
+
+    <script>
+        const headerVideo = document.getElementById('headerVideo');
+        let scrolled = false;
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrollY;
+
+            if (scrollTop > 50 && !scrolled) {
+                scrolled = true;
+                headerVideo.style.width = "500px";  // Shrink to 500px width
+                headerVideo.style.height = "500px"; // Shrink to 500px height
+            }
+            else if (scrollTop === 0 && scrolled) {
+                scrolled = false;
+                headerVideo.style.width = "100vw";  // Expand back to full width
+                headerVideo.style.height = "100vh"; // Expand back to full height
+            }
+        });
+    </script>
+
 </body>
 
 </html>
-<div class="swiper-wrapper">
-    <div class="swiper-slide ">
-
-        <img src='' loading="lazy" />
-        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
-        <p className="white-txt text-center">
-            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
-        </p>
-    </div>
-    <div class="swiper-slide ">
-
-        <img src='' loading="lazy" />
-        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
-        <p className="white-txt text-center">
-            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
-        </p>
-    </div>
-    <div class="swiper-slide ">
-
-        <img src='' loading="lazy" />
-        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
-        <p className="white-txt text-center">
-            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
-        </p>
-    </div>
-    <div class="swiper-slide ">
-
-        <img src='' loading="lazy" />
-        <h2 className="white-txt text-center"> Unlock Your Investment</h2>
-        <p className="white-txt text-center">
-            Enhanced User Engagement for Better Outcomes Enhanced User Engagement for Better Outcomes.
-        </p>
-    </div>
-</div>

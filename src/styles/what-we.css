@@ -1,12 +1,163 @@
+@media (max-width: 425px) {
+    .choose-us {
+        margin-top: 22rem !important;
+
+    }
+}
+
+footer {
+    position: relative;
+}
+
+.what-we .decorative-img {
+    position: absolute;
+    left: -63px;
+    top: 124px;
+    width: 247px;
+    height: 582px;
+    opacity: 1;
+    animation: moveLeftRight19 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveLeftRight19 {
+    0% {
+        left: -63px;
+    }
+
+    50% {
+        left: -40px;
+    }
+
+    100% {
+        left: -63px;
+    }
+}
+
+.what-we .decorative-img2 {
+    position: absolute;
+    right: -70px;
+    top: 760px;
+    width: 299px;
+    height: 582px;
+    opacity: 1;
+    animation: moveRightLeft21 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveRightLeft21 {
+    0% {
+        right: -70px
+    }
+
+    50% {
+        right: -100px;
+    }
+
+    100% {
+        right: -70px
+    }
+}
+
+.what-we .decorative-img3 {
+    position: absolute;
+    left: -56px;
+    top: 1200px;
+    width: 299px;
+    height: 582px;
+    opacity: 1;
+    animation: moveLeftRight20 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveLeftRight20 {
+    0% {
+        left: -56px;
+    }
+
+    50% {
+        left: -100px;
+    }
+
+    100% {
+        left: -56px;
+    }
+}
+
+.what-we .decorative-img4 {
+    position: absolute;
+    right: -56px;
+    top: 1269px;
+    width: 300px;
+    height: 582px;
+    opacity: 1;
+    animation: moveRightLeft22 4s infinite alternate ease-in-out;
+    animation-delay: 4s;
+}
+
+
+
+@keyframes moveRightLeft22 {
+    0% {
+        right: -56px;
+    }
+
+    50% {
+        right: -100px;
+    }
+
+    100% {
+        right: -56px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .what-we .decorative-img {
+        width: 200px;
+    }
+
+    .what-we .decorative-img2 {
+        width: 250px;
+    }
+
+    .what-we .decorative-img3 {
+        width: 250px;
+        left: -60px;
+        top: 1298px;
+    }
+
+    .what-we .decorative-img4 {
+        width: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .what-we {
 
-    background-image: url('../assets/images/What we offer.png');
+    background-image: url('../assets/images/backround/What-we.svg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    position: relative;
+}
+
+.what-we .content-2 {
+    position: relative;
 }
 
 .what-we h1 {
@@ -30,17 +181,28 @@ h6 {
 }
 
 .what-we .header-img {
-    height: 603px;
-    width: 1096px;
+    height: 594px;
+    width: 90%;
     max-width: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
+}
+
+.what-we-header h1 {
+    font-size: 5rem;
+}
+
+@media (max-width: 1324px) {
+    .what-we .header-img {
+        height: 504px;
+        width: 90%;
+    }
 }
 
 
 
 .what-we .what-we-header {
 
-    margin-top: 8rem;
+    margin-top: 7rem;
 }
 
 
@@ -50,9 +212,32 @@ h6 {
     }
 } */
 
+.what-we .financial-Future {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 750px;
+}
 
 .what-we .financial-Future .left-hand {
-    margin-top: 144px;
+    margin-top: 170px;
+    width: 85%;
+}
+
+.what-we .financial-Future .left-hand h1 {
+    font-size: 2.7rem;
+}
+
+@media (max-width: 1350px) {
+    .what-we .financial-Future .left-hand h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .what-we .financial-Future .left-hand {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -66,17 +251,17 @@ h6 {
 .what-we .financial-Future .financial-card {
     background-color: #262D3C;
     border-radius: 38px;
-    height: 326px;
+    height: 300px;
     /* padding: 20px; */
-    width: 370px;
+    width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .what-we .financial-Future .financial-card img {
-    height: 280px;
-    width: 280px;
+    height: 255px;
+    width: 255px;
 }
 
 
@@ -88,15 +273,15 @@ h6 {
     font-family: 'Manrope-Medium', sans-serif;
 }
 
-.what-we .financial-Future .left-hand-intro {
+/* .what-we .financial-Future .left-hand-intro {
     width: 585px;
-}
+} */
 
 /* Parent container */
 .rotation-img {
     position: relative;
     width: 30%;
-    height: 500px;
+    /* height: 500px; */
 }
 
 .financial-card {
@@ -106,28 +291,29 @@ h6 {
 }
 
 
+
 .card-1 {
-    top: -80px;
-    left: -30px;
-    transform: rotate(-30deg);
+    top: -155px;
+    left: -12px;
+    transform: rotate(-20deg);
 }
 
 
 .card-2 {
-    top: -20px;
-    left: -30px;
+    top: -108px;
+    left: -14px;
     z-index: 1;
-    transform: rotate(-15deg);
+    transform: rotate(-16deg);
 }
 
 .card-2 img {
-    height: 358.29px !important;
-    width: 340.93px !important;
+    height: 320.29px !important;
+    width: 300.93px !important;
 
 }
 
 .card-3 {
-    top: 0;
+    top: -82px;
     left: 0;
     z-index: 2;
 
@@ -145,15 +331,15 @@ h6 {
     }
 
     .card-1 {
-        top: -50px;
+        top: -83px;
         left: -15px;
         transform: rotate(-20deg);
     }
 
     .card-2 {
-        top: -10px;
+        top: -45px;
         left: -15px;
-        transform: rotate(-10deg);
+        transform: rotate(-9deg);
     }
 
     .card-3 {
@@ -162,17 +348,38 @@ h6 {
     }
 
     .what-we .financial-Future .financial-card {
-        width: 341px !important;
+        width: 250px !important;
     }
 
-    .what-we .choose-us {
-        margin-top: 8rem;
+    .what-we .financial-Future .financial-card img {
+        width: 200px !important;
+        height: 280px !important;
     }
+
+    .what-we .financial-Future .financial-card.card-3 img {
+
+        height: 220px !important;
+    }
+
+    .what-we .financial-Future .left-hand {
+        margin-top: 60px;
+    }
+
+    .what-we .financial-Future .right-hand {
+        display: flex;
+        justify-content: center;
+    }
+
+    .choose-us {
+        margin-top: 17rem !important;
+
+    }
+
 
 }
 
-/* Responsive for mobile devices (max-width: 425px) */
-@media screen and (max-width: 425px) {
+
+@media (max-width: 425px) {
     .rotation-img {
         width: 80%;
         height: 250px;
@@ -194,19 +401,62 @@ h6 {
         top: 0;
         left: 0;
     }
+
 }
 
 
 .what-we .choose-us .question {
     margin-top: 1.5rem;
-    border-radius: 40px;
+    border-radius: 38px;
     background-color: #262D3C;
-    font-size: 26px;
-    padding: 20px;
+    font-size: 38px;
+    /* padding: 20px; */
     width: 700px;
     max-width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 1024px) {
+    .what-we .choose-us .question {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1350px) {
+    .what-we .choose-us .question {
+        height: 90px;
+        border-radius: 21px;
+    }
 }
 
 .what-we .choose-us {
     margin-bottom: 8rem;
+}
+
+.financial-card {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.5;
+}
+
+.financial-card.active {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    /* Increased duration */
+}
+
+#category-section-5 {
+    /* opacity: 0; */
+    /* transform: translateY(50px); */
+    /* Start slightly below */
 }

@@ -1,17 +1,168 @@
+.perfomance-main .decorative-img {
+    position: absolute;
+    left: -36px;
+    top: 137px;
+    width: 270px;
+    height: 582px;
+    opacity: 1;
+    animation: moveLeftRight25 4s infinite alternate ease-in-out;
+    animation-delay: 4s;
+}
+
+@keyframes moveLeftRight25 {
+    0% {
+        left: -36px;
+    }
+
+    50% {
+        left: 1px;
+    }
+
+    100% {
+        left: -36px;
+    }
+}
+
+.perfomance-main .decorative-img2 {
+    position: absolute;
+    right: -100px;
+    top: 690px;
+    width: 300px;
+    height: 582px;
+    opacity: 1;
+    animation: moveRightLeft2 4s infinite alternate ease-in-out;
+    animation-delay: 4s;
+}
+
+@keyframes moveRightLeft2 {
+    0% {
+        right: -90px;
+    }
+
+    100% {
+        right: -121px;
+    }
+}
+
+.perfomance-main .decorative-img3 {
+    position: absolute;
+    left: -12px;
+    top: 1470px;
+    width: 376px;
+    height: 582px;
+    opacity: 1;
+    animation: moveLeftRight23 4s infinite alternate ease-in-out;
+    animation-delay: 4s;
+}
+
+@keyframes moveLeftRight23 {
+    0% {
+        left: -12px;
+    }
+
+    50% {
+        left: -50px;
+    }
+
+    100% {
+        left: -12px;
+    }
+}
+
+
+.perfomance-main .decorative-img4 {
+    position: absolute;
+    right: -56px;
+    top: 1683px;
+    width: 350px;
+    height: 582px;
+    opacity: 1;
+    animation: moveRightLeft24 4s infinite alternate ease-in-out;
+    animation-delay: 4s;
+}
+
+
+@keyframes moveRightLeft24 {
+    0% {
+        right: -56px;
+    }
+
+    50% {
+        right: -100px;
+    }
+
+    100% {
+        right: -56px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .perfomance-main .decorative-img {
+        width: 200px;
+    }
+
+    .perfomance-main .decorative-img2 {
+        width: 250px;
+    }
+
+    .perfomance-main .decorative-img3 {
+        width: 250px;
+        left: -60px;
+        top: 1298px;
+    }
+
+    .perfomance-main .decorative-img4 {
+        width: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .perfomance-main .perfomance-header {
 
-    margin-top: 8rem;
+    margin-top: 7rem;
 
 }
 
+@media (min-width: 1440px) {
+
+    .perfomance-main .perfomance-header {
+
+        margin-top: 8rem;
+
+    }
+}
+
+.content4 {
+    position: relative;
+}
+
+
 .perfomance-main {
-    background-image: url('../assets/images/performance.png');
+    background-image: url('../assets/images/backround/What-we.svg');
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
+    position: relative;
 }
 
 .perfomance-main h1 {
@@ -26,7 +177,18 @@
 }
 
 
+.perfomance-main .card-container-1 {
+    width: 80%;
 
+}
+
+@media (max-width: 1024px) {
+
+    .perfomance-main .card-container-1 {
+        width: 100%;
+
+    }
+}
 
 .perfomance-main .perfomance-header p {
     font-family: 'Manrope-Medium', sans-serif;
@@ -34,32 +196,56 @@
 }
 
 
+@media (min-width: 1440px) {
+    .perfomance-main .perfomance-header h1 {
+        margin-left: 180px;
+
+    }
+}
+
+@media (min-width: 786px) and (max-width: 1339px) {
+    .perfomance-main .perfomance-header h1 {
+        margin-left: 130px;
+        font-size: 3.8rem;
+    }
+}
+
+
 .perfomance-main .perfomance-header .perfomace-card {
     border-radius: 15px;
-    /* width: 100%;
-    min-width: 250px; */
+    width: 330px;
+
 }
 
 .perfomance-main .perfomance-header .perfomace-card .fill-button {
     border-radius: 14px;
     width: 100%;
     /* padding: 30px 40px; */
-    height: 60px;
-    font-size: 1.3rem;
+    height: 44px;
+    font-size: 1rem;
     line-height: 100%;
+
 }
 
 .perfomance-main .perfomance-header .perfomace-card img {
-    height: 350px;
+    height: 244px;
     width: 100%;
+    max-width: 100%;
     display: block;
     border-radius: 24px;
 }
 
 .perfomance-main .perfomance-header .perfomace-card p {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-family: 'Manrope-ExtraBold', serif;
     line-height: 140%;
+}
+
+@media (max-width: 1350px) {
+    .perfomance-main .perfomance-header .perfomace-card p {
+        font-family: 'Manrope-Bold', sans-serif;
+        font-size: 1rem;
+    }
 }
 
 .perfomance-main .perfomance-header .d-flex.flex-wrap {
@@ -69,23 +255,45 @@
 
 
 .perfomance-main .perfomance-header .perfomace-card {
-    flex: 1 1 calc(33.333% - 20px);
-    min-width: 250px;
+    flex: 1 1;
+    min-width: auto;
+}
+
+@media (max-width: 768px) {
+    .perfomance-main .perfomance-header .perfomace-card {
+
+        min-width: 302px;
+    }
+
+    .perfomance-main .perfomance-header .perfomace-card img {
+
+        width: 100%;
+    }
 }
 
 .perfomance-main .perfomance-second {
-    margin-top: 10rem;
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .perfomance-main .perfomance-second .perfomance-container {
     background-color: #262D3C;
     border-radius: 20px;
     padding: 30px 10px 30px 10px;
+    width: 80%;
+
 }
 
 /* .perfomance-main .perfomance-second h1 {
     font-size: 5rem;
 } */
+@media (max-width: 1024px) {
+    .perfomance-main .perfomance-second .perfomance-container {
+        width: 100%;
+    }
+}
 
 @media (max-width: 768px) {
     .perfomance-main .perfomance-second h1 {
@@ -93,16 +301,25 @@
     }
 }
 
-.perfomance-main .perfomance-second .perfomance-card2 img {
-    height: 300px;
-    width: 100%;
-    max-width: 100%;
-    display: block;
+@media (max-width: 600px) {
+    .perfomance-main .perfomance-card2 img {
+        width: 100% !important;
+    }
 
-    border-radius: 38px;
+    .perfomance-main .perfomance-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-
+.perfomance-main .perfomance-second .perfomance-card2 img {
+    height: 239px;
+    width: 303px;
+    max-width: 100%;
+    display: block;
+    border-radius: 38px;
+}
 
 .perfomance-main .perfomance-second .perfomance-card2 h2 {
     font-family: 'Manrope-ExtraBold', serif;
@@ -116,18 +333,35 @@
     line-height: 140%;
 }
 
+@media (min-width: 1440px) {
+
+    .perfomance-main .perfomance-second .perfomance-card2 p {
+        font-size: 1.1rem;
+    }
+}
+
 .perfomance-main .perfomance-third {
-    margin-top: 10rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 {
-    margin-top: 7rem;
+    margin-top: 3rem;
+    width: 80%;
+}
+
+@media (max-width: 1024px) {
+    .perfomance-main .perfomance-third .perfomance-container3 {
+        width: 100%;
+    }
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card {
     background-color: #262D3C;
     border-radius: 38px;
-    padding: 25px;
+    padding: 25px 9px;
 }
 
 
@@ -151,13 +385,14 @@
 
 .perfomance-main .perfomance-third .perfomance-container3 .sidebar-card h2 {
     font-family: 'Manrope-Bold', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .perfomance-third .perfomance-container3 .sidebar-card .active {
     font-family: 'PlayfairDisplay-BoldItalic', serif !important;
     color: #A1624D;
     font-style: italic;
+    font-size: 1.375rem !important;
 }
 
 
@@ -169,7 +404,7 @@
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand h1 {
     letter-spacing: -4.5px;
     font-weight: 700;
-    font-size: 7rem;
+    font-size: 4.5rem;
     font-family: 'Manrope-Bold', sans-serif;
     line-height: 100%;
 }
@@ -185,7 +420,7 @@
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand {
     background-color: #262D3C;
     border-radius: 41px;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 .perfomance-main .perfomance-third .perfomance-container3 .right-hand p {
@@ -197,10 +432,11 @@
 
 .perfomance-main .perfomance-third .perfomance-container3 .last-divider {
     width: 2px;
-    height: 350px;
+    height: 323px;
     background: linear-gradient(#A96349, #FFFFFF);
     position: absolute;
     margin-right: 30px;
+    margin-top: 30px !important;
 
 }
 
@@ -212,4 +448,41 @@
         position: relative;
 
     }
+}
+
+
+
+
+
+
+/* Content Fade Effect */
+.fade-content {
+    /* opacity: 0;/ */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    border-radius: 41px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.fade-content img,
+.fade-content div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-content img,
+.fade-content div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.perfomance-container3 .fade-content img.one {
+    width: 100% !important;
+    object-fit: cover;
+    height: auto !important;
+    border-radius: 41px;
 }

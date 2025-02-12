@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Expand on Click</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+ 
+     .swiper-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            height: 300px;
+            background-color: #3498db;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Different colors for slides */
+        .swiper-slide:nth-child(1) {
+            background: #ff5733;
+        }
+
+        .swiper-slide:nth-child(2) {
+            background: #33b5e5;
+        }
+
+        .swiper-slide:nth-child(3) {
+            background: #ffcc00;
+        }
+
+        .swiper-slide:nth-child(4) {
+            background: #669900;
+        }
+
+        /* Expanded Slide */
+        .swiper-slide.expanded {
+            width: 100% !important;
+            transform: scale(1);
+        }
+
+        /* Hide non-selected slides */
+        .swiper-slide.hidden-left {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .swiper-slide.hidden-right {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Card 1</div>
+            <div class="swiper-slide">Card 2</div>
+            <div class="swiper-slide">Card 3</div>
+            <div class="swiper-slide">Card 4</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            centeredSlides: false
+        });
+
+        let slides = document.querySelectorAll('.swiper-slide');
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', function () {
+                let isExpanded = this.classList.contains('expanded');
+
+                // Reset all slides
+                slides.forEach((s, i) => {
+                    s.classList.remove('expanded', 'hidden-left', 'hidden-right');
+                });
+
+                if (!isExpanded) {
+                    // Expand the clicked slide
+                    this.classList.add('expanded');
+
+                    // Move the slides on the left outside
+                    slides.forEach((s, i) => {
+                        if (i < index) s.classList.add('hidden-left');
+                        if (i > index) s.classList.add('hidden-right');
+                    });
+
+                    // Change Swiper settings
+                    swiper.params.slidesPerView = 1;
+                    swiper.params.centeredSlides = true;
+                    swiper.update();
+                    swiper.slideTo(index);
+                } else {
+                    // Restore default settings
+                    swiper.params.slidesPerView = 4;
+                    swiper.params.centeredSlides = false;
+                    swiper.update();
+                }
+            });
+        });
+    </script>
+let slides = document.querySelectorAll('.swiper-slide');
+
+slides.forEach((slide, index) => {
+    slide.addEventListener('click', function () {
+        let isExpanded = this.classList.contains('expanded');
+
+        slides.forEach(s => {
+            if (s !== slide) {
+                s.classList.remove('expanded', 'hidden-left', 'hidden-right');
+                s.style.position = "relative";
+                s.style.opacity = "1";
+                s.style.pointerEvents = "auto";
+
+                let imgContainer = s.querySelector('.img-container');
+                let textContainer = s.querySelector('.text-container');
+                let textParagraph = textContainer.querySelector('p');
+
+                imgContainer.classList.remove('col-lg-4');
+                textContainer.classList.remove('col-lg-8');
+
+                // Hide paragraph only when collapsing
+                setTimeout(() => {
+                    if (!s.classList.contains('expanded')) {
+                        textParagraph.style.display = 'none';
+                    }
+                }, 500); // Wait for collapse animation
+            }
+        });
+
+        if (!isExpanded) {
+            this.classList.add('expanded');
+
+            let imgContainer = this.querySelector('.img-container');
+            let textContainer = this.querySelector('.text-container');
+            let textParagraph = textContainer.querySelector('p');
+
+            imgContainer.classList.add('col-lg-4');
+            textContainer.classList.add('col-lg-8');
+
+            // Show paragraph only when expanding
+            textParagraph.style.display = 'block';
+
+            slides.forEach((s, i) => {
+                if (i < index) {
+                    s.classList.add('hidden-left');
+                    setTimeout(() => s.style.position = "absolute", 300);
+                }
+                if (i > index) {
+                    s.classList.add('hidden-right');
+                    setTimeout(() => s.style.position = "absolute", 300);
+                }
+            });
+        }
+    });
+});
+
+</body>
+
+</html>

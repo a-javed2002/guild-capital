@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Expandable Cards</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <style>
+        .description {
+            display: none;
+        }
+
+        .expanded .description {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .expanded .card-text {
+            display: none;
+        }
+
+        .expanded-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .expanded-row img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .col-lg-6 {
+            align-self: center;
+        }
+
+        .card {
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0px 19px 31px 0px rgba(0, 0, 0, 0.41);
+            ;
+        }
+
+        .card.zoom-out {
+            transform: scale(0.8);
+            opacity: 0.5;
+        }
+
+        .typing::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.6s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card {
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0px 19px 31px 0px rgba(0, 0, 0, 0.41);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+
+    <link rel="stylesheet" href="hover-min.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row" id="cardRow">
+                <div class="col-lg-3">
+                    <div class="card row rounded-5 bg-dark hvr-float" onclick="toggleCard(this)">
+                        <div class="row g-0 justify-content-evenly p-3 text-white">
+                            <div class="col-lg-12 card-img-container">
+                                <img class="card-img-top" src="download 2.png" alt="Title" />
+                            </div>
+                            <div class="col-lg-12 card-body-container">
+                                <div class="card-body">
+                                    <h4 class="card-title">Performance Based Model</h4>
+                                    <p class="description"
+                                        data-fulltext="We align our interests with yours through a performance-based compensation structure, where our fees are tied to the profits we generate.">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="row g-0">
+                            <div class="col-lg-12 card-img-container">
+                                <img class="card-img-top" src="image2.jpeg" alt="Title" />
+                            </div>
+                            <div class="col-lg-12 card-body-container">
+                                <div class="card-body">
+                                    <h4 class="card-title">Another Model</h4>
+                                    <p class="description">Detailed description of this model.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="row g-0">
+                            <div class="col-lg-12 card-img-container">
+                                <img class="card-img-top" src="image3.jpeg" alt="Title" />
+                            </div>
+                            <div class="col-lg-12 card-body-container">
+                                <div class="card-body">
+                                    <h4 class="card-title">Model 3</h4>
+                                    <p class="description">Details about Model 3.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="row g-0">
+                            <div class="col-lg-12 card-img-container">
+                                <img class="card-img-top" src="image4.jpeg" alt="Title" />
+                            </div>
+                            <div class="col-lg-12 card-body-container">
+                                <div class="card-body">
+                                    <h4 class="card-title">Model 4</h4>
+                                    <p class="description">Details about Model 4.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleCard(card) {
+            const row = document.getElementById("cardRow");
+            const cols = row.children;
+            const parentCol = card.parentElement;
+            const description = card.querySelector(".description");
+
+            if (parentCol.classList.contains("expanded")) {
+
+                parentCol.classList.remove("expanded");
+                card.classList.add("zoom-out");
+
+
+                card.classList.remove("zoom-out");
+                card.querySelector(".card-img-container").classList.replace("col-lg-4", "col-lg-12");
+                card.querySelector(".card-body-container").classList.replace("col-lg-6", "col-lg-12");
+                setTimeout(() => {
+                    description.innerHTML = "";
+                    description.style.display = "none";
+                }, 500);
+                for (let col of cols) {
+                    col.classList.remove("hide");
+                    col.classList.add("col-lg-3");
+                }
+
+                return;
+            }
+
+            // Apply zoom-out effect before expanding
+            card.classList.add("zoom-out");
+
+            setTimeout(() => {
+                // Hide all other cards after zoom-out effect
+                for (let col of cols) {
+                    col.classList.add("hide");
+                }
+
+                // Expand the clicked card
+                parentCol.classList.remove("hide", "col-lg-3");
+                parentCol.classList.add("expanded");
+                card.classList.remove("zoom-out");
+
+                // Update classes for image and body
+                card.querySelector(".card-img-container").classList.replace("col-lg-12", "col-lg-4");
+                card.querySelector(".card-body-container").classList.replace("col-lg-12", "col-lg-6");
+
+                // Start letter typing effect after expansion
+                setTimeout(() => typeText(description, description.dataset.fulltext), 300);
+            }, 300); // Delay to allow zoom-out animation before expansion
+        }
+
+        // Function to create letter-by-letter typing effect
+        function typeText(element, text, index = 0) {
+            if (!text || index >= text.length) return;
+
+            element.style.display = "block";
+            element.innerHTML = text.substring(0, index + 1) + "<span class='typing'></span>";
+
+            setTimeout(() => typeText(element, text, index + 1), 5); // Slower typing effect
+        }
+
+
+        // Function to create letter-by-letter typing effect
+        function typeText(element, text, index = 0) {
+            if (!text || index >= text.length) return;
+
+            element.style.display = "block";
+            element.innerHTML = text.substring(0, index + 1) + "<span class='typing'></span>";
+
+            setTimeout(() => typeText(element, text, index + 1), 5); // Slower typing effect
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Expand on Click</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <style>
+        .home-slider2 .swiper-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .home-slider2 .swiper-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .home-slider2 .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 300px;
+            width: 100%;
+            padding: 32px;
+            height: 400px;
+            gap: 32px;
+            border-radius: 24px;
+            transition: all 0.5s ease-in-out;
+            flex: 1;
+            cursor: pointer;
+            background-color: #1A1D26;
+            border-radius: 20px;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-slider2 .swiper-slide p {
+            display: none;
+        }
+
+        .home-slider2 .swiper-slide h4 {
+            font-size: 32px;
+        }
+
+        .home-slider2 .swiper-slide img {
+            max-width: 100%;
+            height: 195px;
+            object-fit: contain;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .home-slider2 .swiper-slide.expanded {
+            flex: 10;
+        }
+
+        .home-slider2 .swiper-slide.expanded {
+            flex: 10;
+            transition: flex 0.5s ease-in-out;
+        }
+
+        .home-slider2 .swiper-slide.expanded p {
+            display: block;
+        }
+
+        .home-slider2 .swiper-slide.hidden-left,
+        .home-slider2 .swiper-slide.hidden-right {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .home-slider2 .swiper-slide.hidden-left {
+            transform: translateX(-100%);
+        }
+
+        .home-slider2 .swiper-slide.hidden-right {
+            transform: translateX(100%);
+        }
+
+        .home-slider2 .swiper-slide:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="home-slider2">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="row w-100">
+                        <div class=" img-container">
+                            <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                        </div>
+                        <div class="text-container">
+                            <h4>One</h4>
+                            <p>We align our interests with yours through a performance-based compensation structure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="row w-100">
+                        <div class=" img-container">
+                            <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                        </div>
+                        <div class="text-container">
+                            <h4>Performance Based Model</h4>
+                            <p>We align our interests with yours through a performance-based compensation structure,
+                                where
+                                our fees are tied to the profits we generate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="row w-100">
+                        <div class="col-lg-12 img-container">
+                            <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                        </div>
+                        <div class="text-container">
+                            <h4>Three</h4>
+                            <p>We provide transparency and accountability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="row w-100">
+                        <div class="col-lg-12 img-container">
+                            <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                        </div>
+                        <div class="text-container">
+                            <h4>Four</h4>
+                            <p>We work closely with you to achieve success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        let slides = document.querySelectorAll('.swiper-slide');
+      
+      
+      
+        slides.forEach((slide, index) => {
+          slide.addEventListener('click', function () {
+            let isExpanded = this.classList.contains('expanded');
+            slides.forEach(s => {
+              s.classList.remove('expanded', 'hidden-left', 'hidden-right');
+              s.style.position = "relative";
+              s.style.opacity = "1";
+              s.style.pointerEvents = "auto";
+      
+              let imgContainer = s.querySelector('.img-container');
+              let textContainer = s.querySelector('.text-container');
+              let textParagraph = textContainer.querySelector('p');
+      
+              imgContainer.classList.remove('col-lg-4');
+              textContainer.classList.remove('col-lg-8');
+              setTimeout(() => {
+                    if (!s.classList.contains('expanded')) {
+                        textParagraph.style.display = 'none';
+                    }
+                }, 2000);
+            });
+            if (!isExpanded) {
+              this.classList.add('expanded');
+              let imgContainer = this.querySelector('.img-container');
+              let textContainer = this.querySelector('.text-container');
+              let textParagraph = textContainer.querySelector('p');
+              imgContainer.classList.add('col-lg-4');
+              textContainer.classList.add('col-lg-8');
+              textParagraph.style.display = 'block';
+              slides.forEach((s, i) => {
+                if (i < index) {
+                  s.classList.add('hidden-left');
+                  setTimeout(() => s.style.position = "absolute", 300); // Hide after animation
+                }
+                if (i > index) {
+                  s.classList.add('hidden-right');
+                  setTimeout(() => s.style.position = "absolute", 300); // Hide after animation
+                }
+              });
+            }
+          });
+        });
+      
+      
+      </script>
+      
+
+</body>
+
+</html>

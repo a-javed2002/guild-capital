@@ -118,7 +118,7 @@ function Home() {
                 const activeDot = Array.from(dots).find(dot => dot.classList.contains('slick-active'));
 
                 if (activeDot) {
-                    console.log("Active Dot: ", activeDot);
+                    // console.log("Active Dot: ", activeDot);
                     dots.forEach((dot) => dot.classList.remove('slider-dot-middle'));
 
                     const activeIndex = Array.from(dots).indexOf(activeDot);

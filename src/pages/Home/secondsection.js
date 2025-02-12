@@ -1,41 +1,62 @@
 import React from 'react'
 
-
+import { useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import fund from '../../assets/images/Funds-of-funds.png';
 import useScrollSwipe from "../../hook/useScrollSwipe";
+import aboutLast1 from '../../assets/images/About-Last1.png';
+import aboutLast2 from '../../assets/images/About-Last2.png';
 
+gsap.registerPlugin(ScrollTrigger);
+
+const categories = [
+    { title: "2005", text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.", image: fund },
+    { title: "2007", text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.", image: aboutLast1 },
+    { title: "2009", text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.", image: aboutLast2 },
+];
 function SecondSection() {
-    const categories = [
-        {
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-            title: "2005",
-            text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.",
-            image: fund
-        },
-        {
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+        let scrollingDown = true; // Track scroll direction
 
-            title: "2007",
-            text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.",
-            image: fund
-        },
-        {
+        const updateIndex = (self) => {
+            const progressIndex = Math.round(self.progress * (categories.length - 1));
+            setCurrentIndex(progressIndex);
+        };
 
-            title: "2009",
-            text: "Dignissim ipsum quisque mauris diam. Amet odio purus orci cursus cursus praesent. Commodo id amet mi.",
-            image: fund
-        },
+        const trigger = ScrollTrigger.create({
+            trigger: ".motive",
+            start: "top 0%",
+            end: "bottom 0",
+            scrub: 1,
+            pin: true,
+            pinSpacing: true,
+            onUpdate: updateIndex,
+            onEnter: () => setCurrentIndex(scrollingDown ? 0 : 2), // Set index when entering from top
+            onLeaveBack: () => setCurrentIndex(0), // Reset to 0 when leaving to the top
+            onEnterBack: () => setCurrentIndex(2), // Reset to 2 when entering from bottom
+        });
 
-    ];
-    const images = categories.map(cat => cat.image);
-    const texts = categories.map(cat => cat.text);
+        const trackScrollDirection = () => {
+            scrollingDown = window.scrollY > lastScrollY;
+            lastScrollY = window.scrollY;
+        };
 
-    const { currentIndex } = useScrollSwipe(images, texts, "category-section-2");
+        window.addEventListener("scroll", trackScrollDirection);
 
+        return () => {
+            trigger.kill();
+            window.removeEventListener("scroll", trackScrollDirection);
+        };
+    }, []);
 
     return (
 
-        <section className="rem11-marginTop container second-section mb-5">
+        <section className="container second-section motive ">
             <h1 className="text-center primary">
                 Unveiling Guilds Story
             </h1>
@@ -43,14 +64,13 @@ function SecondSection() {
                 The platform streamlines investments, enhances user engagement, and tracks agent <br></br> performance, catering to users, sales agents, and administrators.
             </p>
             <div className="row fund-section mt-5" id="category-section-2">
-                <div className="col-lg-6 left-hand right-panel">
-
-                    <img src={images[currentIndex]} alt="Category Image" />
+                <div className="col-lg-6 left-hand ">
+                    <img src={categories[currentIndex].image} alt="Category" className="fund-image" />
                 </div>
                 <div className="col-lg-6 right-hand">
                     <h1 className="white-txt">Founding and Early Years</h1>
                     {categories.map((cat, index) => (
-                        <div className={`d-flex gap-4 mt-3 ${index === currentIndex ? "active" : ""}`} key={index}>
+                        <div className={`d-flex gap-3 fund-div ${index === currentIndex ? "active" : ""}`} key={index}>
                             <div className="fund-years">{cat.title}</div>
                             <p className="white-txt fund-txt">{cat.text}</p>
                         </div>

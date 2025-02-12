@@ -12,6 +12,16 @@ import insight12 from "../assets/images/Insight12.png";
 import insight13 from "../assets/images/Insight13.png";
 import insight14 from "../assets/images/Insight14.png";
 import insight15 from "../assets/images/Insight15.png";
+import insight16 from "../assets/images/insight16.png";
+import insight17 from "../assets/images/insight17.png";
+import insight18 from "../assets/images/insight18.png";
+import insight19 from "../assets/images/insight19.png";
+
+import deco1 from "../assets/images/decroation/what-we/deco10.svg";
+import deco2 from "../assets/images/decroation/what-we/deco2.svg";
+import deco3 from "../assets/images/decroation/what-we/deco3.svg";
+import deco4 from "../assets/images/decroation/what-we/deco4.svg";
+import deco5 from "../assets/images/decroation/what-we/deco5.svg";
 const insights = {
     All: [
         { img: insight9, title: 'Savings Strategies – Building a Strong Foundation for Financial Security ', text: '  Retirement Timing : Key factors for Deciding When to Retire and Achieve Financial Independence.' },
@@ -28,8 +38,8 @@ const insights = {
 
     ],
     Borrowing: [{ img: insight10, title: 'Managing Debt Effectively – Strategies for Borrowing and Repaying' }],
-    Earning: [   { img: insight11, title: 'Emerging Markets High-Risk, High-Reward Investment Opportunities', text: 'Emerging Markets : Investing In High Growth Developing Economies For Diversified, High Reward Opportunities .' }, { img: insight11, title: 'Automated Savings - The Key to Effortless Wealth Building', text: 'Automated Savings : Effortlessly Build Wealth Tops Tips for Building Financial Security Through Smart Saving and High-Yield Accounts .' },
-        { img: insight12, title: 'Sustainable Investing – Aligning Your Portfolio with Environmental and Social Goals', text: 'Sustainable Investing : Align your Portfolio with ESG Goals for Ethical and Financial Growth.' },],
+    Earning: [{ img: insight11, title: 'Emerging Markets High-Risk, High-Reward Investment Opportunities', text: 'Emerging Markets : Investing In High Growth Developing Economies For Diversified, High Reward Opportunities .' }, { img: insight11, title: 'Automated Savings - The Key to Effortless Wealth Building', text: 'Automated Savings : Effortlessly Build Wealth Tops Tips for Building Financial Security Through Smart Saving and High-Yield Accounts .' },
+    { img: insight12, title: 'Sustainable Investing – Aligning Your Portfolio with Environmental and Social Goals', text: 'Sustainable Investing : Align your Portfolio with ESG Goals for Ethical and Financial Growth.' },],
     Planning: [{ img: insight10, title: 'Retirement Timing – Choosing the Right Time to Retire for Financial Success', text: 'Retirement Timing : Key factors for Deciding When to Retire and Achieve Financial Independence..' },
         , { img: insight15, title: 'Diversified Portfolio – Building a Strong Investment Strategy for Long-Term Success', text: 'Diversified Portfolio : Essential Strategies for Balanced Investment, Risk Management, and Long Term Financial Growth.' },
     ],
@@ -47,25 +57,41 @@ function Insight() {
     };
     return (
         <div className="insight">
-            <div className="container">
+            <div className="decorative-img">
+                <img src={deco1} alt="Decorative" />
+            </div>
+            <div className="decorative-img2">
+                <img src={deco2} alt="Decorative" />
+            </div>
+            {/* <div className="decorative-img3">
+                <img src={deco3} alt="Decorative" />
+            </div>
+
+            <div className="decorative-img4">
+                <img src={deco4} alt="Decorative" />
+            </div>
+            <div className="decorative-img5">
+                <img src={deco5} alt="Decorative" />
+            </div> */}
+
+            <div className="container content5">
                 <header className="insight-header">
                     <h1 className="primary text-center fst-italic container">
                         Explore Our Comprehensive <br></br> Financial Services Tailored  Just <br></br> for You
                     </h1>
                     <p className="white-txt text-center mt-5 font-base container">
-                        Discover innovative solutions tailored to your financial needs. Start your journey towards smarter savings, <br></br> investing, and planning.
+                        Discover innovative solutions tailored to your financial needs. Start your journey <br></br> towards smarter savings, investing, and planning.
                     </p>
 
-                    <center className="mt-5">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 max-w-3xl mx-auto header-img">
-                            <img alt loading="lazy" data-nimg={1} style={{ color: 'transparent' }} src={insight4} />
-                            <img alt loading="lazy" data-nimg={1} style={{ color: 'transparent' }} src={insight5} />
-                            <img alt loading="lazy" data-nimg={1} style={{ color: 'transparent' }} src={insight6} />
-                            <img alt loading="lazy" data-nimg={1} style={{ color: 'transparent' }} src={insight7} />
+
+                    <center className="rem5-marginTop">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 max-w-3xl mx-auto header-img gap-4">
+                            <img className="rotated-img" alt="Insight 4" loading="lazy" src={insight16} />
+                            <img className="rotated-img" alt="Insight 5" loading="lazy" src={insight17} />
+                            <img className="rotated-img" alt="Insight 6" loading="lazy" src={insight18} />
+                            <img className="rotated-img" alt="Insight 7" loading="lazy" src={insight19} />
                         </div>
-
                     </center>
-
                 </header>
 
                 <section className="insight-second rem7-marginTop ">
@@ -73,7 +99,7 @@ function Insight() {
                         Insights
                     </h1>
                     <center>
-                        <div className="second-tabs mt-5 d-flex justify-content-center gap-5 flex-wrap">
+                        <div className="second-tabs mt-5 d-flex justify-content-center  flex-wrap">
 
                             {['All', 'Borrowing', 'Earning', 'Investing', 'Planning', 'Saving'].map((tab) => (
                                 <button
@@ -89,85 +115,27 @@ function Insight() {
 
                         </div>
                     </center>
+                    <center>
 
-                    <div className=" d-flex insight-container gap-3  mt-5  flex-wrap  justify-content-center">
+                        <div className=" d-flex insight-container gap-3  mt-5  flex-wrap  justify-content-center">
 
-                        {insights[activeTab].map((insight, index) => (
-                            <div key={index} className='insight-card'>
-                                <img src={insight.img} className="" alt={insight.title} />
-                                <h4 className='primary text-start mt-3'>{insight.title}</h4 >
-                                <p className="white-txt mt-3">
-                                    {insight.text}
-                                </p>
-                            </div>
+                            {insights[activeTab].map((insight, index) => (
+                                <div key={index} className='insight-card'>
+                                    <img src={insight.img} className="" alt={insight.title} />
+                                    <h4 className='primary text-start mt-3'>{insight.title}</h4 >
+                                    <p className="white-txt mt-3">
+                                        {insight.text}
+                                    </p>
+                                </div>
 
 
 
-                        ))}
+                            ))}
 
-                        {/* <div className="insight-card ">
-                            <img src={insight9} loading="lazy" />
-                            <h4 className="primary text-start mt-2">
-                                Savings Strategies – Building a Strong Foundation for Financial Security
-                            </h4>
-                            <p className="white-txt mt-3">
-                                Strategies : Tops Tips for Building Financial Security Through Smart Saving and High-Yield Accounts .
-                            </p>
+
+
                         </div>
-                        <div className="insight-card ">
-                            <img src={insight8} loading="lazy" />
-                            <h4 className="primary text-start mt-2">
-                                Goal Balancing – Saving for Multiple Financial Objectives Without Sacrifice
-                            </h4>
-                            <p className="white-txt mt-3">
-                                Goal Balancing : Effective Strategies for Saving Toward Multiple Financial Objectives Simultaneously.
-                            </p>
-                        </div>
-                        <div className="insight-card">
-                            <img src={insight10} loading="lazy" />
-                            <h4 className="primary text-start mt-2">
-                                Retirement Timing – Choosing the Right Time to Retire for Financial Success
-                            </h4>
-                            <p className="white-txt mt-3">
-                                Retirement Timing : Key factors for Deciding When to Retire and Achieve Financial Independence.
-
-
-                            </p>
-                        </div>
-
-
-
-                        <div className="insight-card ">
-                            <img src={insight9} loading="lazy" />
-                            <h4 className="primary text-start mt-2">
-                                Savings Strategies – Building a Strong Foundation for Financial Security
-                            </h4>
-                            <p className="white-txt mt-3">
-                                Strategies : Tops Tips for Building Financial Security Through Smart Saving and High-Yield Accounts .
-                            </p>
-                        </div>
-                        <div className="insight-card ">
-                            <img src={insight8} loading="lazy" />
-                            <h4 className="primary text-start mt-2">
-                                Goal Balancing – Saving for Multiple Financial Objectives Without Sacrifice
-                            </h4>
-                            <p className="white-txt mt-3">
-                                Goal Balancing : Effective Strategies for Saving Toward Multiple Financial Objectives Simultaneously.
-                            </p>
-                        </div>
-                        <div className="insight-card ">
-                            <img src={insight10} loading="lazy" />
-                            <h4 className="primary text-start mt-2">
-                                Retirement Timing – Choosing the Right Time to Retire for Financial Success
-                            </h4>
-                            <p className="white-txt mt-3">
-                                Retirement Timing : Key factors for Deciding When to Retire and Achieve Financial Independence.
-
-
-                            </p>
-                        </div> */}
-
-                    </div>
+                    </center>
                 </section>
 
                 <section className="insight-third rem7-marginTop d-flex justify-content-center ">

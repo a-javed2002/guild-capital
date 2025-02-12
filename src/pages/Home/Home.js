@@ -1,23 +1,25 @@
 import React, { useRef, useState, useEffect, Suspense } from 'react';
 import "../../styles/index.css";
-import ShapeImage from '../../assets/images/Shape.png';
-import ShapeImage2 from '../../assets/images/Shape2.png';
-import ShapeImage3 from '../../assets/images/Shape3.png';
-import ShapeImage4 from '../../assets/images/Shape4.png';
-import ShapeImage5 from '../../assets/images/Shape5.png';
+import { useNavigate } from "react-router-dom";
 import insight1 from '../../assets/images/insight1.png';
 import insight2 from '../../assets/images/insight2.png';
 import insight3 from '../../assets/images/insight3.png';
-import testinomial1 from '../../assets/images/testinomial1.png';
-import testinomial2 from '../../assets/images/testinomial2.png';
-import testinomial3 from '../../assets/images/testinomial3.png';
+
 import vedio2 from '../../assets/vedio/home-two.mp4';
 import vedio1 from '../../assets/vedio/home-one2.m4v';
 import analytics from '../../assets/images/analytics-svg.svg';
 import SecondSection from "./secondsection";
-
+import bg from "../../assets/images/Index.jpg";
 import vector from '../../assets/images/Vector.png';
-
+import ExpandingSlider from "./ExpandableCards";
+import decorartive1 from "../../assets/images/decroation/Index-10.svg";
+import decorartive2 from "../../assets/images/decroation/Index-2.svg";
+import decorartive3 from "../../assets/images/decroation/Index-3.svg";
+import decorartive8 from "../../assets/images/decroation/Index-8.svg";
+import decorartive9 from "../../assets/images/decroation/Index-9.svg";
+import PartnerSection from "./partnership.js"
+import FormSection from "./last-section.js"
+import TestimonialsSection from "./testinomial.js"
 const FeatureSection = React.lazy(() => import("./feature-section.js"));
 
 const insights = {
@@ -34,84 +36,111 @@ const insights = {
 };
 
 const Home = () => {
+    const [bgLoaded, setBgLoaded] = useState(false);
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/Insight"); // Change this to your desired route
+    };
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = { bg };
+        img.onload = () => setBgLoaded(true);
+    }, []);
     const [activeTab, setActiveTab] = useState('All');
 
     const handleTabClick = (tab) => {
         if (tab !== activeTab) setActiveTab(tab);
     };
+
+    // useEffect(() => {
+    //     const zoomEffect = () => {
+    //         document.body.style.zoom = "120%";
+    //         setTimeout(() => {
+    //             document.body.style.zoom = "100%";
+    //         }, 500);
+    //     };
+
+    //     zoomEffect();
+
+
+    //     const handleVisibilityChange = () => {
+    //         if (document.visibilityState === "visible") {
+    //             zoomEffect();
+    //         }
+    //     };
+
+    //     document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    //     return () => {
+    //         document.removeEventListener("visibilitychange", handleVisibilityChange);
+    //     };
+    // }, []);
+
     useEffect(() => {
-        const handleFocus = () => {
-            window.scrollBy(0, 1);
-            window.scrollBy(0, -1);
-        };
-
-        window.addEventListener("focus", handleFocus);
-        return () => window.removeEventListener("focus", handleFocus);
+        document.querySelector(".Home").style.visibility = "visible";
     }, []);
-    useEffect(() => {
-        const zoomEffect = () => {
-            document.body.style.zoom = "110%"; // Zoom In
-            setTimeout(() => {
-                document.body.style.zoom = "100%"; // Zoom Out
-            }, 500);
-        };
-
-        zoomEffect();
-
-
-        const handleVisibilityChange = () => {
-            if (document.visibilityState === "visible") {
-                zoomEffect();
-            }
-        };
-
-        document.addEventListener("visibilitychange", handleVisibilityChange);
-
-        return () => {
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
-        };
-    }, []);
-
 
     return (
+
         <div className="Home">
-            <section className='home-header rem7-marginTop' style={{ position: 'relative' }}>
-                <h1 className="primary text-center">
-                    Unlock Your Investment
-                </h1>
-                <h1 className="primary text-center">
-                    Potential Today
-                </h1>
+            <div className="decorative-img">
+                <img src={decorartive1} alt="Decorative" />
+            </div>
+            <div className="decorative-img2">
+                <img src={decorartive2} alt="Decorative" />
+            </div>
+            {/* <div className="decorative-img3">
+                <img src={decorartive3} alt="Decorative" />
+            </div> */}
 
-                <p className="white-txt text-center">
-                    Join our platform to streamline your investments and enhance your engagement. Experience real-time <br></br> tracking of agent performance and make informed decisions with ease.
-                </p>
-                <div className='video-container mt-5'>
-                    <div className={`vedio1-container `}>
-                        <LazyVideo src={vedio1} className='vedio1' />
-                    </div>      </div>
-                <div className="d-flex justify-content-center gap-3 mt-5">
-                    <button className="fill-button">Facts Sheet</button>
-                    <button className="outline-button">Join Now</button>
-                </div>
-            </section>
+            <div className="decorative-img4">
+                <img src={decorartive8} alt="Decorative" />
+            </div>
+            {/* <div className="decorative-img5">
+                <img src={decorartive9} alt="Decorative" />
+            </div> */}
+            <div className="content1 container">
+                <section className='home-header rem7-marginTop' >
+                    <h1 className="primary text-center">
+                        Unlock Your Investment <br></br>
+                        Potential Today
+                    </h1>
 
-            <PartnerSection />
-            <Suspense fallback={<div>Loading...</div>}>
-            </Suspense>
-            <SecondSection />
-            <Suspense fallback={<div>Loading...</div>}>
-                <FeatureSection />
-            </Suspense>
+                    <p className="white-txt text-center">
+                        Join our platform to streamline your investments and enhance your engagement. Experience real-time <br></br> tracking of agent performance and make informed decisions with ease.
+                    </p>
 
-            <CustomerExperienceSection />
+                    <div className='video-container mt-4'>
+                        <div className={`vedio1-container `}>
+                            <LazyVideo src={vedio1} className='vedio1' />
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center btn-container gap-3">
+                        <button className="outline-button">Facts Sheet</button>
+                        <button className="outline-button">Join Now</button>
+                    </div>
+                </section>
 
-            <InsightsSection activeTab={activeTab} handleTabClick={handleTabClick} />
+                <PartnerSection />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <SecondSection />
+                </Suspense>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <FeatureSection />
+                </Suspense>
+                <ExpandingSlider />
+                <CustomerExperienceSection />
 
-            <TestimonialsSection />
+                <InsightsSection activeTab={activeTab} handleTabClick={handleTabClick} handleClick={handleClick} />
 
 
-            <FinalCTA />
+                <TestimonialsSection />
+
+
+                <FormSection />
+            </div>
         </div>
     );
 };
@@ -150,72 +179,73 @@ const LazyVideo = ({ src, className }) => {
 };
 
 
-const PartnerSection = () => (
+// const PartnerSection = () => (
 
-    <div className='home-second rem7-marginTop'>
-        <h1 className="primary text-center">Our Diverse Network of Partners</h1>
-        <div className="d-flex gap-4 justify-content-center mt-5 flex-wrap">
-            <div className="d-flex gap-2 ">
-                <img src={ShapeImage} className="network-icon" id="huzaifa" alt="Shape" />
+//     <div className='home-second rem7-marginTop'>
+//         <h1 className="primary text-center">Our Diverse Network of Partners</h1>
+//         <div className='partners-container'>
+//             <div className="partners-list d-flex gap-4 justify-content-center mt-5 ">
+//                 <div className="d-flex gap-2 ">
+//                     <img src='/assets/images/Shape.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt ">Boltshift</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage2} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Boltshift</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape2.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt ">Lightbox</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage3} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Lightbox</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape3.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt">FeatherDev</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage4} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt">FeatherDev</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape4.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt ">Spherule</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage5} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Spherule</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape5.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt ">Nietzsche</span>
-            </div>
+//                     <span className="white-txt ">Nietzsche</span>
+//                 </div>
+//                 <div className="d-flex gap-2 ">
+//                     <img src='/assets/images/Shape.png' className="network-icon" loading="lazy" alt="Shape" />
 
-            <div className="d-flex gap-2">
-                <img src={ShapeImage} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Boltshift</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape2.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt  ">Boltshift</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage2} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Lightbox</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape3.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt">Lightbox</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage3} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt">FeatherDev</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape4.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt  ">FeatherDev</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage4} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Spherule</span>
+//                 </div>
+//                 <div className="d-flex gap-2">
+//                     <img src='/assets/images/Shape5.png' className="network-icon" loading="lazy" alt="Shape" />
 
-                <span className="white-txt  ">Spherule</span>
-            </div>
-            <div className="d-flex gap-2">
-                <img src={ShapeImage5} className="network-icon" id="huzaifa" alt="Shape" />
+//                     <span className="white-txt ">Nietzsche</span>
+//                 </div>
 
-                <span className="white-txt  ">Nietzsche</span>
-            </div>
-        </div>
-    </div>
-);
+//             </div></div>
+//     </div>
+// );
 
 
 const CustomerExperienceSection = () => (
-    <section className='rem7-marginTop customer-experience'>
+    <section className='rem5-marginTop customer-experience'>
         <h1 className='primary text-center'> Improves Customer Experiences</h1>
         <p className='white-txt text-center customer-experience-intro mt-3'>
-            Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. <br></br> Nibh est vitae suspendisse parturient sed lorem eu.
+            Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia viverra orci diam. Nibh est vitae<br></br> suspendisse parturient sed lorem eu.
         </p>
 
         <div className='d-flex justify-content-center flex-wrap mt-5  counter '>
@@ -233,7 +263,8 @@ const CustomerExperienceSection = () => (
             </div>
         </div>
 
-        <div className='d-flex justify-content-center rem7-marginTop'>
+        <div className='d-flex justify-content-center mt-5'>
+
             <div className='d-flex justify-content-center vedio2-container'>
                 <video autoPlay loop muted className='vedio2 '  >
                     <source src={vedio2} type="video/mp4" />
@@ -251,9 +282,9 @@ const CustomerExperienceSection = () => (
 );
 
 
-const InsightsSection = ({ activeTab, handleTabClick }) => (
+const InsightsSection = ({ activeTab, handleTabClick, handleClick }) => (
 
-    <div className='rem7-marginTop insight-section'>
+    <div className='rem5-marginTop insight-section'>
         <h1 className='primary text-center'>Insights</h1>
 
         <div className='d-flex gap-5 justify-content-center flex-wrap mt-5'>
@@ -271,7 +302,7 @@ const InsightsSection = ({ activeTab, handleTabClick }) => (
         <div className='mt-5 insight-content d-flex justify-content-center flex-wrap gap-4'>
             {insights[activeTab].map((insight, index) => (
                 <div key={index} className='insight-card'>
-                    <img src={insight.img} id="huzaifa" className="" alt={insight.title} />
+                    <img src={insight.img} loading="lazy" className="" alt={insight.title} />
                     <h5 className='white-txt text-start'>{insight.title}</h5>
                     <div className='d-flex justify-content-start'>
                         <button className="fill-button mt-3 ">Read</button>
@@ -280,73 +311,84 @@ const InsightsSection = ({ activeTab, handleTabClick }) => (
             ))}
         </div>
 
-        <div className='d-flex justify-content-center  btn-container'>
-            <button className="fill-button ">Explore All</button>
+        <div className='d-flex justify-content-center  btn-container mt-5'>
+            <button className="fill-button " onClick={handleClick}>Explore All</button>
         </div>
     </div>
 
 );
 
 
-const TestimonialsSection = () => (
-    <div className="rem7-marginTop testinomial">
-        <h1 className="primary text-center"> Nextronium Testimonials</h1>
+// const TestimonialsSection = () => (
+//     <div className="rem5-marginTop testinomial">
+//         <h1 className="primary text-center"> Nextronium Testimonials</h1>
 
-        <div className="container">
-            {/* Quote and Intro */}
-            <div className="row mt-5 align-items-center">
-                {/* Quote Image */}
-                <div className="col-lg-3 col-md-4 col-sm-12 text-center">
-                    <img src={vector} id="huzaifa" className="Testimonials-quote-img" alt="Quote" />
-                </div>
+//         <div className="container">
+//             {/* Quote and Intro */}
+//             <center>
+//                 <div className="row mt-4 align-items-center quote">
+//                     {/* Quote Image */}
+//                     <div className="col-lg-3 col-md-4 col-sm-12 text-center">
+//                         <img src='/assets/images/Vector.png' loading="lazy" className="Testimonials-quote-img" alt="Quote" />
+//                     </div>
 
-                {/* Testimonial Text */}
-                <div className="col-lg-8 col-md-8 col-sm-12 intro">
-                    <p className="white-txt p-3">
-                        "Joining this platform was a game-changer for me. The educational resources helped me understand crypto trading, and the community support is invaluable. Highly recommended!"
-                    </p>
-                </div>
-            </div>
+//                     {/* Testimonial Text */}
+//                     <div className="col-lg-8 col-md-8 col-sm-12 intro">
+//                         <p className="white-txt p-3">
+//                             "Joining this platform was a game-changer for me. The educational resources helped me understand crypto trading, and the community support is invaluable. Highly recommended!"
+//                         </p>
+//                     </div>
+//                 </div>
+//             </center>
 
-            {/* Testimonial Cards */}
-            <div className="d-flex flex-wrap justify-content-center mt-3">
-                <div className="testinomial-card">
-                    <img src={testinomial1} id="huzaifa" className="img-fluid" alt="Testimonial 1" />
-                    <div className="mx-4">
-                        <h5 className="white-txt">Constance Julien</h5>
-                        <p>Chief Factors Technician</p>
-                    </div>
-                </div>
+//             {/* Testimonial Cards */}
+//             <div className="d-flex flex-wrap gap-4 justify-content-center mt-0">
+//             i wnat effect like auto image like by default like this card show then 
+//                 <div className="testinomial-card">
+//                     <img src='/assets/images/testinomial1.png' loading="lazy" className="img-fluid first" alt="Testimonial 1" />
+//                     <div className="mx-4">
+//                         <h5 className="white-txt">Constance Julien</h5>
+//                         <p>Chief Factors Technician</p>
+//                     </div>
+//                 </div>
+// then this 
+//                 <div className="testinomial-card d-flex flex-column justify-content-end">
+//                     <img src='/assets/images/testinomial2.png' loading="lazy" className="second img-fluid " alt="Testimonial 2" />
+//                     <div className="mx-4">
+//                         <h5 className="white-txt">Constance Julien</h5>
+//                         <p>Chief Factors Technician</p>
+//                     </div>
+//                 </div>
+// the this 
+//                 <div className="testinomial-card d-flex flex-column justify-content-end">
+//                     <img src='/assets/images/testinomial3.png' loading="lazy" className="second img-fluid" alt="Testimonial 3" />
+//                     <div className="mx-4">
+//                         <h5 className="white-txt">Constance Julien</h5>
+//                         <p>Chief Factors Technician</p>
+//                     </div>
+//                 </div>
 
-                <div className="testinomial-card d-flex flex-column justify-content-end">
-                    <img src={testinomial2} id="huzaifa" className="second img-fluid" alt="Testimonial 2" />
-                    <div className="mx-4">
-                        <h5 className="white-txt">Constance Julien</h5>
-                        <p>Chief Factors Technician</p>
-                    </div>
-                </div>
-
-                <div className="testinomial-card d-flex flex-column justify-content-end">
-                    <img src={testinomial3} id="huzaifa" className="second img-fluid" alt="Testimonial 3" />
-                    <div className="mx-4">
-                        <h5 className="white-txt">Constance Julien</h5>
-                        <p>Chief Factors Technician</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+//                 but after 5 second it change it postion but note i wnat smooth beautifule not glitch jerky
+//             </div>
+//         </div>
+//     </div>
 
 
-);
+// );
 
 
 const FinalCTA = () => (
     <section className="last-section mt-5 mb-5">
         <div className="container">
+            <h1 className="primary text-center">
+                Discover the Guild Platform:
+            </h1>
+            <h1 className="primary text-center">
+                Your Gateway to Smart Investment Solutions
+            </h1>
             <div className="row box mt-5 align-items-center">
                 {/* Left Column - Text Section */}
-                <div className="col-lg-6 col-md-6 p-3 p-md-5  text-md-start">
+                <div className="col-lg-6 col-md-6 col-sm-12 p-3 p-md-5  text-md-start">
                     <h2 className="white-txt">
                         Unlock Your <br />
                         Investment Potential <br></br> with Us
@@ -362,8 +404,8 @@ const FinalCTA = () => (
                 </div>
 
                 {/* Right Column - Image */}
-                <div className="col-lg-6 col-md-6 d-flex justify-content-center">
-                    <img src={analytics} className="img-fluid" id="huzaifa" alt="Shape" />
+                <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
+                    <img src='/assets/images/analytics-svg.svg' className="img-fluid" loading="lazy" alt="Shape" />
                 </div>
             </div>
         </div>

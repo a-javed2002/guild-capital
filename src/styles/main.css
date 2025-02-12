@@ -28,22 +28,23 @@ h6 {
 }
 
 .fill-button {
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 999px;
     border: 2px solid #FFFFFF;
     background-color: #FFFFFF;
     color: #0E192B;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     width: auto;
     border: none;
     font-family: 'Manrope-SemiBold', serif;
     line-height: 110%;
+    transition: all 0.3s ease-in-out;
 }
 
 .fill-button:hover {
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.7);
-    /* White glow effect */
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
 }
 
 .outline-button {
@@ -52,7 +53,7 @@ h6 {
     border: 2px solid #FFFFFF;
     background-color: #0E192B;
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     line-height: 110%;
     font-family: 'Manrope-SemiBold', serif;
@@ -61,24 +62,38 @@ h6 {
 
 .outline-button:hover {
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
-    /* White glow */
+    transform: scale(1.1);
 }
 
+.MuiToolbar-root {
+    padding: 12px;
+}
 
+body .css-ippir9-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+}
+
+body .MuiToolbar-root.MuiToolbar-gutters {
+    box-shadow: none !important;
+}
 
 .MuiButtonBase-root.MuiButton-root {
-    font-family: 'Manrope-SemiBold', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: clamp(1rem, 2.5vw, 1.1rem);
     line-height: 110%;
     height: 50px;
 }
 
 .MuiPaper-root {
-    background-color: #0E192B !important;
+    background-color: transparent !important;
 }
 
 .navs-item {
     text-transform: capitalize !important;
+}
+
+.css-1rqi39r-MuiList-root {
+    margin-top: 94px !important;
 }
 
 @media (max-width:2560px) and (min-width: 1450px) {
@@ -95,7 +110,7 @@ h6 {
 @media (max-width:1449px) and (min-width: 1224px) {
 
     .css-1984w2y {
-        gap: 34px !important;
+        gap: 47px !important;
     }
 
 
@@ -122,7 +137,7 @@ h6 {
 
     .MuiButtonBase-root.MuiButton-root {
 
-        font-size: 12px;
+        font-size: 13px;
 
     }
 
@@ -148,7 +163,17 @@ h6 {
 
 }
 
+.footer .footer-col p {
+    font-size: 0.875rem;
+    font-family: 'Manrope-Regular', sans-serif;
+    opacity: 0.7;
 
+
+}
+
+.footer .footer-col {
+    gap: 5rem;
+}
 
 @media (max-width:2560px) and (min-width: 1450px) {
 
@@ -187,7 +212,7 @@ h6 {
 @media (min-width: 600px) {
     .css-yg49xf-MuiToolbar-root {
 
-        margin-top: 1rem !important;
+        margin-top: 0.6rem !important;
     }
 }
 
@@ -322,4 +347,27 @@ footer .footer-bottom p {
 
 .footer-intro {
     font-size: 1rem;
+}
+
+
+
+
+
+
+.move-left {
+    width: 0px !important;
+}
+
+.move-left img {
+    width: 0px !important;
+    transform: translateX(100vw);
+}
+
+.move-right img {
+    width: 0px !important;
+    transform: translateX(100vw);
+}
+
+.move-right {
+    width: 0px !important;
 }

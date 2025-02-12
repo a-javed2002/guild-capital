@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
+import { DiCssTricks } from "react-icons/di";
+import { TbSort09 } from "react-icons/tb";
 
 const useScrollSwipe = (images, categories, sectionId) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isScrollLocked, setIsScrollLocked] = useState(false);
-  const [prevY, setPrevY] = useState(null);
+  const prevIndexRef = useRef(0); // Track previous index
   let startY = 0;
 
   // Handle Mouse Scroll (Desktop)
@@ -13,23 +15,17 @@ const useScrollSwipe = (images, categories, sectionId) => {
       if (!isScrollLocked) return;
       event.preventDefault();
 
-      if (event.deltaY > 0) {
-        // Scroll Downward
-        if (currentIndex < categories.length - 1) {
-          setCurrentIndex((prev) => prev + 1);
-        } else {
-          setIsScrollLocked(false); // Unlock after last item
-        }
-      } else if (event.deltaY < 0) {
-        // Scroll Upward
-        if (currentIndex > 0) {
-          setCurrentIndex((prev) => prev - 1);
-        } else {
-          setIsScrollLocked(false); // Unlock after first item
-        }
-      }
-    };
 
+      if (event.deltaY > 0 && currentIndex < categories.length - 1) {
+        setCurrentIndex((prev) => prev + 1);
+      } else if (event.deltaY < 0 && currentIndex > 0) {
+        setCurrentIndex((prev) => prev - 1);
+      } else {
+        setIsScrollLocked(false);
+      }
+
+
+    };
     window.addEventListener("wheel", handleScroll, { passive: false });
     return () => window.removeEventListener("wheel", handleScroll);
   }, [isScrollLocked, currentIndex]);
@@ -78,57 +74,43 @@ const useScrollSwipe = (images, categories, sectionId) => {
     };
   }, [isScrollLocked, currentIndex, sectionId]);
 
-  // Optimized GSAP Image Transition
+  // GSAP Image Transition Effect
   useEffect(() => {
+    if (currentIndex < 0 || currentIndex >= categories.length) return;
+
     const imgElement = document.querySelector(`#${sectionId} .right-panel img`);
     if (!imgElement) return;
-    const direction = currentIndex > prevY ? "100%" : "-100%";
-    gsap.fromTo(
-      imgElement,
-      { y: direction, opacity: 0 },
-      { y: "0%", opacity: 1, duration: 0.5, ease: "power2.out" }
-    );
 
-    imgElement.src = images[currentIndex];
-  }, [currentIndex, sectionId, images]);
+    const previousIndex = prevIndexRef.current;
 
+    gsap.timeline()
+      .to(imgElement, { opacity: 0, duration: 0.4, ease: "power2.out" }) // Fade out
+      .call(() => {
+        imgElement.src = images[currentIndex]; // Change image
+      })
+      .to(imgElement, { opacity: 1, duration: 0.6, ease: "power2.out" }); // Fade in
 
+    prevIndexRef.current = currentIndex;
+  }, [currentIndex, sectionId, images, categories.length]);
+
+  // Intersection Observer for Locking Scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.intersectionRatio >= 0.9) {
+          if (entry.intersectionRatio >= 1) {
             setIsScrollLocked(true);
-
-            // Determine scroll direction
-            if (prevY !== null) {
-              const direction = entry.boundingClientRect.y > prevY ? "up" : "down";
-              if (direction === "down") {
-                setCurrentIndex(0);
-              } else {
-                setCurrentIndex(categories.length - 1);
-              }
-            }
-
-            setPrevY(entry.boundingClientRect.y);
           }
         });
       },
-      { threshold: 0.9 } // Change from 1 to 0.8
+      { threshold:1 }
     );
 
-
     const section = document.getElementById(sectionId);
-    console.log(`Checking Section ID: ${sectionId}`, section);
     if (section) observer.observe(section);
 
     return () => observer.disconnect();
-  }, [sectionId, categories.length, prevY]);
-  useEffect(() => {
-    console.log("Hook Re-rendered for:", sectionId);
-    console.log("Current Index:", currentIndex);
-    console.log("Images:", images);
-  }, [currentIndex, sectionId, images]);
+  }, [sectionId]);
 
   return { currentIndex, setCurrentIndex, isScrollLocked };
 };

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video Animation</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Section Styling */
+        .home-header {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            background: white;
+            z-index: 10;
+            /* Ensure text is above video after scrolling */
+        }
+
+        /* Video Container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease-in-out;
+            z-index: 1000;
+            background: black;
+        }
+
+        /* Video Styling */
+        .video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Shrinking Effect */
+        .shrink {
+            width: 800px !important;
+            height: 400px !important;
+        }
+
+        /* Move Video to Normal Content */
+        .move-to-content {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            background: white;
+        }
+
+        /* Add Enough Space to Enable Scrolling */
+        .content {
+            padding: 50px;
+            text-align: center;
+            height: 150vh;
+            /* Increased height to ensure scrolling */
+            background: #f8f8f8;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 50px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Text Section -->
+    <section class="home-header">
+        <h1 class="primary text-center">Unlock Your Investment</h1>
+        <h1 class="primary text-center">Potential Today</h1>
+
+        <p class="white-txt text-center">
+            Join our platform to streamline your investments and enhance your engagement. Experience real-time <br>
+            tracking of agent performance and make informed decisions with ease.
+        </p>
+    </section>
+
+    <!-- Video Section -->
+    <div class="video-container" id="videoContainer">
+        <video src="C:/Users/kk/Desktop/Structure/Freelance/Web/Sheery/guild-capital/src/assets/vedio/home-one.mp4"
+            class="video" id="videoElement" controls autoplay muted loop></video>
+    </div>
+
+    <!-- Extra Content for Scrolling -->
+    <div class="content">
+        <h2>More Content Below</h2>
+        <p>After scrolling down, the video shrinks and moves into the normal content flow.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Select elements
+        const video = document.getElementById('videoElement');
+        const videoContainer = document.getElementById('videoContainer');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                // If scrolled more than 100px, shrink video and move to normal flow
+                video.classList.add('shrink');
+                videoContainer.classList.add('move-to-content');
+                videoContainer.style.position = "relative"; // Remove fixed positioning
+                videoContainer.style.height = "auto"; // Allow natural height
+            } else {
+                // If scrolled back to the top, make video full-screen again
+                video.classList.remove('shrink');
+                videoContainer.classList.remove('move-to-content');
+                videoContainer.style.position = "fixed"; // Make fullscreen again
+                videoContainer.style.height = "100vh";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

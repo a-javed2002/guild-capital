@@ -6,12 +6,13 @@ import insight2 from "../../assets/images/insight2.png";
 import Investment1 from "../../assets/images/Investment-Advisory1.png";
 import Investment2 from "../../assets/images/Investment2.png";
 import Investment3 from "../../assets/images/Investment3.png";
-
+import perfomance19 from "../../assets/images/perfomance19.png";
+import perfomance20 from "../../assets/images/perfomance20.png";
 function FeatureSection() {
   const categories2 = [
-    { first: Investment1, text: "Advanced Security Measures", image: feature },
-    { first: Investment2, text: "Customizable Integrations", image: fund },
-    { first: Investment3, text: "Real-time Analytics Dashboard", image: insight2 },
+    { first: Investment1, text: ["Advanced Security ", <br key="br1" />, "Measures"], image: feature },
+    { first: Investment2, text: ["Customizable", <br key="br1" />, "Integrations"], image: perfomance19 },
+    { first: Investment3, text: ["Real-time Analytics", <br key="br1" />, "Dashboard"], image: perfomance20 },
   ];
 
   const images2 = categories2.map((cat) => cat.image);
@@ -20,12 +21,10 @@ function FeatureSection() {
   const { currentIndex } = useScrollSwipe(images2, texts2, "category-section-3");
 
   return (
-    <div className="rem15-marginTop feature-section container" >
+    <div className="rem5-marginTop feature-section container" id="" >
       <h1 className="text-center primary">Guild’s Key Features</h1>
-
-
-      <div className="row  gap-3 justify-content-center " id="category-section-3" >
-        <div className="col-lg-5 left-hand mt-2">
+      <div className="row  justify-content-center mt-2" id="category-section-3" >
+        <div className="col-lg-6 left-hand mt-2">
           {categories2.map((category2, index2) => (
             <div
               className={`d-flex gap-4 ${index2 === currentIndex ? "active" : ""}`}
@@ -39,19 +38,22 @@ function FeatureSection() {
           ))}
         </div>
 
-        <div className="col-lg-6 mt-2 right-panel">
+        <div className="col-lg-5 mt-2 right-panel">
           <img
             src={images2[currentIndex] || images2[0]}
             className="feature-image"
             alt="Category Image"
           />
+
+
+
           <p className="white-txt text-center feature-image-txt mt-2">
             Experience a seamless investment journey.
           </p>
         </div>
       </div>
       <center>
-        <button className="fill-button mt-5">Get Started</button>
+        <button className="fill-button mt-">Get Started</button>
 
       </center>
     </div>

@@ -9,11 +9,17 @@ import What_we from './pages/What-we';
 import About from './pages/About';
 import Insight from './pages/Insight';
 import Performance from './pages/perfomance';
+import StickyScroll from './pages/check';
 
+import "./styles/main.css";
+import { StyledEngineProvider } from '@mui/material/styles';
+import VerticalImageSlider from './pages/animation3';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
     <Router>
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,7 +27,7 @@ root.render(
         <Route path="/About" element={<About />} />
         <Route path="/Insight" element={<Insight />} />
         <Route path="/performance" element={<Performance />} />
-     
+        <Route path="/check" element={<StickyScroll />} />
       </Routes>
       <Footer />
     </Router>
